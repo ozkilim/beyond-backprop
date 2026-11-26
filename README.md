@@ -818,6 +818,10 @@ fit in a 0.83M-parameter model. So let the table *teach* the network instead.
   worth roughly twice as much to this local rule as to backprop. That is the first extra here that
   favours an alternative, but not enough. Control: the same per-block tables trained end to end by
   backprop (`taught_layers_bp`) get **1.585 / 1.587 / 1.585** (1.586), 0.07 ahead.
+  Per-layer tables do not help backprop (1.586 vs 1.583 with only the top teacher). So I tried them
+  on mirror credit (`taught_mirror_layers`, 🪞), whose credit is slightly off: **1.623 / 1.619 /
+  1.628** (1.623), worse than mirror with only the top teacher (1.596). They help only the rule
+  with no cross-block credit at all.
 - *Did not help:* also training on text the table **dreams up** (sampled from it, 1M chars, scored
   against the teacher), val 1.456 / 1.463 for half / one extra dreamed batch vs 1.449 without.
   The dreams cost steps and read like garbled Shakespeare.
@@ -945,6 +949,7 @@ way, 1.560 vs 1.567, while the 3-seed means go backprop's way, 1.584 vs 1.553.)
 | `adv_embed` | 🪞 modified | Learns from the gradient at input embeddings pushed in their worst-case direction (one extra pass). | Miyato et al. 2017; Zhu et al. 2020 |
 | `taught_layers` 📏 | 🧱 local | Local per-block learning where each block is also taught by a counting table cut to a memory suited to its depth (2/4/6/8 chars). | Belilovsky et al. 2019; Witten & Bell 1991 |
 | `taught_layers_bp` | ✅ full | Its control: the same per-block tables, trained end to end by backprop. | |
+| `taught_mirror_layers` | 🪞 modified | Mirror-neuron credit (no weight transport anywhere) plus the depth-suited per-block tables. | |
 | `mirror_window` 🪞 | 🪞 modified | Mirrored feedback on one hidden layer of 2,048 neurons that see the last 6 chars through hand-wired copy heads. | + Bengio et al. 2003 |
 | `sign_symmetry` | 🪞 modified | Backward pass through `sign(W)`: the feedback knows the signs of the weights but not their size. | Liao, Leibo & Poggio 2016 |
 | `local_losses` | 🧱 local | Every block gets its own tiny next-char readout and learns greedily. Gradients never cross a block boundary. | Belilovsky et al. 2019; Nøkland & Eidnes 2019 |

@@ -62,3 +62,40 @@ class TaughtLayersBackprop(TaughtLayers):
     autograd = "full"
     blurb = "Control for taught_layers: same per-block tables and readouts, but trained by end-to-end backprop."
     local = False
+
+
+@register
+class TaughtMirrorLayers(TaughtLayers):
+    """mirror_neurons credit end to end (backward weights born random, given the same update as
+    their forward twins; no weight is ever copied, including in the per-block readouts), plus the
+    same depth-suited per-block counting tables as taught_layers. End-to-end backward pass with
+    learned stand-in weights, so 'modified'. Control: taught_layers_bp (exact backprop, same tables)."""
+    name = "taught_mirror_layers"
+    autograd = "modified"
+    blurb = "Mirror-neuron credit (no weight transport) plus a depth-suited counting table teaching every block's readout."
+    paper = "Kolen & Pollack 1994; Witten & Bell 1991; this repo"
+    defaults = dict(TaughtLayers.defaults, lr=1e-3)
+    local = False
+
+    def __init__(self, model, **hp):
+        from .feedback_alignment import FALinear, swap_linears
+        super().__init__(model, **hp)
+        swap_linears(model, "random", 1.0)
+        swap_linears(self.aux, "random", 1.0)
+        twins = [m for m in list(model.modules()) + list(self.aux.modules()) if isinstance(m, FALinear)]
+        self.W, self.B = [m.weight for m in twins], [m.feedback for m in twins]
+        params = list(model.parameters()) + list(self.aux.parameters())
+        self.opt = torch.optim.AdamW(params, lr=self.hp["lr"], weight_decay=self.hp["weight_decay"])
+        step = self.opt.step
+
+        def mirrored_step(*a, **k):  # each B gets exactly its forward twin's AdamW update (see mirror_neurons)
+            with torch.no_grad():
+                before = torch._foreach_mul(self.W, 1.0)
+            out = step(*a, **k)
+            with torch.no_grad():
+                lr_wd = self.opt.param_groups[0]["lr"] * self.hp["weight_decay"]
+                gap = torch._foreach_sub(self.B, before)
+                torch._foreach_add_(self.B, torch._foreach_sub(self.W, before))
+                torch._foreach_add_(self.B, gap, alpha=-lr_wd)
+            return out
+        self.opt.step = mirrored_step
