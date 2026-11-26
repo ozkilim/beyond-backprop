@@ -863,6 +863,10 @@ fit in a 0.83M-parameter model. So let the table *teach* the network instead.
   **1.583**. It wins 4 of 6 seed pairs, but paired t ≈ −0.7, so it is not a win. Mirror-credit SAM,
   3 seeds: 1.586 / 1.579 / 1.597 (**1.587**) vs backprop's 1.589 / 1.586 / 1.580 on the same seeds.
   Resolving a 0.006 gap at this seed spread would take about 40 seed pairs.
+- **So I ran 26 seed pairs of `sam` vs backprop** (both with the teacher, each at its tournament
+  lr, run count fixed in advance). SAM is ahead by **0.006** on average (95% CI −0.015 to +0.002),
+  paired t = −1.59 (p ≈ 0.12), and wins 18 of 26 pairs (sign test p ≈ 0.08). Probably a small real
+  edge, but not established at the usual 5% level. And SAM is backprop run twice per step.
 - **Random weight perturbation (`rwp`) was the strongest candidate, and it still ties.** On the
   *Richard II* proxy, sigma 0.2 beat backprop's best regularised run by 0.023 (two seeds each
   for `rwp`). On the real arena, 6 seeds each, both with the teacher: `rwp` test **1.542**
