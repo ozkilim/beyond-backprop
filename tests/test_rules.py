@@ -234,3 +234,16 @@ def test_proxy_split_holds_out_a_play_and_never_touches_val_or_test():
     assert len(p.splits["train"]) + len(p.splits["val"]) == len(real.splits["train"])
     lo = int(n * proxy.LO)
     assert torch.equal(p.splits["val"][:100], real.splits["train"][lo:lo + 100])
+
+
+def test_teacher_multi_matches_separate_shorter_memory_calls():
+    from bbp.rules._teacher import CountingTeacher
+    torch.manual_seed(0)
+    text = torch.randint(6, (3, 200))
+    x, y = text[:, :-1], text[:, 1:]
+    T = CountingTeacher(6, order=6, beta=4.0)
+    T.observe(x, y)
+    T.build()
+    P = T.multi(x, y, [1, 3, 5])
+    for m in (1, 3, 5):
+        assert torch.allclose(P[m], T(x, y, max_ctx=m), atol=1e-6)

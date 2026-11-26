@@ -132,11 +132,14 @@ class CountingTeacher:
         return k
 
     @torch.no_grad()
-    def _dist(self, hist, avail, y=None):
+    def _dist(self, hist, avail, y=None, record=None):
         """Backoff distribution (..., V). hist[..., i] = char i back; avail = chars of history
-        actually available; y = the true next char, whose own count is left out (LOO)."""
+        actually available; y = the true next char, whose own count is left out (LOO).
+        record: a list of context lengths; returns {m: distribution using at most m chars}."""
         if self.smoothing == "kn":
+            assert record is None
             return self._dist_kn(hist, avail, y)
+        rec = {}
         V = self.V
         p = torch.full(hist.shape[:-1] + (V,), 1.0 / V, device=hist.device)
         onehot = torch.nn.functional.one_hot(y, V).float() if y is not None else None
@@ -153,13 +156,27 @@ class CountingTeacher:
             lam = self.beta * types
             q = (c + lam * p) / (tot + lam).clamp_min(1e-9)
             p = torch.where(tot > 0, q, p)
+            if record is not None and n in record:
+                rec[n] = p
+        if record is not None:
+            return {m: rec.get(min(m, self.order - 1), p) for m in record}
         return p
 
     @torch.no_grad()
-    def __call__(self, x, y, loo=True):
-        """Soft targets (B, T, V) for the next character at every position of x."""
+    def multi(self, x, y, ctxs, loo=True):
+        """One pass, several shorter-memory teachers: {m: soft targets using at most m chars}."""
+        hist = torch.stack([torch.roll(x, i, 1) for i in range(self.order - 1)], -1)
+        avail = (torch.arange(x.shape[1], device=x.device) + 1).expand(x.shape)
+        return self._dist(hist, avail, y if loo else None, record=list(ctxs))
+
+    @torch.no_grad()
+    def __call__(self, x, y, loo=True, max_ctx=None):
+        """Soft targets (B, T, V) for the next character at every position of x.
+        max_ctx: use at most this many characters of context (a shorter-memory teacher)."""
         hist = torch.stack([torch.roll(x, i, 1) for i in range(self.order - 1)], -1)  # char i back
         avail = torch.arange(x.shape[1], device=x.device) + 1
+        if max_ctx is not None:
+            avail = avail.clamp_max(max_ctx)
         return self._dist(hist, avail.expand(x.shape), y if loo else None)
 
     @torch.no_grad()

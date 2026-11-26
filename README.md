@@ -809,6 +809,15 @@ fit in a 0.83M-parameter model. So let the table *teach* the network instead.
   the counting teacher and the regulariser: 1.540.**
 - *Did not help:* a Kneser-Ney teacher (val 1.477 vs 1.474 for Witten-Bell, 50 batches; left in as
   `smoothing="kn"`).
+- **📏 Teaching each layer its own counting table helps local learning a lot.** In
+  `taught_layers` (🧱 local), no error ever crosses a block boundary (`local_losses`). Each block's
+  own readout also learns from the table cut to a memory that suits its depth: block 0 from 2
+  characters of context, then 4, 6, and the top block 8. Test, 5 min: **1.640 / 1.642 / 1.670 /
+  1.649** (mean 1.650) vs 1.743 for plain `local_losses`, about 0.09 better. Giving every block the
+  8-character table does worse (1.666, one seed), so the depth matching matters. The teacher is
+  worth roughly twice as much to this local rule as to backprop. That is the first extra here that
+  favours an alternative, but not enough. Control: the same per-block tables trained end to end by
+  backprop (`taught_layers_bp`) get **1.585 / 1.587 / 1.585** (1.586), 0.07 ahead.
 - *Did not help:* also training on text the table **dreams up** (sampled from it, 1M chars, scored
   against the teacher), val 1.456 / 1.463 for half / one extra dreamed batch vs 1.449 without.
   The dreams cost steps and read like garbled Shakespeare.
@@ -934,6 +943,8 @@ way, 1.560 vs 1.567, while the 3-seed means go backprop's way, 1.584 vs 1.553.)
 | `rwp` | 🪞 modified | Each gradient is taken at a randomly jittered copy of the weights (noise scaled to each row), then the clean weights step. | Li et al. 2023 |
 | `lazy_lower` | 🪞 modified | The error reaches the bottom blocks only every k-th step. | cf. FreezeOut (Brock et al. 2017) |
 | `adv_embed` | 🪞 modified | Learns from the gradient at input embeddings pushed in their worst-case direction (one extra pass). | Miyato et al. 2017; Zhu et al. 2020 |
+| `taught_layers` 📏 | 🧱 local | Local per-block learning where each block is also taught by a counting table cut to a memory suited to its depth (2/4/6/8 chars). | Belilovsky et al. 2019; Witten & Bell 1991 |
+| `taught_layers_bp` | ✅ full | Its control: the same per-block tables, trained end to end by backprop. | |
 | `mirror_window` 🪞 | 🪞 modified | Mirrored feedback on one hidden layer of 2,048 neurons that see the last 6 chars through hand-wired copy heads. | + Bengio et al. 2003 |
 | `sign_symmetry` | 🪞 modified | Backward pass through `sign(W)`: the feedback knows the signs of the weights but not their size. | Liao, Leibo & Poggio 2016 |
 | `local_losses` | 🧱 local | Every block gets its own tiny next-char readout and learns greedily. Gradients never cross a block boundary. | Belilovsky et al. 2019; Nøkland & Eidnes 2019 |

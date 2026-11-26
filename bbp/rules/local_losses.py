@@ -33,7 +33,7 @@ class LocalLosses(Rule):
         losses = []
         n = len(self.model.blocks)
         for i, blk in enumerate(self.model.blocks):
-            h = blk(h if i == 0 else h.detach())  # block 0 also trains the embeddings
+            h = blk(h if i == 0 or not getattr(self, "local", True) else h.detach())  # block 0 also trains the embeddings
             logits = self.aux[i](h) if i < n - 1 else self.model.head(h)
             losses.append(F.cross_entropy(logits.reshape(-1, logits.size(-1)), y.reshape(-1)))
         self.opt.zero_grad(set_to_none=True)
