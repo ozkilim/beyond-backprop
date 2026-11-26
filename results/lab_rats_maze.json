@@ -34,7 +34,6 @@
  "batch_size": 32,
  "seed": 0,
  "diverged": false,
- "unigram_loss": 3.309084177017212,
  "curve": [
   {
    "t": 0.0,
@@ -244,5 +243,7 @@
     "val_loss": 2.815421233177185
    }
   ]
- }
+ },
+ "unigram_val_loss": 3.3294193267822267,
+ "unigram_test_loss": 3.3595264625549315
 }

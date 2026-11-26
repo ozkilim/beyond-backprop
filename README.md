@@ -47,15 +47,12 @@ is *by how much*, and *why*.
 | 26 | `hill_climb` | 🚫 none | 3.153 | +1.515 | no | 5.0 min | 24,757 | 49,514 | sigma=0.01 |
 | 27 | `forward_grad` | 🚫 none | 3.167 | +1.529 | no | 5.0 min | 9,280 | 9,280 | lr=0.0018 |
 | 28 | `dreaming` | 🧱 local | 3.331 | +1.693 | no | 3.0 min | 21,607 | 43,214 | lr=0.0003 |
+| | *unigram (letter frequencies only)* | | 3.360 | | | | | | |
 | | *untrained / uniform guess* | | 4.216 | | | | | | |
 
 <sub>0.83M-param char GPT (4 layers, d=128, ctx 128), batch 32, TinyShakespeare, 5 min of training time per rule on `mps`, loss in nats/char. Early stopping: each rule's best checkpoint by val loss is scored on a held-out test split. Each rule's `tuned` knob got a 3-point sweep first. Tagged rows are controls, not contenders: (taught) is backprop given the same counting teacher `taught_mirror` uses. Compare a tagged row with what it controls for, not with the `vs backprop` column.</sub>
 
 ![loss curves](results/curves.png)
-
-The grey line labelled “unigram floor” in this historical plot is the training-set
-entropy. Rebuilding the plot with held-out baselines labels the validation reference
-“unigram baseline”.
 
 <details><summary>What each rule's model writes after its run (prompt <code>ROMEO:</code>)</summary>
 
