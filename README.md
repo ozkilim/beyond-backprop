@@ -854,6 +854,11 @@ fit in a 0.83M-parameter model. So let the table *teach* the network instead.
   it is not. Like SAM, it finds flatter minima that help on the play it trained on and on
   *Richard II*, but not on *The Tempest*. What moved test was the counting teacher and input
   noise, not where the gradient is taken.
+- **Adversarial embeddings (`adv_embed`, 🪞 modified)**: learn from the gradient at input
+  embeddings pushed in their worst-case direction, a continuous cousin of the input noise that
+  did move test. Val, with the teacher: eps 0.1 / 0.3 / 1.0 → 1.412 / 1.480 / 1.648. Test at
+  eps 0.1, 3 seeds: 1.544 / 1.564 / 1.552 (**1.553**) vs regularised backprop's 1.553 / 1.532 / 1.534
+  (1.540). Backprop wins.
 - **A faster mirror.** The feedback weights now get their update in place instead of from a second
   AdamW. It is the same update (a test checks it matches to 1e-6), but mirror is still about 12%
   slower per step than backprop, because of its custom linear layer.
@@ -896,6 +901,7 @@ way, 1.560 vs 1.567, while the 3-seed means go backprop's way, 1.584 vs 1.553.)
 | `and_mask` | 🪞 modified | A weight moves only where most slices of the batch agree on the sign of its gradient: learn what is hard to vary. | Parascandolo et al. 2020 |
 | `rwp` | 🪞 modified | Each gradient is taken at a randomly jittered copy of the weights (noise scaled to each row), then the clean weights step. | Li et al. 2023 |
 | `lazy_lower` | 🪞 modified | The error reaches the bottom blocks only every k-th step. | cf. FreezeOut (Brock et al. 2017) |
+| `adv_embed` | 🪞 modified | Learns from the gradient at input embeddings pushed in their worst-case direction (one extra pass). | Miyato et al. 2017; Zhu et al. 2020 |
 | `mirror_window` 🪞 | 🪞 modified | Mirrored feedback on one hidden layer of 2,048 neurons that see the last 6 chars through hand-wired copy heads. | + Bengio et al. 2003 |
 | `sign_symmetry` | 🪞 modified | Backward pass through `sign(W)`: the feedback knows the signs of the weights but not their size. | Liao, Leibo & Poggio 2016 |
 | `local_losses` | 🧱 local | Every block gets its own tiny next-char readout and learns greedily. Gradients never cross a block boundary. | Belilovsky et al. 2019; Nøkland & Eidnes 2019 |
