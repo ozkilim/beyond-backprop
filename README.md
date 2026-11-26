@@ -867,6 +867,10 @@ fit in a 0.83M-parameter model. So let the table *teach* the network instead.
   lr, run count fixed in advance). SAM is ahead by **0.006** on average (95% CI −0.015 to +0.002),
   paired t = −1.59 (p ≈ 0.12), and wins 18 of 26 pairs (sign test p ≈ 0.08). Probably a small real
   edge, but not established at the usual 5% level. And SAM is backprop run twice per step.
+- **A pre-registered confirmation failed.** Before running, I fixed 20 fresh seed pairs (26 to 45),
+  a one-sided paired t-test, no early stopping and no extension. Result: SAM ahead by **0.002**,
+  t = −0.43 (needed −1.73), 11 of 20 pairs. The 0.006 edge did not replicate. Over all 46 pairs
+  the gap is about 0.005, inside the noise. SAM with the teacher ties backprop with the teacher.
 - **Random weight perturbation (`rwp`) was the strongest candidate, and it still ties.** On the
   *Richard II* proxy, sigma 0.2 beat backprop's best regularised run by 0.023 (two seeds each
   for `rwp`). On the real arena, 6 seeds each, both with the teacher: `rwp` test **1.542**
