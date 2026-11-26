@@ -1,6 +1,6 @@
 """Run the whole leaderboard: for every rule, a quick 3-point sweep of its
 `tune` hyperparameter (default x1/3, x1, x3), then a full timed run with the
-winner. Every rule gets the same treatment, so nobody loses to a bad guess.
+winner. Trials use validation only; test is scored once for the selected final run.
 
     python -m bbp.tournament                       # everything, 1-min sweeps, 5-min finals
     python -m bbp.tournament --rules mezo es       # just some
@@ -23,7 +23,8 @@ def tournament(rule: str, minutes: float, sweep_minutes: float, device: str, fac
 
     def trial(f):
         val = base * f
-        r = run(rule, sweep_minutes, device, {key: val}, GPTConfig(), save=False, quiet=True)
+        r = run(rule, sweep_minutes, device, {key: val}, GPTConfig(), save=False, quiet=True,
+                evaluate_test=False)
         v = r["best_val"] if math.isfinite(r["best_val"]) else float("inf")
         sweep.append({key: val, "factor": f, "val_loss": v})
         print(f"  sweep {rule:20s} {key}={val:.3g}: val {v:.3f}", flush=True)
@@ -41,7 +42,7 @@ def tournament(rule: str, minutes: float, sweep_minutes: float, device: str, fac
             break
     best = min(sweep, key=lambda s: s["val_loss"])
     print(f"  -> {rule}: {key}={best[key]:.3g}, final {minutes}-min run")
-    res = run(rule, minutes, device, {key: best[key]}, GPTConfig(), save=False)
+    res = run(rule, minutes, device, {key: best[key]}, GPTConfig(), save=False, evaluate_test=True)
     res["sweep"] = dict(key=key, minutes=sweep_minutes, grid=sweep)
     from .arena import RESULTS
     import json

@@ -72,6 +72,8 @@ def test_arena_end_to_end_cpu():
               batch_size=4, max_steps=20, save=False, quiet=True)
     assert res["steps"] == 20 and math.isfinite(res["test_loss"]) and len(res["sample"]) > 300
     assert res["test_loss"] < res["init_val"]
+    assert math.isfinite(res["unigram_val_loss"])
+    assert math.isfinite(res["unigram_test_loss"])
 
 
 def test_every_rule_is_honestly_labelled():
@@ -79,43 +81,49 @@ def test_every_rule_is_honestly_labelled():
         assert cls.blurb and cls.autograd
 
 
-def test_census_heads_update_is_the_local_attention_gradient():
+@pytest.mark.parametrize("attn", ["census", "position-only"])
+@pytest.mark.parametrize("prior,beta,sharpen", [("self", 1.0, 1.0), ("self", 0.7, 1.4), ("uniform", 0.7, 1.4)])
+def test_census_heads_update_is_the_local_attention_gradient(attn, prior, beta, sharpen):
     """census_heads' hand-written Q/K update == autograd of CE(EM posterior, attention), prior held fixed."""
     from bbp.rules.census_heads import CensusHeads
     torch.manual_seed(0)
     cfg = GPTConfig(**TINY)
     m = GPT(cfg)
-    r = CensusHeads(m, max_offset=3)
+    r = CensusHeads(m, max_offset=3, attn=attn, prior=prior, beta=beta, sharpen=sharpen)
     x, y = batch(cfg)
     for _ in range(3):
         r.step(x, y)
     r._refresh()
     with torch.no_grad():
         m(x)
-    r._teach_heads(x, y)
+        r._teach_heads(x, y)
     W = m.blocks[0].attn.qkv.weight
     manual = W.grad.clone()
-    z, b = r.caught["z"].detach(), m.blocks[0].attn.qkv.bias.detach()
+    manual_bias = m.blocks[0].attn.qkv.bias.grad.clone()
+    z = r.caught["z"].detach()
+    b = m.blocks[0].attn.qkv.bias.detach().clone().requires_grad_(True)
     W2 = W.detach().clone().requires_grad_(True)
     B, T, C, hd = x.size(0), cfg.block_size, cfg.n_embd, r.hd
     ar = torch.arange(T)
     offs = ar[:, None] - ar[None, :]
-    L = torch.full((B, T, T), float("-inf"))
-    L[:, ar, ar] = 0.0
-    for d in range(1, 4):
-        t = ar[d:]
-        L[:, t, t - d] = r.table[d - 1][x[:, :-d], x[:, d:], y[:, d:]]
+    allowed = (offs >= 0) & (offs <= 3)
+    L = torch.zeros((B, T, T)).masked_fill(~allowed, float("-inf"))
+    if attn == "census":
+        for d in range(1, 4):
+            t = ar[d:]
+            L[:, t, t - d] = r.table[d - 1][x[:, :-d], x[:, d:], y[:, d:]]
     loss = 0.0
     for h in range(r.nh):
         q = z @ W2[h * hd:(h + 1) * hd].T + b[h * hd:(h + 1) * hd]
         k = z @ W2[C + h * hd:C + (h + 1) * hd].T + b[C + h * hd:C + (h + 1) * hd]
         S = ((q @ k.transpose(1, 2)) / math.sqrt(hd)).masked_fill(offs < 0, float("-inf"))
         a = S.softmax(-1)
-        prior = (a.detach() + 1e-9).log()
-        tgt = (prior + L.masked_fill((offs >= 1) & (offs <= h), float("-inf"))).softmax(-1)
+        log_prior = sharpen * (a.detach() + 1e-9).log() if prior == "self" else 0.0
+        tgt = (log_prior + beta * L.masked_fill((offs >= 1) & (offs <= h), float("-inf"))).softmax(-1)
         loss = loss - (tgt * S.log_softmax(-1).masked_fill(offs < 0, 0)).sum() / (B * T)
     loss.backward()
     assert torch.allclose(W2.grad, manual, atol=1e-6, rtol=1e-4)
+    assert torch.allclose(b.grad, manual_bias, atol=1e-6, rtol=1e-4)
 
 
 def test_backdrop_leaves_forward_alone_and_thins_lower_gradients():

@@ -19,7 +19,8 @@ BADGE = {"none": "🚫 none", "local": "🧱 local", "modified": "🪞 modified"
 
 
 def load():
-    rows = [json.loads(p.read_text()) for p in sorted(RESULTS.glob("*.json"))]
+    rows = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(RESULTS.glob("*.json"))]
+    rows = [r for r in rows if r["test_loss"] is not None]  # validation-only runs have no test rank
     return sorted(rows, key=lambda r: r["test_loss"] if math.isfinite(r["test_loss"]) else 1e9)
 
 
@@ -42,9 +43,10 @@ def table(rows) -> str:
         )
     if rows:
         r0 = rows[0]
-        out.append(
-            f"| | *unigram (letter frequencies only)* | | {r0['unigram_loss']:.3f} | | | | | | |"
-        )
+        if r0.get("unigram_test_loss") is not None:
+            out.append(
+                f"| | *unigram (letter frequencies only)* | | {r0['unigram_test_loss']:.3f} | | | | | | |"
+            )
         out.append(f"| | *untrained / uniform guess* | | {r0['init_val']:.3f} | | | | | | |")
         out.append("")
         out.append(
@@ -68,8 +70,10 @@ def plot(rows):
         c = r["curve"]
         ls = {"none": ":", "local": "--", "modified": "-.", "full": "-"}[r["autograd"]]
         ax.plot([p["t"] / 60 for p in c], [p["val"] for p in c], ls, lw=2, label=r["rule"], color=colors[i % 20])
-    ax.axhline(rows[0]["unigram_loss"], color="grey", lw=1)
-    ax.text(0.02, rows[0]["unigram_loss"] + 0.03, "unigram floor", color="grey", fontsize=8)
+    unigram = rows[0].get("unigram_val_loss")
+    if unigram is not None:
+        ax.axhline(unigram, color="grey", lw=1)
+        ax.text(0.02, unigram + 0.03, "unigram baseline", color="grey", fontsize=8)
     ax.set_xlabel("training time (min)")
     ax.set_ylabel("val loss (nats/char)")
     ax.set_title("beyond-backprop: who can teach a tiny GPT Shakespeare?")
@@ -96,15 +100,17 @@ def main(argv=None):
     if not rows:
         print("no results yet - run python -m bbp.tournament")
         return
+    if any(rows[0].get(key) is None for key in ("unigram_val_loss", "unigram_test_loss")):
+        print("Missing held-out unigram scores. For standard arena results, run python -m scripts.update_unigram_baselines.")
     md = table(rows)
     png = plot(rows)
     block = md + ("\n\n![loss curves](results/curves.png)\n" if png else "") + "\n" + samples(rows)
     print(md)
     if README.exists():
-        text = README.read_text()
+        text = README.read_text(encoding="utf-8")
         if START in text:
             text = re.sub(re.escape(START) + ".*?" + re.escape(END), lambda _: f"{START}\n{block}\n{END}", text, flags=re.S)
-            README.write_text(text)
+            README.write_text(text, encoding="utf-8", newline="\n")
             print(f"\nupdated {README}")
 
 

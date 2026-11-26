@@ -47,12 +47,15 @@ is *by how much*, and *why*.
 | 26 | `hill_climb` | 🚫 none | 3.153 | +1.515 | no | 5.0 min | 24,757 | 49,514 | sigma=0.01 |
 | 27 | `forward_grad` | 🚫 none | 3.167 | +1.529 | no | 5.0 min | 9,280 | 9,280 | lr=0.0018 |
 | 28 | `dreaming` | 🧱 local | 3.331 | +1.693 | no | 3.0 min | 21,607 | 43,214 | lr=0.0003 |
-| | *unigram (letter frequencies only)* | | 3.309 | | | | | | |
 | | *untrained / uniform guess* | | 4.216 | | | | | | |
 
 <sub>0.83M-param char GPT (4 layers, d=128, ctx 128), batch 32, TinyShakespeare, 5 min of training time per rule on `mps`, loss in nats/char. Early stopping: each rule's best checkpoint by val loss is scored on a held-out test split. Each rule's `tuned` knob got a 3-point sweep first. Tagged rows are controls, not contenders: (taught) is backprop given the same counting teacher `taught_mirror` uses. Compare a tagged row with what it controls for, not with the `vs backprop` column.</sub>
 
 ![loss curves](results/curves.png)
+
+The grey line labelled “unigram floor” in this historical plot is the training-set
+entropy. Rebuilding the plot with held-out baselines labels the validation reference
+“unigram baseline”.
 
 <details><summary>What each rule's model writes after its run (prompt <code>ROMEO:</code>)</summary>
 
@@ -535,7 +538,7 @@ What the gradient probes showed along the way (cosine of the estimate with the t
 |---|---|---:|---:|---:|---|
 | `wire_together` | "Fire together, wire together", literally: count letter pairs, compile them into the weights. Zero optimisation. | 2.500 | | | 📊 the bar for 🚫 rules; deterministic, so one run |
 | `instinct_rats` | Born wired as a bigram, then `lab_rats_maze` keeps learning on top. Nature, then nurture. | 2.498 | 2.498 | 2.499 | 🤷 nurture adds nothing |
-| `dreaming` | Awake: strengthen what fires on real text. Asleep: weaken what fires on the model's own dreamt text. | 3.331 | 3.322 | 3.323 | 💀 dreams erase everything |
+| `dreaming` | Awake: strengthen what fires on real text. Asleep: weaken what fires on the model's own dreamt text. | 3.331 | 3.322 | 3.323 | 💤 worse than readout-only |
 
 - **Counting is exact.** The compiled transformer's loss matches a lookup-table bigram to 4 decimals (2.4552 both ways).
 - **Instincts are fragile, then frozen.** The first version had 1-sized one-hots, and lab rats
@@ -544,10 +547,9 @@ What the gradient probes showed along the way (cosine of the estimate with the t
   LayerNorm erases scale, but then the blocks barely move the output, and the lr sweep
   walks the learning rate down to ~0. Either way lab rats can't get past the bigram:
   doing that needs attention, the one thing it can't train.
-- **"We dream in order to forget"** (Crick & Mitchison 1983), confirmed. The dreaming readout
+- **Dreaming increases loss over the readout alone.** The readout
   alone gets an honest delta-rule signal and reaches 2.73 (≈ the random reservoir). Switch on
-  the wake/sleep Hebbian in the hidden layers and it collapses to 3.32, worse than letter
-  frequencies, within the first 10 seconds, and never recovers. Contrasting real text
+  the wake/sleep Hebbian in the hidden layers and test loss rises to 3.32–3.33. Contrasting real text
   against the model's own early dreams (≈ random letters) apparently teaches the features
   "is this real text?" and nothing about *which* character comes next.
   (Relabelled 🚫 → 🧱: its readout is the delta rule, held to the same standard as `reservoir`.)
@@ -585,6 +587,24 @@ What the gradient probes showed along the way (cosine of the estimate with the t
   and the early plateau as a capacity limit. Those are untested guesses.
 - Hand-wired heads are a reference, not a proven upper bound.
 - Value codes are fixed across seeds, so the spread between seeds understates the real variance.
+
+**Position-only control.** How much do the census counts contribute to the attention
+teacher? Set `attn=position-only` to give every allowed offset a census log-likelihood
+ratio of zero. Both modes use the same attention prior, masks, counting schedule, Q/K
+optimizer, and readout. The attention prior and readout can still use character content.
+
+To compare the two modes under the leaderboard's five-minute MPS budget, use the
+same seed, batch size, and learning rate for both runs.
+
+```bash
+for mode in census position-only; do
+  python -m bbp.arena --rule census_heads --device mps --minutes 5 --seed 0 \
+    --batch-size 32 --set attn="$mode" lr=0.001 --no-test --tag "${mode}-seed0"
+done
+```
+
+Compare `best_val` in the two `results/census_heads-*-seed0-val-only.json` files.
+The `steps` field shows how many updates each mode completed within the time budget.
 
 ### 🧠 Census MLP: census heads plus a hidden layer taught by random feedback
 
@@ -868,7 +888,11 @@ way, 1.560 vs 1.567, while the 3-seed means go backprop's way, 1.584 vs 1.553.)
 
 **How to read it**
 - **test loss**: cross-entropy on held-out Shakespeare, nats per character. Lower is better.
-  4.17 = uniform guessing over 65 chars, ~3.3 = knows letter frequencies only, ~1.5 = writes pseudo-Shakespeare.
+  4.17 = uniform guessing over 65 chars, ~1.5 = writes pseudo-Shakespeare.
+- **unigram baseline**: character probabilities are fitted on the training split, then scored
+  on held-out targets with the same evaluator and sampling seed (1234) as the models.
+  `unigram_val_loss` uses the 10 validation batches shown in the learning curves;
+  `unigram_test_loss` uses the 50 test batches reported in the table.
 - **best ckpt at / early stopping**: TinyShakespeare is small. Backprop rips through ~90 epochs
   in 5 minutes and starts memorising the training text after about a minute. Scoring the
   *last* weights would reward rules for being bad at overfitting, so the data is split
@@ -884,7 +908,10 @@ way, 1.560 vs 1.567, while the 3-seed means go backprop's way, 1.584 vs 1.553.)
 - **fwd passes**: total full-model forward passes spent. Wall-clock is the budget, but this
   shows how compute-hungry each idea is (ES burns 64 per step, backprop 1).
 - **tuned**: each rule's one most important knob got the same quick sweep (×⅓, ×1, ×3,
-  extended if the best was on the edge) before its final run. Nobody loses to a bad guess.
+  extended if the best was on the edge) before its final run. Sweep trials evaluate validation
+  only; the selected configuration's final run is scored on test. This also applies to the
+  unigram reference. Selection already used validation; this avoids unnecessary test scoring
+  during tuning.
 
 ## The contenders
 
@@ -932,12 +959,29 @@ pip install -e ".[dev]"
 python -m bbp.arena --list                          # what's in the arena
 python -m bbp.arena --rule backprop --minutes 1     # train one rule, prints a Shakespeare sample
 python -m bbp.arena --rule mezo --set lr=3e-4 eps=1e-3
+python -m bbp.arena --rule census_heads --no-test --tag position-only --set attn=position-only
 python -m bbp.tournament                            # the full leaderboard (sweeps + 5-min finals, ~2h)
 python -m bbp.leaderboard                           # rebuild the table + plot from results/
 pytest                                              # every rule takes a few steps on a tiny CPU model
 ```
 
 TinyShakespeare (1.1 MB) downloads itself on first run.
+
+Use `--no-test` for manual validation-only runs (`evaluate_test=False` in Python).
+Their `test_loss` and `unigram_test_loss` are `null`, and they are omitted from the test
+leaderboard. They save to `<rule>-val-only.json` or `<rule>-<tag>-val-only.json`,
+preserving the test-scored result for the same rule and tag. Updating historical
+unigram baselines preserves the decision to skip test evaluation.
+
+For the published MPS runs, the commands below score the held-out unigram baselines
+on MPS and rebuild the table and plot. Model scores and samples are preserved.
+The migration assumes the standard 90/5/5 split. Keep legacy proxy or custom-split
+results outside `results/*.json` during migration, since those files do not record their splits.
+
+```bash
+python -m scripts.update_unigram_baselines --device mps
+python -m bbp.leaderboard
+```
 
 ## Add your own crazy idea
 

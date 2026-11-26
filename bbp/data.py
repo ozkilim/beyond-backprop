@@ -36,10 +36,6 @@ class CharData:
         self.train = self.splits["train"]
         self.block_size = block_size
         self.device = device
-        # unigram entropy of the training set: the "learned nothing but letter frequencies" floor
-        counts = torch.bincount(self.train, minlength=self.vocab_size).float()
-        p = counts / counts.sum()
-        self.unigram_loss = float(-(p[p > 0] * p[p > 0].log()).sum())
 
     def batch(self, split: str, batch_size: int, generator: torch.Generator | None = None):
         d = self.splits[split]
@@ -53,3 +49,16 @@ class CharData:
 
     def decode(self, ids) -> str:
         return "".join(self.chars[i] for i in ids)
+
+
+class UnigramBaseline(torch.nn.Module):
+    """Training-set character frequencies, scored on the supplied targets."""
+
+    def __init__(self, train: torch.Tensor, vocab_size: int):
+        super().__init__()
+        counts = torch.bincount(train, minlength=vocab_size).float()
+        self.register_buffer("log_probs", (counts / counts.sum()).log())
+
+    def forward(self, x, y):
+        loss = -self.log_probs[y].mean()
+        return None, loss

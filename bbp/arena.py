@@ -21,7 +21,7 @@ from pathlib import Path
 
 import torch
 
-from .data import CharData
+from .data import CharData, UnigramBaseline
 from .guard import no_backprop
 from .model import GPT, GPTConfig
 from .rules import AUTOGRAD_LEVELS, RULES
@@ -63,11 +63,22 @@ def evaluate(model, data, batches, batch_size, split="val", seed=1234) -> float:
     return tot / batches
 
 
+def unigram_losses(data, batch_size, evaluate_test: bool = True) -> dict:
+    """Match the validation curves (10 batches) and reported test score (50)."""
+    baseline = UnigramBaseline(data.train, data.vocab_size).to(data.device)
+    return dict(
+        unigram_val_loss=evaluate(baseline, data, 10, batch_size, "val"),
+        unigram_test_loss=evaluate(baseline, data, 50, batch_size, "test") if evaluate_test else None,
+    )
+
+
 def run(rule_name: str, minutes: float, device: str, hp: dict, cfg: GPTConfig,
         batch_size: int = 32, eval_every_s: float = 10.0, seed: int = 0, tag: str = "",
-        max_steps: int | None = None, save: bool = True, quiet: bool = False) -> dict:
+        max_steps: int | None = None, save: bool = True, quiet: bool = False,
+        evaluate_test: bool = True) -> dict:
     """Train for `minutes` of step() time. Early stopping: the weights with the
-    best val loss seen are kept, and *that* checkpoint is scored on the test split."""
+    best val loss seen are kept. Set evaluate_test=False for validation-only
+    tuning; both test losses are then None and no test batches are sampled."""
     torch.manual_seed(seed)
     data = CharData(cfg.block_size, device)
     cfg.vocab_size = data.vocab_size
@@ -112,11 +123,12 @@ def run(rule_name: str, minutes: float, device: str, hp: dict, cfg: GPTConfig,
 
     model.load_state_dict(best["state"])
     best_val = evaluate(model, data, 50, batch_size, "val")
-    test = evaluate(model, data, 50, batch_size, "test")
+    test = evaluate(model, data, 50, batch_size, "test") if evaluate_test else None
     prompt = torch.tensor([data.encode("ROMEO:\n")], device=device)
     sample = data.decode(model.generate(prompt, 300, generator=torch.Generator().manual_seed(0))[0].tolist())
+    test_text = f"{test:.4f}" if test is not None else "skipped"
     log(f"[{rule_name}] best checkpoint at {best['t']/60:.1f} min (step {best['step']}): "
-        f"val {best_val:.4f} test {test:.4f}; ran {step} steps / {train_time:.0f}s\n--- sample ---\n{sample}\n")
+        f"val {best_val:.4f} test {test_text}; ran {step} steps / {train_time:.0f}s\n--- sample ---\n{sample}\n")
 
     result = dict(
         rule=rule_name, tag=tag, autograd=rule.autograd, blurb=rule.blurb, paper=rule.paper,
@@ -124,11 +136,14 @@ def run(rule_name: str, minutes: float, device: str, hp: dict, cfg: GPTConfig,
         init_val=init_val, steps=step, forwards=rule.forwards,
         train_seconds=round(train_time, 1), budget_minutes=minutes, device=device,
         params=model.n_params(), model=cfg.to_dict(), batch_size=batch_size, seed=seed,
-        diverged=diverged, unigram_loss=data.unigram_loss, curve=curve, sample=sample,
+        diverged=diverged, **unigram_losses(data, batch_size, evaluate_test=evaluate_test), curve=curve, sample=sample,
     )
     if save:
         RESULTS.mkdir(exist_ok=True)
-        out = RESULTS / f"{rule_name}{'-' + tag if tag else ''}.json"
+        name = f"{rule_name}-{tag}" if tag else rule_name
+        if not evaluate_test:
+            name += "-val-only"
+        out = RESULTS / f"{name}.json"
         out.write_text(json.dumps(result, indent=1))
         log(f"wrote {out}")
     return result
@@ -144,6 +159,7 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--tag", default="")
     ap.add_argument("--max-steps", type=int)
+    ap.add_argument("--no-test", action="store_true", help="validation-only run; do not evaluate the test split")
     ap.add_argument("--set", nargs="*", default=[], metavar="KEY=VALUE", help="override rule hyperparameters")
     a = ap.parse_args()
     if a.list or not a.rule:
@@ -152,7 +168,7 @@ def main():
         print("\nautograd levels:", *(f"  {k:8s} {v}" for k, v in AUTOGRAD_LEVELS.items()), sep="\n")
         return
     run(a.rule, a.minutes, pick_device(a.device), parse_sets(a.set), GPTConfig(),
-        batch_size=a.batch_size, seed=a.seed, tag=a.tag, max_steps=a.max_steps)
+        batch_size=a.batch_size, seed=a.seed, tag=a.tag, max_steps=a.max_steps, evaluate_test=not a.no_test)
 
 
 if __name__ == "__main__":

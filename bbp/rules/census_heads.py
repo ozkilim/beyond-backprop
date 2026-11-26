@@ -30,8 +30,12 @@ So the readout sees "current char + whatever the heads fetched", and the only
 hidden thing that learns is *where the heads look*. Head h is barred from the
 nearest h offsets so the heads don't all fetch the same character.
 
-`attn` switches the ablation: "census" (learn), "frozen" (random heads, never
-trained), "wired" (hand-set to look exactly h+1 steps back: a reference, not a proven bound).
+`attn` switches the ablation: "census" (learn), "position-only" (learn Q/K with
+neutral census evidence on the same allowed offsets), "frozen" (random heads,
+never trained), "wired" (hand-set to look exactly h+1 steps back: a reference,
+not a proven bound). The position-only control retains the attention prior and
+readout, which can still depend on token content. Census counting and refresh
+continue at the same cadence.
 """
 import math
 
@@ -73,7 +77,7 @@ class CensusHeads(Rule):
         model.blocks[0].attn.register_forward_hook(lambda m, i, o: self.caught.__setitem__("z", i[0]))
         model.lm_head.register_forward_hook(lambda m, i, o: self.caught.__setitem__("f", i[0]))
         qkv = model.blocks[0].attn.qkv
-        params = [model.lm_head.weight] + ([qkv.weight, qkv.bias] if self.hp["attn"] == "census" else [])
+        params = [model.lm_head.weight] + ([qkv.weight, qkv.bias] if self.hp["attn"] in ("census", "position-only") else [])
         self.opt = torch.optim.Adam(params, lr=self.hp["lr"])
 
     # ---------------------------------------------------------------- wiring
@@ -161,7 +165,10 @@ class CensusHeads(Rule):
         L[:, ar, ar] = 0.0  # "nothing earlier needed": the bigram explanation
         for d in range(1, min(self.D, T - 1) + 1):
             t = ar[d:]
-            L[:, t, t - d] = self.table[d - 1][x[:, :-d], x[:, d:], y[:, d:]]
+            if self.hp["attn"] == "position-only":
+                L[:, t, t - d] = 0.0  # neutral evidence; preserve -inf outside the allowed window
+            else:
+                L[:, t, t - d] = self.table[d - 1][x[:, :-d], x[:, d:], y[:, d:]]
         gW = torch.zeros_like(W)
         gb = torch.zeros_like(bias)
         offs = ar[:, None] - ar[None, :]  # t - s
@@ -195,7 +202,7 @@ class CensusHeads(Rule):
         N = x.numel()
         dlogits = (logits.softmax(-1) - F.one_hot(y, self.V).float()) / N  # delta rule
         self.model.lm_head.weight.grad = torch.einsum("btv,btc->vc", dlogits, f)
-        if self.hp["attn"] == "census":
+        if self.hp["attn"] in ("census", "position-only"):
             self._teach_heads(x, y)
         self.opt.step()
         self.forwards += 1
@@ -280,7 +287,7 @@ class CensusMLP(CensusHeads):
         f = self.caught["f"]
         err = (logits.softmax(-1) - F.one_hot(y, self.V).float()) / x.numel()
         self.model.lm_head.weight.grad = torch.einsum("btv,btc->vc", err, f)
-        if self.hp["attn"] == "census":
+        if self.hp["attn"] in ("census", "position-only"):
             self._teach_heads(x, y)
         fb = self.hp["feedback"]
         if fb != "frozen":
