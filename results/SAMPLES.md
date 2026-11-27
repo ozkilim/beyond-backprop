@@ -17,6 +17,25 @@ Seven yet faith and love,--In the marketposing flesh.
 And then the tidings. in both the state of 
 ```
 
+**fast_mirror** (test 1.562)
+
+```
+ROMEO:
+Thou makes the self it off means to death
+The tranconse you for a hom hither?
+
+HORTENSIO:
+If he be match your walked and send did ere no more the even sort,
+Which I see the day scorn sound and ne.
+
+SICINIUS:
+Thanks.
+
+HASTINGS:
+O, you are dead for my inferior that the sea,--
+For thou stands fa
+```
+
 **noisy_mirror (sig08)** (test 1.566)
 
 ```

@@ -1,0 +1,230 @@
+{
+ "rule": "fast_mirror",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Simplified noisy mirror: set B=W+noise each step, skip mirror tracking. Faster by ~30%.",
+ "paper": "Novel: minimal-overhead mirror neurons (B=W always, ephemeral noise).",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "noise_schedule": "linear",
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.561651132106781,
+ "best_val": 1.4246536087989807,
+ "best_at_s": 160.12,
+ "best_step": 9577,
+ "init_val": 4.216201114654541,
+ "steps": 17841,
+ "forwards": 17841,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 663,
+   "forwards": 663,
+   "val": 2.0061139822006226
+  },
+  {
+   "t": 20.02,
+   "step": 1328,
+   "forwards": 1328,
+   "val": 1.7314049839973449
+  },
+  {
+   "t": 30.02,
+   "step": 1932,
+   "forwards": 1932,
+   "val": 1.6035654425621033
+  },
+  {
+   "t": 40.03,
+   "step": 2485,
+   "forwards": 2485,
+   "val": 1.5562474966049193
+  },
+  {
+   "t": 50.05,
+   "step": 3076,
+   "forwards": 3076,
+   "val": 1.514676606655121
+  },
+  {
+   "t": 60.05,
+   "step": 3667,
+   "forwards": 3667,
+   "val": 1.5004729747772216
+  },
+  {
+   "t": 70.06,
+   "step": 4258,
+   "forwards": 4258,
+   "val": 1.4884405493736268
+  },
+  {
+   "t": 80.06,
+   "step": 4849,
+   "forwards": 4849,
+   "val": 1.4724963188171387
+  },
+  {
+   "t": 90.06,
+   "step": 5440,
+   "forwards": 5440,
+   "val": 1.4630759596824645
+  },
+  {
+   "t": 100.07,
+   "step": 6031,
+   "forwards": 6031,
+   "val": 1.4580058455467224
+  },
+  {
+   "t": 110.08,
+   "step": 6622,
+   "forwards": 6622,
+   "val": 1.4447097897529602
+  },
+  {
+   "t": 120.1,
+   "step": 7213,
+   "forwards": 7213,
+   "val": 1.4373107194900512
+  },
+  {
+   "t": 130.1,
+   "step": 7804,
+   "forwards": 7804,
+   "val": 1.4448747873306274
+  },
+  {
+   "t": 140.1,
+   "step": 8395,
+   "forwards": 8395,
+   "val": 1.4354684352874756
+  },
+  {
+   "t": 150.11,
+   "step": 8986,
+   "forwards": 8986,
+   "val": 1.4333421349525453
+  },
+  {
+   "t": 160.12,
+   "step": 9577,
+   "forwards": 9577,
+   "val": 1.4253849744796754
+  },
+  {
+   "t": 170.12,
+   "step": 10168,
+   "forwards": 10168,
+   "val": 1.4285314917564391
+  },
+  {
+   "t": 180.13,
+   "step": 10759,
+   "forwards": 10759,
+   "val": 1.4329961895942689
+  },
+  {
+   "t": 190.14,
+   "step": 11351,
+   "forwards": 11351,
+   "val": 1.4313602924346924
+  },
+  {
+   "t": 200.15,
+   "step": 11943,
+   "forwards": 11943,
+   "val": 1.426859939098358
+  },
+  {
+   "t": 210.16,
+   "step": 12535,
+   "forwards": 12535,
+   "val": 1.4345401287078858
+  },
+  {
+   "t": 220.16,
+   "step": 13126,
+   "forwards": 13126,
+   "val": 1.433748972415924
+  },
+  {
+   "t": 230.17,
+   "step": 13717,
+   "forwards": 13717,
+   "val": 1.4394227504730224
+  },
+  {
+   "t": 240.19,
+   "step": 14308,
+   "forwards": 14308,
+   "val": 1.440590465068817
+  },
+  {
+   "t": 250.2,
+   "step": 14900,
+   "forwards": 14900,
+   "val": 1.4448266267776488
+  },
+  {
+   "t": 260.2,
+   "step": 15491,
+   "forwards": 15491,
+   "val": 1.4421797156333924
+  },
+  {
+   "t": 270.21,
+   "step": 16082,
+   "forwards": 16082,
+   "val": 1.4487892270088196
+  },
+  {
+   "t": 280.22,
+   "step": 16672,
+   "forwards": 16672,
+   "val": 1.4503888845443726
+  },
+  {
+   "t": 290.23,
+   "step": 17263,
+   "forwards": 17263,
+   "val": 1.450912082195282
+  },
+  {
+   "t": 300.01,
+   "step": 17841,
+   "forwards": 17841,
+   "val": 1.4546380400657655
+  }
+ ],
+ "sample": "ROMEO:\nThou makes the self it off means to death\nThe tranconse you for a hom hither?\n\nHORTENSIO:\nIf he be match your walked and send did ere no more the even sort,\nWhich I see the day scorn sound and ne.\n\nSICINIUS:\nThanks.\n\nHASTINGS:\nO, you are dead for my inferior that the sea,--\nFor thou stands father, a"
+}
