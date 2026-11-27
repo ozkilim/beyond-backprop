@@ -1,5 +1,5 @@
-"""Build the leaderboard table + loss-curve plot from results/*.json and
-splice them into README.md between the LEADERBOARD markers.
+"""Build the leaderboard table + loss-curve plot from results/*.json, splice them into
+README.md between the LEADERBOARD markers, and write the model samples to results/SAMPLES.md.
 
     python -m bbp.leaderboard
 """
@@ -52,7 +52,8 @@ def table(rows) -> str:
         out.append(
             f"<sub>{r0['params']/1e6:.2f}M-param char GPT ({r0['model']['n_layer']} layers, d={r0['model']['n_embd']}, "
             f"ctx {r0['model']['block_size']}), batch {r0['batch_size']}, TinyShakespeare, {r0['budget_minutes']:g} min of "
-            f"training time per rule on `{r0['device']}`, loss in nats/char. Early stopping: each rule's best checkpoint by val loss is scored on a held-out test split. Each rule's `tuned` knob got a 3-point sweep first. Tagged rows are controls, not contenders: (taught) is backprop given the same counting teacher `taught_mirror` uses. Compare a tagged row with what it controls for, not with the `vs backprop` column.</sub>"
+            f"training time per rule on `{r0['device']}`, loss in nats/char, best checkpoint by val scored on test. "
+            "Tagged rows are controls: (taught) is backprop with the counting teacher `taught_mirror` uses.</sub>"
         )
     return "\n".join(out)
 
@@ -87,11 +88,10 @@ def plot(rows):
 
 
 def samples(rows) -> str:
-    parts = ["<details><summary>What each rule's model writes after its run (prompt <code>ROMEO:</code>)</summary>\n"]
+    parts = ["# Samples\n", "What each rule's model writes after its leaderboard run (prompt `ROMEO:`).\n"]
     for r in rows:
         name = r["rule"] + (f" ({r['tag']})" if r["tag"] else "")
         parts.append(f"**{name}** (test {r['test_loss']:.3f})\n\n```\n{r['sample'][:300]}\n```\n")
-    parts.append("</details>")
     return "\n".join(parts)
 
 
@@ -104,7 +104,8 @@ def main(argv=None):
         print("Missing held-out unigram scores. For standard arena results, run python -m scripts.update_unigram_baselines.")
     md = table(rows)
     png = plot(rows)
-    block = md + ("\n\n![loss curves](results/curves.png)\n" if png else "") + "\n" + samples(rows)
+    (RESULTS / "SAMPLES.md").write_text(samples(rows), encoding="utf-8", newline="\n")
+    block = md + ("\n\n![loss curves](results/curves.png)\n" if png else "") + "\nWhat each model writes: [results/SAMPLES.md](results/SAMPLES.md)."
     print(md)
     if README.exists():
         text = README.read_text(encoding="utf-8")
