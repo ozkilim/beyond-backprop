@@ -1,0 +1,224 @@
+{
+ "rule": "grandmother_cells",
+ "tag": "gc-final-defaults",
+ "autograd": "none",
+ "blurb": "One neuron per memory: each MLP neuron fires for one specific recent string, hired by counting, wired to add what that string says beyond the shorter one. No gradients, no error signal. Copy heads are hand-wired.",
+ "paper": "Lettvin's grandmother cell; Cleary & Witten 1984 (PPM); Willems et al. 1995 (context trees)",
+ "hp": {
+  "kappa": 64.0,
+  "count_steps": 3000,
+  "max_len": 9
+ },
+ "test_loss": 1.8826569437980651,
+ "best_val": 1.820099651813507,
+ "best_at_s": 30.01,
+ "best_step": 3284,
+ "init_val": 4.174386978149414,
+ "steps": 49566,
+ "forwards": 49566,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.174386978149414
+  },
+  {
+   "t": 10.0,
+   "step": 857,
+   "forwards": 857,
+   "val": 1.8275658726692199
+  },
+  {
+   "t": 20.01,
+   "step": 1962,
+   "forwards": 1962,
+   "val": 1.8199127912521362
+  },
+  {
+   "t": 30.01,
+   "step": 3284,
+   "forwards": 3284,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 40.01,
+   "step": 5426,
+   "forwards": 5426,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 50.02,
+   "step": 6665,
+   "forwards": 6665,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 60.03,
+   "step": 7890,
+   "forwards": 7890,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 70.03,
+   "step": 9155,
+   "forwards": 9155,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 80.03,
+   "step": 10424,
+   "forwards": 10424,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 90.04,
+   "step": 11686,
+   "forwards": 11686,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 100.04,
+   "step": 12987,
+   "forwards": 12987,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 110.05,
+   "step": 14265,
+   "forwards": 14265,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 120.05,
+   "step": 15553,
+   "forwards": 15553,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 130.05,
+   "step": 16837,
+   "forwards": 16837,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 140.06,
+   "step": 18174,
+   "forwards": 18174,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 150.07,
+   "step": 20004,
+   "forwards": 20004,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 160.07,
+   "step": 22213,
+   "forwards": 22213,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 170.07,
+   "step": 24326,
+   "forwards": 24326,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 180.07,
+   "step": 26519,
+   "forwards": 26519,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 190.08,
+   "step": 28662,
+   "forwards": 28662,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 200.08,
+   "step": 30709,
+   "forwards": 30709,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 210.08,
+   "step": 32823,
+   "forwards": 32823,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 220.08,
+   "step": 34917,
+   "forwards": 34917,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 230.09,
+   "step": 35861,
+   "forwards": 35861,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 240.09,
+   "step": 37223,
+   "forwards": 37223,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 250.1,
+   "step": 39210,
+   "forwards": 39210,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 260.1,
+   "step": 41389,
+   "forwards": 41389,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 270.1,
+   "step": 43581,
+   "forwards": 43581,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 280.11,
+   "step": 45778,
+   "forwards": 45778,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 290.11,
+   "step": 47962,
+   "forwards": 47962,
+   "val": 1.819709551334381
+  },
+  {
+   "t": 300.03,
+   "step": 49566,
+   "forwards": 49566,
+   "val": 1.819709551334381
+  }
+ ],
+ "sample": "ROMEO:\nThat more it when?\n\nWARWICKINGHAMILLA:\nI to the My pour you for bear? hath thin to have many him; that of to his perman.\n\nCOMILUCHer not my father we would for 'f I seech the he cont shus the car. So I fearfurth and lord,--\nIn shalf in come defear thing bith the thing.\n\nKingbr your for the rath you "
+}

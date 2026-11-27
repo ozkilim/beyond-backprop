@@ -1,0 +1,227 @@
+{
+ "rule": "ppm_attention",
+ "tag": "",
+ "autograd": "none",
+ "blurb": "Grandmother cells + attention-based context-window n-gram lookup.",
+ "paper": "Novel: PPM (Cleary & Witten 1984) implemented via transformer attention Q/K matching, combined with hand-wired AND-gate MLP neurons.",
+ "hp": {
+  "kappa": 4.0,
+  "count_steps": 2000,
+  "max_len": 9,
+  "attn_gain": 100.0,
+  "attn_scale": 1.0,
+  "n_attn_blocks": 3
+ },
+ "test_loss": 1.9296009540557861,
+ "best_val": 1.8277220225334168,
+ "best_at_s": 20.01,
+ "best_step": 2330,
+ "init_val": 4.15871844291687,
+ "steps": 42492,
+ "forwards": 42492,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.15871844291687
+  },
+  {
+   "t": 10.0,
+   "step": 1043,
+   "forwards": 1043,
+   "val": 1.8306907534599304
+  },
+  {
+   "t": 20.01,
+   "step": 2330,
+   "forwards": 2330,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 30.01,
+   "step": 3734,
+   "forwards": 3734,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 40.01,
+   "step": 5142,
+   "forwards": 5142,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 50.01,
+   "step": 6546,
+   "forwards": 6546,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 60.02,
+   "step": 7922,
+   "forwards": 7922,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 70.02,
+   "step": 9315,
+   "forwards": 9315,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 80.02,
+   "step": 10720,
+   "forwards": 10720,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 90.03,
+   "step": 12126,
+   "forwards": 12126,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 100.03,
+   "step": 13533,
+   "forwards": 13533,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 110.04,
+   "step": 14939,
+   "forwards": 14939,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 120.04,
+   "step": 16343,
+   "forwards": 16343,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 130.04,
+   "step": 17747,
+   "forwards": 17747,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 140.04,
+   "step": 19542,
+   "forwards": 19542,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 150.05,
+   "step": 21166,
+   "forwards": 21166,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 160.05,
+   "step": 22779,
+   "forwards": 22779,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 170.06,
+   "step": 24187,
+   "forwards": 24187,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 180.06,
+   "step": 25594,
+   "forwards": 25594,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 190.06,
+   "step": 27004,
+   "forwards": 27004,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 200.07,
+   "step": 28416,
+   "forwards": 28416,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 210.07,
+   "step": 29826,
+   "forwards": 29826,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 220.08,
+   "step": 31238,
+   "forwards": 31238,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 230.08,
+   "step": 32653,
+   "forwards": 32653,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 240.09,
+   "step": 34059,
+   "forwards": 34059,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 250.09,
+   "step": 35463,
+   "forwards": 35463,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 260.09,
+   "step": 36872,
+   "forwards": 36872,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 270.1,
+   "step": 38277,
+   "forwards": 38277,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 280.1,
+   "step": 39686,
+   "forwards": 39686,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 290.1,
+   "step": 41100,
+   "forwards": 41100,
+   "val": 1.8263953804969788
+  },
+  {
+   "t": 300.01,
+   "step": 42492,
+   "forwards": 42492,
+   "val": 1.8263953804969788
+  }
+ ],
+ "sample": "ROMEO:\nThou more it whomethis off meansolvedd I to the Mess and givingmakere hath thin to have many him; that of to his per and senay thou, no; my father we why marraight is hither chese and your curs have and to fair in mily mood not say that of me fles thing bill the thing.\n\nKingbrother for cord them mar"
+}

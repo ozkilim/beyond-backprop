@@ -1,0 +1,221 @@
+{
+ "rule": "gc_plus",
+ "tag": "",
+ "autograd": "none",
+ "blurb": "Grandmother cells + orthogonal lm_head correction from char-code dims.",
+ "paper": "Novel: hand-wired n-gram base + orthogonal closed-form readout correction.",
+ "hp": {
+  "kappa": 8.0,
+  "count_steps": 2500,
+  "max_len": 9,
+  "reg_alpha": 1.0,
+  "corr_steps": 200,
+  "n_samples": 16384
+ },
+ "test_loss": 1.9053747129440308,
+ "best_val": 1.813010516166687,
+ "best_at_s": 300.15,
+ "best_step": 21900,
+ "init_val": 4.174386978149414,
+ "steps": 21900,
+ "forwards": 21900,
+ "train_seconds": 300.2,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.174386978149414
+  },
+  {
+   "t": 10.0,
+   "step": 892,
+   "forwards": 892,
+   "val": 1.8136027574539184
+  },
+  {
+   "t": 20.0,
+   "step": 2120,
+   "forwards": 2120,
+   "val": 1.8136027574539184
+  },
+  {
+   "t": 30.58,
+   "step": 2900,
+   "forwards": 2900,
+   "val": 1.8115517020225524
+  },
+  {
+   "t": 40.58,
+   "step": 3690,
+   "forwards": 3690,
+   "val": 1.8115518808364868
+  },
+  {
+   "t": 50.58,
+   "step": 4311,
+   "forwards": 4311,
+   "val": 1.8115529060363769
+  },
+  {
+   "t": 61.73,
+   "step": 5100,
+   "forwards": 5100,
+   "val": 1.811554217338562
+  },
+  {
+   "t": 72.89,
+   "step": 5900,
+   "forwards": 5900,
+   "val": 1.8115580797195434
+  },
+  {
+   "t": 84.22,
+   "step": 6700,
+   "forwards": 6700,
+   "val": 1.811553716659546
+  },
+  {
+   "t": 94.22,
+   "step": 7470,
+   "forwards": 7470,
+   "val": 1.8115550398826599
+  },
+  {
+   "t": 104.43,
+   "step": 8100,
+   "forwards": 8100,
+   "val": 1.8115502834320067
+  },
+  {
+   "t": 114.43,
+   "step": 8857,
+   "forwards": 8857,
+   "val": 1.8115518927574157
+  },
+  {
+   "t": 124.64,
+   "step": 9500,
+   "forwards": 9500,
+   "val": 1.8115527749061584
+  },
+  {
+   "t": 135.97,
+   "step": 10300,
+   "forwards": 10300,
+   "val": 1.8115549087524414
+  },
+  {
+   "t": 147.18,
+   "step": 11100,
+   "forwards": 11100,
+   "val": 1.8115550518035888
+  },
+  {
+   "t": 157.19,
+   "step": 11894,
+   "forwards": 11894,
+   "val": 1.8115548729896545
+  },
+  {
+   "t": 167.2,
+   "step": 12507,
+   "forwards": 12507,
+   "val": 1.8115574717521667
+  },
+  {
+   "t": 178.5,
+   "step": 13300,
+   "forwards": 13300,
+   "val": 1.8115505933761598
+  },
+  {
+   "t": 189.8,
+   "step": 14100,
+   "forwards": 14100,
+   "val": 1.811554777622223
+  },
+  {
+   "t": 199.81,
+   "step": 14899,
+   "forwards": 14899,
+   "val": 1.811558198928833
+  },
+  {
+   "t": 209.82,
+   "step": 15508,
+   "forwards": 15508,
+   "val": 1.8115560412406921
+  },
+  {
+   "t": 221.04,
+   "step": 16300,
+   "forwards": 16300,
+   "val": 1.8115516781806946
+  },
+  {
+   "t": 232.32,
+   "step": 17100,
+   "forwards": 17100,
+   "val": 1.8115565061569214
+  },
+  {
+   "t": 243.61,
+   "step": 17900,
+   "forwards": 17900,
+   "val": 1.811552894115448
+  },
+  {
+   "t": 254.91,
+   "step": 18700,
+   "forwards": 18700,
+   "val": 1.8115559458732604
+  },
+  {
+   "t": 266.24,
+   "step": 19500,
+   "forwards": 19500,
+   "val": 1.8115541815757752
+  },
+  {
+   "t": 277.52,
+   "step": 20300,
+   "forwards": 20300,
+   "val": 1.8115520000457763
+  },
+  {
+   "t": 288.83,
+   "step": 21100,
+   "forwards": 21100,
+   "val": 1.81154944896698
+  },
+  {
+   "t": 300.15,
+   "step": 21900,
+   "forwards": 21900,
+   "val": 1.8115486264228822
+  },
+  {
+   "t": 300.15,
+   "step": 21900,
+   "forwards": 21900,
+   "val": 1.8115486264228822
+  }
+ ],
+ "sample": "ROMEO:\nThat more it when?\n\nWARWICKINGHAMILLA:\nI to the Mespeak you for bear? hath thin to have many him; that of to his perman.\n\nCOMILLA:\nA not my father we why marraight is hither.\n\nDUCHI king.\n\nFRIAR LAUREY:\nTo fair in mily mood not say, if to queen I much let's me thou,\nAs to bed, your for the stand mar"
+}

@@ -1,0 +1,228 @@
+{
+ "rule": "layer_oracle",
+ "tag": "",
+ "autograd": "none",
+ "blurb": "Each layer predicts a different-depth n-gram distribution, fitted by closed-form regression.",
+ "paper": "Novel: depth-graded local targets from counting teacher, closed-form layer-wise fitting.",
+ "hp": {
+  "count_steps": 1500,
+  "order": 9,
+  "beta": 16.0,
+  "reg_alpha": 0.01,
+  "depths": "1,2,4,8",
+  "fit_interval": 200,
+  "n_fit_samples": 8192
+ },
+ "test_loss": 3.8929222202301026,
+ "best_val": 3.8874219179153444,
+ "best_at_s": 10.0,
+ "best_step": 1569,
+ "init_val": 4.174386978149414,
+ "steps": 31493,
+ "forwards": 31493,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.174386978149414
+  },
+  {
+   "t": 10.0,
+   "step": 1569,
+   "forwards": 1569,
+   "val": 3.8914010524749756
+  },
+  {
+   "t": 20.01,
+   "step": 2638,
+   "forwards": 2638,
+   "val": 3.9285532951354982
+  },
+  {
+   "t": 30.01,
+   "step": 3593,
+   "forwards": 3593,
+   "val": 3.921718621253967
+  },
+  {
+   "t": 40.01,
+   "step": 4668,
+   "forwards": 4668,
+   "val": 3.9281029224395754
+  },
+  {
+   "t": 50.71,
+   "step": 5700,
+   "forwards": 5700,
+   "val": 3.927235221862793
+  },
+  {
+   "t": 60.72,
+   "step": 6788,
+   "forwards": 6788,
+   "val": 3.927207088470459
+  },
+  {
+   "t": 70.72,
+   "step": 7868,
+   "forwards": 7868,
+   "val": 3.917270040512085
+  },
+  {
+   "t": 81.35,
+   "step": 8900,
+   "forwards": 8900,
+   "val": 3.92451388835907
+  },
+  {
+   "t": 91.36,
+   "step": 9983,
+   "forwards": 9983,
+   "val": 3.9292970180511473
+  },
+  {
+   "t": 101.36,
+   "step": 11069,
+   "forwards": 11069,
+   "val": 3.9311917781829835
+  },
+  {
+   "t": 111.36,
+   "step": 12015,
+   "forwards": 12015,
+   "val": 3.9224421977996826
+  },
+  {
+   "t": 121.36,
+   "step": 13084,
+   "forwards": 13084,
+   "val": 3.9307303190231324
+  },
+  {
+   "t": 131.99,
+   "step": 14100,
+   "forwards": 14100,
+   "val": 3.926322412490845
+  },
+  {
+   "t": 142.0,
+   "step": 15176,
+   "forwards": 15176,
+   "val": 3.929977798461914
+  },
+  {
+   "t": 152.0,
+   "step": 16250,
+   "forwards": 16250,
+   "val": 3.9234784603118897
+  },
+  {
+   "t": 162.8,
+   "step": 17300,
+   "forwards": 17300,
+   "val": 3.931796360015869
+  },
+  {
+   "t": 173.03,
+   "step": 18300,
+   "forwards": 18300,
+   "val": 3.9314796209335325
+  },
+  {
+   "t": 183.03,
+   "step": 19375,
+   "forwards": 19375,
+   "val": 3.930345368385315
+  },
+  {
+   "t": 193.03,
+   "step": 20456,
+   "forwards": 20456,
+   "val": 3.926798939704895
+  },
+  {
+   "t": 203.88,
+   "step": 21500,
+   "forwards": 21500,
+   "val": 3.9321003913879395
+  },
+  {
+   "t": 213.88,
+   "step": 22572,
+   "forwards": 22572,
+   "val": 3.9335275411605837
+  },
+  {
+   "t": 223.88,
+   "step": 23533,
+   "forwards": 23533,
+   "val": 3.9293456792831423
+  },
+  {
+   "t": 233.89,
+   "step": 24611,
+   "forwards": 24611,
+   "val": 3.9304500818252563
+  },
+  {
+   "t": 243.89,
+   "step": 25685,
+   "forwards": 25685,
+   "val": 3.93009192943573
+  },
+  {
+   "t": 254.63,
+   "step": 26700,
+   "forwards": 26700,
+   "val": 3.9290701150894165
+  },
+  {
+   "t": 264.63,
+   "step": 27764,
+   "forwards": 27764,
+   "val": 3.9300258636474608
+  },
+  {
+   "t": 274.64,
+   "step": 28827,
+   "forwards": 28827,
+   "val": 3.9380738496780396
+  },
+  {
+   "t": 285.58,
+   "step": 29900,
+   "forwards": 29900,
+   "val": 3.9302860736846923
+  },
+  {
+   "t": 295.58,
+   "step": 30979,
+   "forwards": 30979,
+   "val": 3.930864381790161
+  },
+  {
+   "t": 300.0,
+   "step": 31493,
+   "forwards": 31493,
+   "val": 3.9281970262527466
+  }
+ ],
+ "sample": "ROMEO:\nU3ZxjmhPPqkARxLsX?LUWHoHKGM-exhayU&NNdUIgAlsv,BUMNFp?D$By$XOV:t;zhVrM h&?j DJR3sOEHWlC!BTg3xU&PRCW3MP-N3KypXrWwXkMGRJIRZ:$ZOLSJUUHRr&nK-PWj$fxt-HAHMLAwP\nJRDKFHR'SUIiVO$EoLBHAX!DSSLj'GsCPz.B3IRSBC.SSqHIGVA3SVSp-P$\nEOS$HATWVQUnNHR$KNfMiIzPH3Uq:OGOIoZOwiA\n'zi'k3RpZ EQ,AV3FPKUSzFSFUYLMOQ3EMSq3fVYYxmEPhF"
+}

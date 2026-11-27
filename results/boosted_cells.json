@@ -1,0 +1,230 @@
+{
+ "rule": "boosted_cells",
+ "tag": "",
+ "autograd": "none",
+ "blurb": "Grandmother cells + ridge-regressed residual correction from full hidden state.",
+ "paper": "Novel: forward-only boosting \u2014 exact n-gram base + closed-form residual correction.",
+ "hp": {
+  "count_steps": 1500,
+  "order": 9,
+  "beta": 16.0,
+  "kappa": 4.0,
+  "max_len": 9,
+  "boost_lr": 0.3,
+  "reg_alpha": 1.0,
+  "boost_interval": 200,
+  "n_samples": 8192
+ },
+ "test_loss": 1.9239276957511902,
+ "best_val": 1.8196381115913391,
+ "best_at_s": 81.72,
+ "best_step": 8788,
+ "init_val": 4.174386978149414,
+ "steps": 31398,
+ "forwards": 31398,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.174386978149414
+  },
+  {
+   "t": 10.01,
+   "step": 1371,
+   "forwards": 1371,
+   "val": 1.825858759880066
+  },
+  {
+   "t": 20.01,
+   "step": 2455,
+   "forwards": 2455,
+   "val": 1.8175410032272339
+  },
+  {
+   "t": 30.76,
+   "step": 3500,
+   "forwards": 3500,
+   "val": 1.8175414204597473
+  },
+  {
+   "t": 40.77,
+   "step": 4592,
+   "forwards": 4592,
+   "val": 1.8175393342971802
+  },
+  {
+   "t": 50.77,
+   "step": 5547,
+   "forwards": 5547,
+   "val": 1.8175400257110597
+  },
+  {
+   "t": 60.77,
+   "step": 6620,
+   "forwards": 6620,
+   "val": 1.8175398230552673
+  },
+  {
+   "t": 71.72,
+   "step": 7700,
+   "forwards": 7700,
+   "val": 1.8175394773483275
+  },
+  {
+   "t": 81.72,
+   "step": 8788,
+   "forwards": 8788,
+   "val": 1.8175361633300782
+  },
+  {
+   "t": 91.72,
+   "step": 9883,
+   "forwards": 9883,
+   "val": 1.817540955543518
+  },
+  {
+   "t": 101.73,
+   "step": 10846,
+   "forwards": 10846,
+   "val": 1.8175398707389832
+  },
+  {
+   "t": 112.6,
+   "step": 11900,
+   "forwards": 11900,
+   "val": 1.8175422072410583
+  },
+  {
+   "t": 122.6,
+   "step": 12984,
+   "forwards": 12984,
+   "val": 1.8175421237945557
+  },
+  {
+   "t": 132.6,
+   "step": 14066,
+   "forwards": 14066,
+   "val": 1.817538356781006
+  },
+  {
+   "t": 143.28,
+   "step": 15100,
+   "forwards": 15100,
+   "val": 1.8175401926040649
+  },
+  {
+   "t": 153.28,
+   "step": 16194,
+   "forwards": 16194,
+   "val": 1.8175419569015503
+  },
+  {
+   "t": 163.28,
+   "step": 17158,
+   "forwards": 17158,
+   "val": 1.81754013299942
+  },
+  {
+   "t": 173.29,
+   "step": 18241,
+   "forwards": 18241,
+   "val": 1.817540454864502
+  },
+  {
+   "t": 183.29,
+   "step": 19290,
+   "forwards": 19290,
+   "val": 1.8175407648086548
+  },
+  {
+   "t": 193.29,
+   "step": 20298,
+   "forwards": 20298,
+   "val": 1.8175411462783813
+  },
+  {
+   "t": 203.78,
+   "step": 21300,
+   "forwards": 21300,
+   "val": 1.8175389051437378
+  },
+  {
+   "t": 213.78,
+   "step": 22394,
+   "forwards": 22394,
+   "val": 1.817542266845703
+  },
+  {
+   "t": 223.79,
+   "step": 23478,
+   "forwards": 23478,
+   "val": 1.8175411462783813
+  },
+  {
+   "t": 234.39,
+   "step": 24500,
+   "forwards": 24500,
+   "val": 1.8175405859947205
+  },
+  {
+   "t": 244.39,
+   "step": 25588,
+   "forwards": 25588,
+   "val": 1.8175410747528076
+  },
+  {
+   "t": 254.39,
+   "step": 26676,
+   "forwards": 26676,
+   "val": 1.8175418376922607
+  },
+  {
+   "t": 264.99,
+   "step": 27700,
+   "forwards": 27700,
+   "val": 1.8175416231155395
+  },
+  {
+   "t": 275.0,
+   "step": 28786,
+   "forwards": 28786,
+   "val": 1.8175376296043395
+  },
+  {
+   "t": 285.0,
+   "step": 29870,
+   "forwards": 29870,
+   "val": 1.817540955543518
+  },
+  {
+   "t": 295.68,
+   "step": 30900,
+   "forwards": 30900,
+   "val": 1.8175397276878358
+  },
+  {
+   "t": 300.0,
+   "step": 31398,
+   "forwards": 31398,
+   "val": 1.8175418376922607
+  }
+ ],
+ "sample": "ROMEO:\nThat more it when?\n\nWARWICKINGHAMILLA:\nI to the Mespeak you for bear? hath thin to have many him; that of to his per and sends thou, no; my father we why marvaim which to the he contry sweet us have and to fair in mily mood not say, if to queen I much let's me thou,\nAs to bed, your for good them mar"
+}

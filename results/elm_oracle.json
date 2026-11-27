@@ -1,0 +1,229 @@
+{
+ "rule": "elm_oracle",
+ "tag": "",
+ "autograd": "none",
+ "blurb": "Random features + ridge regression decoding from counting teacher.",
+ "paper": "Novel: ELM (Huang 2006) in transformer with hand-wired attention and counting oracle.",
+ "hp": {
+  "count_steps": 2000,
+  "order": 9,
+  "beta": 16.0,
+  "reg_alpha": 0.01,
+  "fc_scale": 25.0,
+  "fc_bias_range": 2.0,
+  "n_fit_samples": 16384,
+  "seed_rf": 42
+ },
+ "test_loss": 3.8862928628921507,
+ "best_val": 3.8810113143920897,
+ "best_at_s": 20.01,
+ "best_step": 3251,
+ "init_val": 4.174386978149414,
+ "steps": 65119,
+ "forwards": 65119,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.174386978149414
+  },
+  {
+   "t": 10.0,
+   "step": 1375,
+   "forwards": 1375,
+   "val": 4.174386978149414
+  },
+  {
+   "t": 20.01,
+   "step": 3251,
+   "forwards": 3251,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 30.01,
+   "step": 5483,
+   "forwards": 5483,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 40.01,
+   "step": 7716,
+   "forwards": 7716,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 50.01,
+   "step": 9921,
+   "forwards": 9921,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 60.02,
+   "step": 12133,
+   "forwards": 12133,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 70.02,
+   "step": 14326,
+   "forwards": 14326,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 80.02,
+   "step": 16536,
+   "forwards": 16536,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 90.02,
+   "step": 18747,
+   "forwards": 18747,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 100.02,
+   "step": 20958,
+   "forwards": 20958,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 110.03,
+   "step": 23170,
+   "forwards": 23170,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 120.03,
+   "step": 25375,
+   "forwards": 25375,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 130.03,
+   "step": 27578,
+   "forwards": 27578,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 140.03,
+   "step": 29786,
+   "forwards": 29786,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 150.03,
+   "step": 32001,
+   "forwards": 32001,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 160.04,
+   "step": 34208,
+   "forwards": 34208,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 170.04,
+   "step": 36421,
+   "forwards": 36421,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 180.04,
+   "step": 38632,
+   "forwards": 38632,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 190.04,
+   "step": 40840,
+   "forwards": 40840,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 200.04,
+   "step": 43049,
+   "forwards": 43049,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 210.05,
+   "step": 45253,
+   "forwards": 45253,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 220.05,
+   "step": 47459,
+   "forwards": 47459,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 230.05,
+   "step": 49671,
+   "forwards": 49671,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 240.05,
+   "step": 51869,
+   "forwards": 51869,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 250.06,
+   "step": 54085,
+   "forwards": 54085,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 260.06,
+   "step": 56289,
+   "forwards": 56289,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 270.06,
+   "step": 58496,
+   "forwards": 58496,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 280.06,
+   "step": 60708,
+   "forwards": 60708,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 290.06,
+   "step": 62918,
+   "forwards": 62918,
+   "val": 3.880798411369324
+  },
+  {
+   "t": 300.0,
+   "step": 65119,
+   "forwards": 65119,
+   "val": 3.880798411369324
+  }
+ ],
+ "sample": "ROMEO:\nt3ZrjmhfkdkARxLsXltUWHoHcu -exhayU&aNdkIgAlsvSBUMycoRD$BygX- ntw\nkVrM h&?j DJRbsOEHelC!BTg3pihPRCslMa-'3KyporWiXkMvRJIRc:sZO;qJU,H:r?nK- mj$fxts!AHMLpwPjJRDf.HR'f IiVezEoLg,Ak!DSc j'\nsCuzyB3u!SB..SSqHImVe3xfSp-P$\n-Oi$HATWoeQnNHssKNfMiItPojq?dgfOIomOwiAl'zi'kIRpZpE!,nm.FpKin,bS yYLMOqoEMgs3f vYxmEmhF"
+}

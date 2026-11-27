@@ -160,7 +160,7 @@ class GrandmotherCells(Rule):
     autograd = "none"
     blurb = "One neuron per memory: each MLP neuron fires for one specific recent string, hired by counting, wired to add what that string says beyond the shorter one. No gradients, no error signal. Copy heads are hand-wired."
     paper = "Lettvin's grandmother cell; Cleary & Witten 1984 (PPM); Willems et al. 1995 (context trees)"
-    defaults = dict(kappa=4.0, count_steps=2000, max_len=9)
+    defaults = dict(kappa=64.0, count_steps=3000, max_len=9)
     tune = "kappa"
 
     def __init__(self, model, **hp):
