@@ -1,0 +1,230 @@
+{
+ "rule": "stratified_mirror",
+ "tag": "t04",
+ "autograd": "modified",
+ "blurb": "Layer-wise phased backward noise: output layers get clean credit early, input layers explore first, then they swap.",
+ "paper": "Novel: spatiotemporal noise scheduling across network depth.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "phase_spread": 1.0,
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5906218361854554,
+ "best_val": 1.4434605288505553,
+ "best_at_s": 290.75,
+ "best_step": 5964,
+ "init_val": 4.216201114654541,
+ "steps": 6132,
+ "forwards": 6132,
+ "train_seconds": 300.1,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.02,
+   "step": 272,
+   "forwards": 272,
+   "val": 2.313286471366882
+  },
+  {
+   "t": 20.05,
+   "step": 542,
+   "forwards": 542,
+   "val": 2.0390794038772584
+  },
+  {
+   "t": 30.08,
+   "step": 817,
+   "forwards": 817,
+   "val": 1.872348713874817
+  },
+  {
+   "t": 40.09,
+   "step": 1092,
+   "forwards": 1092,
+   "val": 1.7413097500801087
+  },
+  {
+   "t": 50.1,
+   "step": 1355,
+   "forwards": 1355,
+   "val": 1.668773317337036
+  },
+  {
+   "t": 60.15,
+   "step": 1553,
+   "forwards": 1553,
+   "val": 1.5985504746437074
+  },
+  {
+   "t": 70.15,
+   "step": 1734,
+   "forwards": 1734,
+   "val": 1.5696684002876282
+  },
+  {
+   "t": 80.22,
+   "step": 1917,
+   "forwards": 1917,
+   "val": 1.565359878540039
+  },
+  {
+   "t": 90.24,
+   "step": 2099,
+   "forwards": 2099,
+   "val": 1.5389999508857728
+  },
+  {
+   "t": 100.27,
+   "step": 2281,
+   "forwards": 2281,
+   "val": 1.5372156023979187
+  },
+  {
+   "t": 110.28,
+   "step": 2480,
+   "forwards": 2480,
+   "val": 1.5247290492057801
+  },
+  {
+   "t": 120.32,
+   "step": 2664,
+   "forwards": 2664,
+   "val": 1.5179395437240601
+  },
+  {
+   "t": 130.35,
+   "step": 2848,
+   "forwards": 2848,
+   "val": 1.502587866783142
+  },
+  {
+   "t": 140.36,
+   "step": 3031,
+   "forwards": 3031,
+   "val": 1.497970449924469
+  },
+  {
+   "t": 150.37,
+   "step": 3215,
+   "forwards": 3215,
+   "val": 1.4931938767433166
+  },
+  {
+   "t": 160.43,
+   "step": 3399,
+   "forwards": 3399,
+   "val": 1.484613263607025
+  },
+  {
+   "t": 170.48,
+   "step": 3583,
+   "forwards": 3583,
+   "val": 1.4877723455429077
+  },
+  {
+   "t": 180.49,
+   "step": 3837,
+   "forwards": 3837,
+   "val": 1.4763208031654358
+  },
+  {
+   "t": 190.51,
+   "step": 4082,
+   "forwards": 4082,
+   "val": 1.4742671608924867
+  },
+  {
+   "t": 200.56,
+   "step": 4319,
+   "forwards": 4319,
+   "val": 1.4700870394706727
+  },
+  {
+   "t": 210.57,
+   "step": 4498,
+   "forwards": 4498,
+   "val": 1.4662030458450317
+  },
+  {
+   "t": 220.61,
+   "step": 4679,
+   "forwards": 4679,
+   "val": 1.4652472853660583
+  },
+  {
+   "t": 230.61,
+   "step": 4859,
+   "forwards": 4859,
+   "val": 1.462827694416046
+  },
+  {
+   "t": 240.67,
+   "step": 5041,
+   "forwards": 5041,
+   "val": 1.4611531138420104
+  },
+  {
+   "t": 250.7,
+   "step": 5222,
+   "forwards": 5222,
+   "val": 1.455075442790985
+  },
+  {
+   "t": 260.71,
+   "step": 5401,
+   "forwards": 5401,
+   "val": 1.460120964050293
+  },
+  {
+   "t": 270.72,
+   "step": 5602,
+   "forwards": 5602,
+   "val": 1.4587910056114197
+  },
+  {
+   "t": 280.74,
+   "step": 5783,
+   "forwards": 5783,
+   "val": 1.4567240953445435
+  },
+  {
+   "t": 290.75,
+   "step": 5964,
+   "forwards": 5964,
+   "val": 1.447333323955536
+  },
+  {
+   "t": 300.06,
+   "step": 6132,
+   "forwards": 6132,
+   "val": 1.447735071182251
+  }
+ ],
+ "sample": "ROMEO:\nThou make the presenced cannerable,\nAnd gelse than of thy hands and may should seemels!\nThese deadly thought away we allosen:\nBut true,\nThe first the worth for me him oft to be scorn soul\nWhere have a mother plaint.\n\nHASTINGS:\nI am that our duty of wintering to the next.\n\nROMEO:\nThe stroke stand mar"
+}

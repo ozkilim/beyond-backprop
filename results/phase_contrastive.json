@@ -1,0 +1,232 @@
+{
+ "rule": "phase_contrastive",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Phase-transition annealing + contrastive gradient filtering: explore broadly with noisy credit, then exploit only the signals that are consistent across steps.",
+ "paper": "Novel combination: phase transition + contrastive gradient filtering.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "agreement_boost": 1.3,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.598241729736328,
+ "best_val": 1.4447606563568116,
+ "best_at_s": 240.36,
+ "best_step": 8785,
+ "init_val": 4.216201114654541,
+ "steps": 11904,
+ "forwards": 11904,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.02,
+   "step": 398,
+   "forwards": 398,
+   "val": 2.277602458000183
+  },
+  {
+   "t": 20.04,
+   "step": 802,
+   "forwards": 802,
+   "val": 1.9889127135276794
+  },
+  {
+   "t": 30.06,
+   "step": 1206,
+   "forwards": 1206,
+   "val": 1.8232962012290954
+  },
+  {
+   "t": 40.08,
+   "step": 1593,
+   "forwards": 1593,
+   "val": 1.6673947095870971
+  },
+  {
+   "t": 50.1,
+   "step": 1954,
+   "forwards": 1954,
+   "val": 1.6074935793876648
+  },
+  {
+   "t": 60.11,
+   "step": 2315,
+   "forwards": 2315,
+   "val": 1.5719771027565002
+  },
+  {
+   "t": 70.12,
+   "step": 2676,
+   "forwards": 2676,
+   "val": 1.5574172496795655
+  },
+  {
+   "t": 80.15,
+   "step": 3039,
+   "forwards": 3039,
+   "val": 1.5318265914916993
+  },
+  {
+   "t": 90.17,
+   "step": 3400,
+   "forwards": 3400,
+   "val": 1.5132345318794251
+  },
+  {
+   "t": 100.18,
+   "step": 3761,
+   "forwards": 3761,
+   "val": 1.5065037846565246
+  },
+  {
+   "t": 110.2,
+   "step": 4122,
+   "forwards": 4122,
+   "val": 1.4916082262992858
+  },
+  {
+   "t": 120.2,
+   "step": 4455,
+   "forwards": 4455,
+   "val": 1.4884841203689576
+  },
+  {
+   "t": 130.2,
+   "step": 4816,
+   "forwards": 4816,
+   "val": 1.4835172533988952
+  },
+  {
+   "t": 140.22,
+   "step": 5178,
+   "forwards": 5178,
+   "val": 1.4805426239967345
+  },
+  {
+   "t": 150.24,
+   "step": 5539,
+   "forwards": 5539,
+   "val": 1.4775643348693848
+  },
+  {
+   "t": 160.25,
+   "step": 5900,
+   "forwards": 5900,
+   "val": 1.466227078437805
+  },
+  {
+   "t": 170.25,
+   "step": 6260,
+   "forwards": 6260,
+   "val": 1.46511652469635
+  },
+  {
+   "t": 180.27,
+   "step": 6620,
+   "forwards": 6620,
+   "val": 1.4652247548103332
+  },
+  {
+   "t": 190.29,
+   "step": 6981,
+   "forwards": 6981,
+   "val": 1.4592324376106263
+  },
+  {
+   "t": 200.3,
+   "step": 7341,
+   "forwards": 7341,
+   "val": 1.4572723388671875
+  },
+  {
+   "t": 210.31,
+   "step": 7703,
+   "forwards": 7703,
+   "val": 1.4523651838302611
+  },
+  {
+   "t": 220.33,
+   "step": 8063,
+   "forwards": 8063,
+   "val": 1.4538588285446168
+  },
+  {
+   "t": 230.36,
+   "step": 8424,
+   "forwards": 8424,
+   "val": 1.4493970155715943
+  },
+  {
+   "t": 240.36,
+   "step": 8785,
+   "forwards": 8785,
+   "val": 1.44300217628479
+  },
+  {
+   "t": 250.38,
+   "step": 9147,
+   "forwards": 9147,
+   "val": 1.4457925796508788
+  },
+  {
+   "t": 260.39,
+   "step": 9648,
+   "forwards": 9648,
+   "val": 1.4541261434555053
+  },
+  {
+   "t": 270.41,
+   "step": 10218,
+   "forwards": 10218,
+   "val": 1.443932259082794
+  },
+  {
+   "t": 280.42,
+   "step": 10788,
+   "forwards": 10788,
+   "val": 1.4521856784820557
+  },
+  {
+   "t": 290.42,
+   "step": 11358,
+   "forwards": 11358,
+   "val": 1.4472747802734376
+  },
+  {
+   "t": 300.01,
+   "step": 11904,
+   "forwards": 11904,
+   "val": 1.4589123129844666
+  }
+ ],
+ "sample": "ROMEO:\nThou makes her selfsame an eest of all I to tell you awhile: now here hath too slept in sad.\n\nPRINCE EDWARD:\nWith we are senate forfend; my father weeps\nAnd dri's his head.\n\nProvost:\nBe with this. Sweet loxg plain, if I possess\nThe fight of my leighting bird to the next.\n\nDUKE OF YORK:\n\nHASTINGS:\nTh"
+}

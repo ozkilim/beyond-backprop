@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-wf0.25",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.25,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.590162742137909,
+ "best_val": 1.4454877877235413,
+ "best_at_s": 170.15,
+ "best_step": 10282,
+ "init_val": 4.216201114654541,
+ "steps": 18011,
+ "forwards": 18011,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 663,
+   "forwards": 663,
+   "val": 2.0204715728759766
+  },
+  {
+   "t": 20.03,
+   "step": 1326,
+   "forwards": 1326,
+   "val": 1.7447097897529602
+  },
+  {
+   "t": 30.03,
+   "step": 1933,
+   "forwards": 1933,
+   "val": 1.6111473441123962
+  },
+  {
+   "t": 40.04,
+   "step": 2530,
+   "forwards": 2530,
+   "val": 1.5659258604049682
+  },
+  {
+   "t": 50.05,
+   "step": 3126,
+   "forwards": 3126,
+   "val": 1.5151888012886048
+  },
+  {
+   "t": 60.06,
+   "step": 3722,
+   "forwards": 3722,
+   "val": 1.494570529460907
+  },
+  {
+   "t": 70.06,
+   "step": 4318,
+   "forwards": 4318,
+   "val": 1.4872114419937135
+  },
+  {
+   "t": 80.08,
+   "step": 4915,
+   "forwards": 4915,
+   "val": 1.4759897351264955
+  },
+  {
+   "t": 90.08,
+   "step": 5511,
+   "forwards": 5511,
+   "val": 1.470448875427246
+  },
+  {
+   "t": 100.09,
+   "step": 6108,
+   "forwards": 6108,
+   "val": 1.4576828956604004
+  },
+  {
+   "t": 110.1,
+   "step": 6704,
+   "forwards": 6704,
+   "val": 1.4519808173179627
+  },
+  {
+   "t": 120.11,
+   "step": 7300,
+   "forwards": 7300,
+   "val": 1.4512349486351013
+  },
+  {
+   "t": 130.11,
+   "step": 7896,
+   "forwards": 7896,
+   "val": 1.4545649290084839
+  },
+  {
+   "t": 140.11,
+   "step": 8492,
+   "forwards": 8492,
+   "val": 1.4498170495033265
+  },
+  {
+   "t": 150.13,
+   "step": 9089,
+   "forwards": 9089,
+   "val": 1.4530245542526246
+  },
+  {
+   "t": 160.14,
+   "step": 9685,
+   "forwards": 9685,
+   "val": 1.4531547904014588
+  },
+  {
+   "t": 170.15,
+   "step": 10282,
+   "forwards": 10282,
+   "val": 1.448532485961914
+  },
+  {
+   "t": 180.16,
+   "step": 10878,
+   "forwards": 10878,
+   "val": 1.4511289715766906
+  },
+  {
+   "t": 190.16,
+   "step": 11474,
+   "forwards": 11474,
+   "val": 1.4549381852149963
+  },
+  {
+   "t": 200.17,
+   "step": 12071,
+   "forwards": 12071,
+   "val": 1.4567713379859923
+  },
+  {
+   "t": 210.19,
+   "step": 12668,
+   "forwards": 12668,
+   "val": 1.4517006278038025
+  },
+  {
+   "t": 220.19,
+   "step": 13264,
+   "forwards": 13264,
+   "val": 1.4642327785491944
+  },
+  {
+   "t": 230.2,
+   "step": 13860,
+   "forwards": 13860,
+   "val": 1.4624920964241028
+  },
+  {
+   "t": 240.21,
+   "step": 14456,
+   "forwards": 14456,
+   "val": 1.4628600478172302
+  },
+  {
+   "t": 250.22,
+   "step": 15053,
+   "forwards": 15053,
+   "val": 1.4664815664291382
+  },
+  {
+   "t": 260.24,
+   "step": 15650,
+   "forwards": 15650,
+   "val": 1.4726078867912293
+  },
+  {
+   "t": 270.24,
+   "step": 16242,
+   "forwards": 16242,
+   "val": 1.4710422873497009
+  },
+  {
+   "t": 280.25,
+   "step": 16837,
+   "forwards": 16837,
+   "val": 1.4747503042221068
+  },
+  {
+   "t": 290.26,
+   "step": 17433,
+   "forwards": 17433,
+   "val": 1.482684862613678
+  },
+  {
+   "t": 300.01,
+   "step": 18011,
+   "forwards": 18011,
+   "val": 1.4855633020401
+  }
+ ],
+ "sample": "ROMEO:\nThou must know the fied cur early words gels from home.\n\nPOLIXENES:\nMy lord.\n\nKING RICHARD II:\nWhat attory or warporath.\n\nCOMINIUS:\nWe are the soor that to fire's diseason.\n\nSICINIUS:\nCome,\nI cannot any to fair in my poor honour,\nNor I come to being in this me that neighbour'd you;\nThe good at my ha"
+}

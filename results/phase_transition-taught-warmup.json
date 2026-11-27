@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-warmup",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.1,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5947920083999634,
+ "best_val": 1.4499583840370178,
+ "best_at_s": 170.15,
+ "best_step": 10282,
+ "init_val": 4.216201114654541,
+ "steps": 18018,
+ "forwards": 18018,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 663,
+   "forwards": 663,
+   "val": 2.0204771041870115
+  },
+  {
+   "t": 20.01,
+   "step": 1325,
+   "forwards": 1325,
+   "val": 1.7455349087715148
+  },
+  {
+   "t": 30.02,
+   "step": 1933,
+   "forwards": 1933,
+   "val": 1.6112095355987548
+  },
+  {
+   "t": 40.03,
+   "step": 2530,
+   "forwards": 2530,
+   "val": 1.5661539912223816
+  },
+  {
+   "t": 50.04,
+   "step": 3126,
+   "forwards": 3126,
+   "val": 1.514424479007721
+  },
+  {
+   "t": 60.05,
+   "step": 3722,
+   "forwards": 3722,
+   "val": 1.4940497636795045
+  },
+  {
+   "t": 70.06,
+   "step": 4318,
+   "forwards": 4318,
+   "val": 1.4869082689285278
+  },
+  {
+   "t": 80.07,
+   "step": 4914,
+   "forwards": 4914,
+   "val": 1.4739401698112489
+  },
+  {
+   "t": 90.08,
+   "step": 5511,
+   "forwards": 5511,
+   "val": 1.462606167793274
+  },
+  {
+   "t": 100.09,
+   "step": 6108,
+   "forwards": 6108,
+   "val": 1.4535613894462585
+  },
+  {
+   "t": 110.1,
+   "step": 6704,
+   "forwards": 6704,
+   "val": 1.4551655411720277
+  },
+  {
+   "t": 120.11,
+   "step": 7301,
+   "forwards": 7301,
+   "val": 1.4503113269805907
+  },
+  {
+   "t": 130.12,
+   "step": 7897,
+   "forwards": 7897,
+   "val": 1.4555826783180237
+  },
+  {
+   "t": 140.13,
+   "step": 8493,
+   "forwards": 8493,
+   "val": 1.4526873469352721
+  },
+  {
+   "t": 150.13,
+   "step": 9089,
+   "forwards": 9089,
+   "val": 1.4550030946731567
+  },
+  {
+   "t": 160.15,
+   "step": 9686,
+   "forwards": 9686,
+   "val": 1.457574760913849
+  },
+  {
+   "t": 170.15,
+   "step": 10282,
+   "forwards": 10282,
+   "val": 1.4501495122909547
+  },
+  {
+   "t": 180.16,
+   "step": 10878,
+   "forwards": 10878,
+   "val": 1.4575218558311462
+  },
+  {
+   "t": 190.17,
+   "step": 11474,
+   "forwards": 11474,
+   "val": 1.4572794556617736
+  },
+  {
+   "t": 200.17,
+   "step": 12070,
+   "forwards": 12070,
+   "val": 1.4600670099258424
+  },
+  {
+   "t": 210.19,
+   "step": 12667,
+   "forwards": 12667,
+   "val": 1.4576755166053772
+  },
+  {
+   "t": 220.2,
+   "step": 13263,
+   "forwards": 13263,
+   "val": 1.46806081533432
+  },
+  {
+   "t": 230.2,
+   "step": 13859,
+   "forwards": 13859,
+   "val": 1.4650653839111327
+  },
+  {
+   "t": 240.21,
+   "step": 14455,
+   "forwards": 14455,
+   "val": 1.4706179261207581
+  },
+  {
+   "t": 250.22,
+   "step": 15051,
+   "forwards": 15051,
+   "val": 1.4725484490394591
+  },
+  {
+   "t": 260.23,
+   "step": 15647,
+   "forwards": 15647,
+   "val": 1.4792174220085144
+  },
+  {
+   "t": 270.24,
+   "step": 16244,
+   "forwards": 16244,
+   "val": 1.4801960945129395
+  },
+  {
+   "t": 280.26,
+   "step": 16841,
+   "forwards": 16841,
+   "val": 1.4911722421646119
+  },
+  {
+   "t": 290.27,
+   "step": 17438,
+   "forwards": 17438,
+   "val": 1.4947463631629945
+  },
+  {
+   "t": 300.01,
+   "step": 18018,
+   "forwards": 18018,
+   "val": 1.4991076946258546
+  }
+ ],
+ "sample": "ROMEO:\nThou must know the first and good counsel\nThe true of thy heart;\nThe charge of such lies and his son thought in the\nJULIET:\nWhere is none faults, the worth of it will be\nthy cheek and much apt me. So I fear, it is.\n\nJULIET:\nI have fellow, sir; but I am reign to the neighbour\nSo the queen your pleasu"
+}

@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-wf05-s2",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5801332640647887,
+ "best_val": 1.4467936062812805,
+ "best_at_s": 200.24,
+ "best_step": 8926,
+ "init_val": 4.240832328796387,
+ "steps": 12808,
+ "forwards": 12808,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 2,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.240832328796387
+  },
+  {
+   "t": 10.01,
+   "step": 660,
+   "forwards": 660,
+   "val": 1.9690921187400818
+  },
+  {
+   "t": 20.02,
+   "step": 1320,
+   "forwards": 1320,
+   "val": 1.726033627986908
+  },
+  {
+   "t": 30.03,
+   "step": 1921,
+   "forwards": 1921,
+   "val": 1.5831002950668336
+  },
+  {
+   "t": 40.04,
+   "step": 2515,
+   "forwards": 2515,
+   "val": 1.5394715428352357
+  },
+  {
+   "t": 50.04,
+   "step": 3063,
+   "forwards": 3063,
+   "val": 1.5132373332977296
+  },
+  {
+   "t": 60.07,
+   "step": 3466,
+   "forwards": 3466,
+   "val": 1.5013231754302978
+  },
+  {
+   "t": 70.08,
+   "step": 3868,
+   "forwards": 3868,
+   "val": 1.484779965877533
+  },
+  {
+   "t": 80.09,
+   "step": 4270,
+   "forwards": 4270,
+   "val": 1.4818191647529602
+  },
+  {
+   "t": 90.1,
+   "step": 4666,
+   "forwards": 4666,
+   "val": 1.4772917032241821
+  },
+  {
+   "t": 100.12,
+   "step": 5057,
+   "forwards": 5057,
+   "val": 1.4668736100196837
+  },
+  {
+   "t": 110.12,
+   "step": 5447,
+   "forwards": 5447,
+   "val": 1.4657589316368103
+  },
+  {
+   "t": 120.14,
+   "step": 5837,
+   "forwards": 5837,
+   "val": 1.455694556236267
+  },
+  {
+   "t": 130.16,
+   "step": 6226,
+   "forwards": 6226,
+   "val": 1.4542194604873657
+  },
+  {
+   "t": 140.18,
+   "step": 6616,
+   "forwards": 6616,
+   "val": 1.4523608565330506
+  },
+  {
+   "t": 150.19,
+   "step": 7006,
+   "forwards": 7006,
+   "val": 1.452884554862976
+  },
+  {
+   "t": 160.19,
+   "step": 7395,
+   "forwards": 7395,
+   "val": 1.4536518931388855
+  },
+  {
+   "t": 170.19,
+   "step": 7756,
+   "forwards": 7756,
+   "val": 1.4568547248840331
+  },
+  {
+   "t": 180.2,
+   "step": 8146,
+   "forwards": 8146,
+   "val": 1.451648771762848
+  },
+  {
+   "t": 190.22,
+   "step": 8536,
+   "forwards": 8536,
+   "val": 1.4532472252845765
+  },
+  {
+   "t": 200.24,
+   "step": 8926,
+   "forwards": 8926,
+   "val": 1.446341335773468
+  },
+  {
+   "t": 210.26,
+   "step": 9315,
+   "forwards": 9315,
+   "val": 1.4577857971191406
+  },
+  {
+   "t": 220.28,
+   "step": 9705,
+   "forwards": 9705,
+   "val": 1.451916790008545
+  },
+  {
+   "t": 230.3,
+   "step": 10095,
+   "forwards": 10095,
+   "val": 1.4567385077476502
+  },
+  {
+   "t": 240.32,
+   "step": 10484,
+   "forwards": 10484,
+   "val": 1.4516407608985902
+  },
+  {
+   "t": 250.33,
+   "step": 10872,
+   "forwards": 10872,
+   "val": 1.4529847741127013
+  },
+  {
+   "t": 260.34,
+   "step": 11261,
+   "forwards": 11261,
+   "val": 1.45904198884964
+  },
+  {
+   "t": 270.36,
+   "step": 11651,
+   "forwards": 11651,
+   "val": 1.4613726735115051
+  },
+  {
+   "t": 280.37,
+   "step": 12042,
+   "forwards": 12042,
+   "val": 1.4549143671989442
+  },
+  {
+   "t": 290.38,
+   "step": 12433,
+   "forwards": 12433,
+   "val": 1.4643802762031555
+  },
+  {
+   "t": 300.01,
+   "step": 12808,
+   "forwards": 12808,
+   "val": 1.4696986079216003
+  }
+ ],
+ "sample": "ROMEO:\nThou must know so? for I am exampled;\nFor let the common give thee re hath the seemedy:\nThese dearly thoughts we permaccession thee, not more thou wert stoop.\n\nSLY:\nMenenius breach not up the strumpet male.\n\nKING EDWARD IV:\nI take friar of love to this suit:\nA sent, my point of the queen years my hu"
+}

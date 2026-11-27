@@ -1,0 +1,231 @@
+{
+ "rule": "drift_diffusion",
+ "tag": "taught",
+ "autograd": "modified",
+ "blurb": "Mirror-neuron credit plus noise that scales with per-weight gradient uncertainty: noisy where the signal is unreliable, precise where it's clear.",
+ "paper": "Novel: Ratcliff's drift-diffusion (1978) applied as a credit-assignment mechanism.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "sigma": 0.3,
+  "ema_var": 0.999,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.6212293457984925,
+ "best_val": 1.45201762676239,
+ "best_at_s": 180.14,
+ "best_step": 10467,
+ "init_val": 4.216201114654541,
+ "steps": 17305,
+ "forwards": 17305,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 636,
+   "forwards": 636,
+   "val": 2.0387863993644713
+  },
+  {
+   "t": 20.02,
+   "step": 1275,
+   "forwards": 1275,
+   "val": 1.7772489547729493
+  },
+  {
+   "t": 30.03,
+   "step": 1866,
+   "forwards": 1866,
+   "val": 1.6201619267463685
+  },
+  {
+   "t": 40.04,
+   "step": 2440,
+   "forwards": 2440,
+   "val": 1.5708453178405761
+  },
+  {
+   "t": 50.05,
+   "step": 3013,
+   "forwards": 3013,
+   "val": 1.5404664397239685
+  },
+  {
+   "t": 60.05,
+   "step": 3586,
+   "forwards": 3586,
+   "val": 1.5084728837013244
+  },
+  {
+   "t": 70.06,
+   "step": 4160,
+   "forwards": 4160,
+   "val": 1.491854965686798
+  },
+  {
+   "t": 80.07,
+   "step": 4734,
+   "forwards": 4734,
+   "val": 1.4759886145591736
+  },
+  {
+   "t": 90.07,
+   "step": 5307,
+   "forwards": 5307,
+   "val": 1.4752376556396485
+  },
+  {
+   "t": 100.07,
+   "step": 5881,
+   "forwards": 5881,
+   "val": 1.4679429173469543
+  },
+  {
+   "t": 110.08,
+   "step": 6454,
+   "forwards": 6454,
+   "val": 1.459651815891266
+  },
+  {
+   "t": 120.1,
+   "step": 7028,
+   "forwards": 7028,
+   "val": 1.4545626521110535
+  },
+  {
+   "t": 130.1,
+   "step": 7601,
+   "forwards": 7601,
+   "val": 1.4538532733917235
+  },
+  {
+   "t": 140.11,
+   "step": 8175,
+   "forwards": 8175,
+   "val": 1.4579599499702454
+  },
+  {
+   "t": 150.12,
+   "step": 8748,
+   "forwards": 8748,
+   "val": 1.457255983352661
+  },
+  {
+   "t": 160.12,
+   "step": 9321,
+   "forwards": 9321,
+   "val": 1.4544033885002137
+  },
+  {
+   "t": 170.12,
+   "step": 9894,
+   "forwards": 9894,
+   "val": 1.4544158577919006
+  },
+  {
+   "t": 180.14,
+   "step": 10467,
+   "forwards": 10467,
+   "val": 1.4523476839065552
+  },
+  {
+   "t": 190.15,
+   "step": 11041,
+   "forwards": 11041,
+   "val": 1.4525077581405639
+  },
+  {
+   "t": 200.15,
+   "step": 11611,
+   "forwards": 11611,
+   "val": 1.458184254169464
+  },
+  {
+   "t": 210.15,
+   "step": 12181,
+   "forwards": 12181,
+   "val": 1.4533543467521668
+  },
+  {
+   "t": 220.16,
+   "step": 12752,
+   "forwards": 12752,
+   "val": 1.4591421127319335
+  },
+  {
+   "t": 230.17,
+   "step": 13323,
+   "forwards": 13323,
+   "val": 1.4582188248634338
+  },
+  {
+   "t": 240.18,
+   "step": 13894,
+   "forwards": 13894,
+   "val": 1.4587117671966552
+  },
+  {
+   "t": 250.19,
+   "step": 14465,
+   "forwards": 14465,
+   "val": 1.4666540980339051
+  },
+  {
+   "t": 260.19,
+   "step": 15035,
+   "forwards": 15035,
+   "val": 1.4654857158660888
+  },
+  {
+   "t": 270.21,
+   "step": 15606,
+   "forwards": 15606,
+   "val": 1.4730896711349488
+  },
+  {
+   "t": 280.21,
+   "step": 16177,
+   "forwards": 16177,
+   "val": 1.4799824357032776
+  },
+  {
+   "t": 290.21,
+   "step": 16747,
+   "forwards": 16747,
+   "val": 1.4715046167373658
+  },
+  {
+   "t": 300.01,
+   "step": 17305,
+   "forwards": 17305,
+   "val": 1.478410279750824
+  }
+ ],
+ "sample": "ROMEO:\nThou makest his nature Henryes,\nAnd thrown strength friends for a vil hath not speak.\nBut I had not possess'd with daughter'd with a namempt\nThat every stone and which to the people's news,\nI cannot spoke their head of mine nor say,\nAnd for my brother our mine hence, sir, but not\nMarcius to them mea"
+}

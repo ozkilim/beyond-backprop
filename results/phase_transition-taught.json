@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.0,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5879929327964784,
+ "best_val": 1.4442926335334778,
+ "best_at_s": 180.17,
+ "best_step": 10897,
+ "init_val": 4.216201114654541,
+ "steps": 18064,
+ "forwards": 18064,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 664,
+   "forwards": 664,
+   "val": 2.0164379715919494
+  },
+  {
+   "t": 20.02,
+   "step": 1326,
+   "forwards": 1326,
+   "val": 1.7420158982276917
+  },
+  {
+   "t": 30.02,
+   "step": 1935,
+   "forwards": 1935,
+   "val": 1.6088514804840088
+  },
+  {
+   "t": 40.03,
+   "step": 2531,
+   "forwards": 2531,
+   "val": 1.5602946758270264
+  },
+  {
+   "t": 50.03,
+   "step": 3127,
+   "forwards": 3127,
+   "val": 1.5159475445747375
+  },
+  {
+   "t": 60.03,
+   "step": 3723,
+   "forwards": 3723,
+   "val": 1.4919438004493712
+  },
+  {
+   "t": 70.04,
+   "step": 4321,
+   "forwards": 4321,
+   "val": 1.4838682532310485
+  },
+  {
+   "t": 80.06,
+   "step": 4919,
+   "forwards": 4919,
+   "val": 1.4694992184638977
+  },
+  {
+   "t": 90.07,
+   "step": 5516,
+   "forwards": 5516,
+   "val": 1.465092658996582
+  },
+  {
+   "t": 100.08,
+   "step": 6112,
+   "forwards": 6112,
+   "val": 1.447514545917511
+  },
+  {
+   "t": 110.09,
+   "step": 6709,
+   "forwards": 6709,
+   "val": 1.452282977104187
+  },
+  {
+   "t": 120.1,
+   "step": 7307,
+   "forwards": 7307,
+   "val": 1.4444709181785584
+  },
+  {
+   "t": 130.11,
+   "step": 7905,
+   "forwards": 7905,
+   "val": 1.4443086862564087
+  },
+  {
+   "t": 140.13,
+   "step": 8504,
+   "forwards": 8504,
+   "val": 1.4455901861190796
+  },
+  {
+   "t": 150.13,
+   "step": 9102,
+   "forwards": 9102,
+   "val": 1.4559873700141908
+  },
+  {
+   "t": 160.14,
+   "step": 9700,
+   "forwards": 9700,
+   "val": 1.4434976935386659
+  },
+  {
+   "t": 170.16,
+   "step": 10298,
+   "forwards": 10298,
+   "val": 1.4491928100585938
+  },
+  {
+   "t": 180.17,
+   "step": 10897,
+   "forwards": 10897,
+   "val": 1.4416905403137208
+  },
+  {
+   "t": 190.17,
+   "step": 11495,
+   "forwards": 11495,
+   "val": 1.4518501520156861
+  },
+  {
+   "t": 200.18,
+   "step": 12094,
+   "forwards": 12094,
+   "val": 1.450308895111084
+  },
+  {
+   "t": 210.19,
+   "step": 12692,
+   "forwards": 12692,
+   "val": 1.4532042384147643
+  },
+  {
+   "t": 220.2,
+   "step": 13291,
+   "forwards": 13291,
+   "val": 1.4557257771492005
+  },
+  {
+   "t": 230.21,
+   "step": 13889,
+   "forwards": 13889,
+   "val": 1.4638620734214782
+  },
+  {
+   "t": 240.22,
+   "step": 14488,
+   "forwards": 14488,
+   "val": 1.4611677527427673
+  },
+  {
+   "t": 250.23,
+   "step": 15087,
+   "forwards": 15087,
+   "val": 1.4696424722671508
+  },
+  {
+   "t": 260.23,
+   "step": 15685,
+   "forwards": 15685,
+   "val": 1.4681317806243896
+  },
+  {
+   "t": 270.25,
+   "step": 16284,
+   "forwards": 16284,
+   "val": 1.4723533868789673
+  },
+  {
+   "t": 280.26,
+   "step": 16883,
+   "forwards": 16883,
+   "val": 1.4790661096572877
+  },
+  {
+   "t": 290.27,
+   "step": 17482,
+   "forwards": 17482,
+   "val": 1.4838531851768493
+  },
+  {
+   "t": 300.01,
+   "step": 18064,
+   "forwards": 18064,
+   "val": 1.4817212581634522
+  }
+ ],
+ "sample": "ROMEO:\nThou makes her self meddition hath a disgule them home.\n\nPOLIXENES:\nMy lord, you chell!\n\nHENRY BOLINGBROKE:\nWhile we all this raiser 'go must the elements of a man, being the hear i' the morning.\nShow my prayers and look on nor say 'dose.\n\nLORD WILLOUGHBY:\nThe head, my lord,' that we thou fearful ha"
+}

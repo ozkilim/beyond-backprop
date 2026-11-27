@@ -1,0 +1,88 @@
+{
+ "rule": "phase_sam",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Phase transition annealing (exploration\u2192exploitation in credit) combined with SAM (wide-minimum seeking): orthogonal axes of improvement.",
+ "paper": "Novel combination: phase transition + Foret et al. 2021 (SAM).",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.15,
+  "schedule": "cosine",
+  "mirror": true,
+  "rho": 0.1,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 2.112837700843811,
+ "best_at_s": 60.02,
+ "best_step": 1264,
+ "init_val": 4.216201114654541,
+ "steps": 1264,
+ "forwards": 2528,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.02,
+   "step": 185,
+   "forwards": 370,
+   "val": 2.6012592554092406
+  },
+  {
+   "t": 20.05,
+   "step": 406,
+   "forwards": 812,
+   "val": 2.5025838136672975
+  },
+  {
+   "t": 30.09,
+   "step": 626,
+   "forwards": 1252,
+   "val": 2.4278022050857544
+  },
+  {
+   "t": 40.13,
+   "step": 828,
+   "forwards": 1656,
+   "val": 2.3449714183807373
+  },
+  {
+   "t": 50.17,
+   "step": 1048,
+   "forwards": 2096,
+   "val": 2.2421075105667114
+  },
+  {
+   "t": 60.02,
+   "step": 1264,
+   "forwards": 2528,
+   "val": 2.120750832557678
+  }
+ ],
+ "sample": "ROMEO:\nThy, mome kiss selt made a meament, in I to the Myou ur you for beare hath thight\nHell son sere the ath ky weaill we all shim\nAnd trond-devam the hee woor to all wiiserdod.\n\n\nFARCIOM:\nCuze your hat wall torf praieng or myournt shat that of leatheome in\nA Mende sto dem.\n\n\nSomblest onest gor sthem mar"
+}

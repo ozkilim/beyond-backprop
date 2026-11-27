@@ -1,0 +1,232 @@
+{
+ "rule": "phase_sam",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Phase transition annealing (exploration\u2192exploitation in credit) combined with SAM (wide-minimum seeking): orthogonal axes of improvement.",
+ "paper": "Novel combination: phase transition + Foret et al. 2021 (SAM).",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.15,
+  "schedule": "cosine",
+  "mirror": true,
+  "rho": 0.1,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.6102933406829834,
+ "best_val": 1.4647229528427124,
+ "best_at_s": 300.01,
+ "best_step": 6841,
+ "init_val": 4.216201114654541,
+ "steps": 6841,
+ "forwards": 13682,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.03,
+   "step": 221,
+   "forwards": 442,
+   "val": 2.573494291305542
+  },
+  {
+   "t": 20.07,
+   "step": 443,
+   "forwards": 886,
+   "val": 2.492015552520752
+  },
+  {
+   "t": 30.1,
+   "step": 664,
+   "forwards": 1328,
+   "val": 2.419773721694946
+  },
+  {
+   "t": 40.13,
+   "step": 885,
+   "forwards": 1770,
+   "val": 2.3093019247055055
+  },
+  {
+   "t": 50.14,
+   "step": 1106,
+   "forwards": 2212,
+   "val": 2.19709997177124
+  },
+  {
+   "t": 60.15,
+   "step": 1326,
+   "forwards": 2652,
+   "val": 2.0686056852340697
+  },
+  {
+   "t": 70.19,
+   "step": 1525,
+   "forwards": 3050,
+   "val": 1.9868522047996522
+  },
+  {
+   "t": 80.21,
+   "step": 1717,
+   "forwards": 3434,
+   "val": 1.8830309510231018
+  },
+  {
+   "t": 90.23,
+   "step": 1909,
+   "forwards": 3818,
+   "val": 1.8152923107147216
+  },
+  {
+   "t": 100.25,
+   "step": 2101,
+   "forwards": 4202,
+   "val": 1.7440680623054505
+  },
+  {
+   "t": 110.28,
+   "step": 2293,
+   "forwards": 4586,
+   "val": 1.7119137048721313
+  },
+  {
+   "t": 120.3,
+   "step": 2485,
+   "forwards": 4970,
+   "val": 1.675422728061676
+  },
+  {
+   "t": 130.34,
+   "step": 2675,
+   "forwards": 5350,
+   "val": 1.647010600566864
+  },
+  {
+   "t": 140.36,
+   "step": 2866,
+   "forwards": 5732,
+   "val": 1.6137181758880614
+  },
+  {
+   "t": 150.38,
+   "step": 3058,
+   "forwards": 6116,
+   "val": 1.6012577533721923
+  },
+  {
+   "t": 160.41,
+   "step": 3250,
+   "forwards": 6500,
+   "val": 1.5759799480438232
+  },
+  {
+   "t": 170.43,
+   "step": 3442,
+   "forwards": 6884,
+   "val": 1.565513825416565
+  },
+  {
+   "t": 180.48,
+   "step": 3635,
+   "forwards": 7270,
+   "val": 1.5546980500221252
+  },
+  {
+   "t": 190.53,
+   "step": 3828,
+   "forwards": 7656,
+   "val": 1.5479736804962159
+  },
+  {
+   "t": 200.54,
+   "step": 4020,
+   "forwards": 8040,
+   "val": 1.5318705320358277
+  },
+  {
+   "t": 210.55,
+   "step": 4212,
+   "forwards": 8424,
+   "val": 1.5279483914375305
+  },
+  {
+   "t": 220.58,
+   "step": 4496,
+   "forwards": 8992,
+   "val": 1.523956334590912
+  },
+  {
+   "t": 230.6,
+   "step": 4792,
+   "forwards": 9584,
+   "val": 1.5013397932052612
+  },
+  {
+   "t": 240.62,
+   "step": 5088,
+   "forwards": 10176,
+   "val": 1.5022737979888916
+  },
+  {
+   "t": 250.64,
+   "step": 5384,
+   "forwards": 10768,
+   "val": 1.4946808576583863
+  },
+  {
+   "t": 260.66,
+   "step": 5680,
+   "forwards": 11360,
+   "val": 1.4925813674926758
+  },
+  {
+   "t": 270.69,
+   "step": 5976,
+   "forwards": 11952,
+   "val": 1.4794573545455934
+  },
+  {
+   "t": 280.71,
+   "step": 6272,
+   "forwards": 12544,
+   "val": 1.4783188939094543
+  },
+  {
+   "t": 290.74,
+   "step": 6568,
+   "forwards": 13136,
+   "val": 1.475769817829132
+  },
+  {
+   "t": 300.01,
+   "step": 6841,
+   "forwards": 13682,
+   "val": 1.4666614294052125
+  }
+ ],
+ "sample": "ROMEO:\nTherefore knew self it one of hand,\nAnd gelse than of thy heart and may the poose\nHels! Therefore that's your way were comes;\nAnd true nemit thee the world of thine own than the contrarizen:\nRenown of my prayers and look of not say,\nAnd our dear of wintering to the next.\n\nSICINIUS:\nThen story! my hu"
+}

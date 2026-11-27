@@ -1,0 +1,85 @@
+{
+ "rule": "ema_backward",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Backward weights are an exponential moving average of the forward weights, decaying the random initial offset and smoothing the credit signal through time.",
+ "paper": "Novel combination: EMA (Polyak & Juditsky 1992) applied to the backward pathway.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "ema_beta": 0.99,
+  "scale": 1.0,
+  "teach": 0.0,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 1.5546571707725525,
+ "best_at_s": 60.01,
+ "best_step": 4164,
+ "init_val": 4.216201114654541,
+ "steps": 4164,
+ "forwards": 4164,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 706,
+   "forwards": 706,
+   "val": 1.9973639130592347
+  },
+  {
+   "t": 20.01,
+   "step": 1413,
+   "forwards": 1413,
+   "val": 1.7642456769943238
+  },
+  {
+   "t": 30.01,
+   "step": 2114,
+   "forwards": 2114,
+   "val": 1.6516693949699401
+  },
+  {
+   "t": 40.01,
+   "step": 2795,
+   "forwards": 2795,
+   "val": 1.607937479019165
+  },
+  {
+   "t": 50.03,
+   "step": 3490,
+   "forwards": 3490,
+   "val": 1.5776809930801392
+  },
+  {
+   "t": 60.01,
+   "step": 4164,
+   "forwards": 4164,
+   "val": 1.5548062920570374
+  }
+ ],
+ "sample": "ROMEO:\nHave me this wisely made a means!\n\nLUCENTIO:\nStray of thy heart; here hath thou betweens't shall\nseek a kile a tobberat of your foerence my father?\n\nANTIGONUS:\n'Sweign the with scorn souls and near was\nThat spirit-milke to send say time of me flesh.\nAnd then the than shake you shall be good them mar"
+}

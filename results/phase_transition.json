@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.0,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.0,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.6488372111320495,
+ "best_val": 1.4807172560691833,
+ "best_at_s": 80.06,
+ "best_step": 5475,
+ "init_val": 4.216201114654541,
+ "steps": 20467,
+ "forwards": 20467,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 683,
+   "forwards": 683,
+   "val": 1.9918769955635072
+  },
+  {
+   "t": 20.01,
+   "step": 1367,
+   "forwards": 1367,
+   "val": 1.720997953414917
+  },
+  {
+   "t": 30.02,
+   "step": 2053,
+   "forwards": 2053,
+   "val": 1.6114912509918213
+  },
+  {
+   "t": 40.03,
+   "step": 2738,
+   "forwards": 2738,
+   "val": 1.5688467621803284
+  },
+  {
+   "t": 50.04,
+   "step": 3422,
+   "forwards": 3422,
+   "val": 1.529015851020813
+  },
+  {
+   "t": 60.04,
+   "step": 4106,
+   "forwards": 4106,
+   "val": 1.509122657775879
+  },
+  {
+   "t": 70.05,
+   "step": 4790,
+   "forwards": 4790,
+   "val": 1.4910353660583495
+  },
+  {
+   "t": 80.06,
+   "step": 5475,
+   "forwards": 5475,
+   "val": 1.4789122700691224
+  },
+  {
+   "t": 90.06,
+   "step": 6160,
+   "forwards": 6160,
+   "val": 1.4902565479278564
+  },
+  {
+   "t": 100.07,
+   "step": 6844,
+   "forwards": 6844,
+   "val": 1.4946998953819275
+  },
+  {
+   "t": 110.08,
+   "step": 7528,
+   "forwards": 7528,
+   "val": 1.4870654344558716
+  },
+  {
+   "t": 120.09,
+   "step": 8213,
+   "forwards": 8213,
+   "val": 1.5091211438179015
+  },
+  {
+   "t": 130.1,
+   "step": 8897,
+   "forwards": 8897,
+   "val": 1.521669828891754
+  },
+  {
+   "t": 140.12,
+   "step": 9582,
+   "forwards": 9582,
+   "val": 1.517765963077545
+  },
+  {
+   "t": 150.13,
+   "step": 10267,
+   "forwards": 10267,
+   "val": 1.529554510116577
+  },
+  {
+   "t": 160.14,
+   "step": 10952,
+   "forwards": 10952,
+   "val": 1.5491050958633423
+  },
+  {
+   "t": 170.15,
+   "step": 11636,
+   "forwards": 11636,
+   "val": 1.5626527428627015
+  },
+  {
+   "t": 180.16,
+   "step": 12320,
+   "forwards": 12320,
+   "val": 1.5738709926605225
+  },
+  {
+   "t": 190.16,
+   "step": 13004,
+   "forwards": 13004,
+   "val": 1.6023665904998778
+  },
+  {
+   "t": 200.16,
+   "step": 13688,
+   "forwards": 13688,
+   "val": 1.608395278453827
+  },
+  {
+   "t": 210.17,
+   "step": 14372,
+   "forwards": 14372,
+   "val": 1.6192257761955262
+  },
+  {
+   "t": 220.17,
+   "step": 15056,
+   "forwards": 15056,
+   "val": 1.6366195678710938
+  },
+  {
+   "t": 230.17,
+   "step": 15740,
+   "forwards": 15740,
+   "val": 1.664199912548065
+  },
+  {
+   "t": 240.17,
+   "step": 16424,
+   "forwards": 16424,
+   "val": 1.6875627398490907
+  },
+  {
+   "t": 250.18,
+   "step": 17107,
+   "forwards": 17107,
+   "val": 1.6761144995689392
+  },
+  {
+   "t": 260.19,
+   "step": 17747,
+   "forwards": 17747,
+   "val": 1.699065053462982
+  },
+  {
+   "t": 270.21,
+   "step": 18431,
+   "forwards": 18431,
+   "val": 1.6940396547317504
+  },
+  {
+   "t": 280.21,
+   "step": 19115,
+   "forwards": 19115,
+   "val": 1.739730668067932
+  },
+  {
+   "t": 290.21,
+   "step": 19798,
+   "forwards": 19798,
+   "val": 1.754083514213562
+  },
+  {
+   "t": 300.01,
+   "step": 20467,
+   "forwards": 20467,
+   "val": 1.7772701859474183
+  }
+ ],
+ "sample": "ROMEO:\nThou must know so? follow meet and aid I to tell\nThou why hast were my strength being so.\nTo help the songue awake a white of day,\nA next hath soot enduction a man,\nAnd that been his soul thus near fall of fair,\nAnd let to see as your scope.\n\nGLOUCESTER:\nMy lord of his points, you have good to my hu"
+}

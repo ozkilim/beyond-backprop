@@ -1,0 +1,230 @@
+{
+ "rule": "noisy_mirror",
+ "tag": "t04",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with decaying Gaussian noise: explores around the true gradient early, converges to exact credit assignment late.",
+ "paper": "Novel: temperature-scheduled noise on mirror backward weights.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "noise_schedule": "linear",
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5577534461021423,
+ "best_val": 1.4371871423721314,
+ "best_at_s": 270.61,
+ "best_step": 7006,
+ "init_val": 4.216201114654541,
+ "steps": 7696,
+ "forwards": 7696,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 426,
+   "forwards": 426,
+   "val": 2.1843029499053954
+  },
+  {
+   "t": 20.02,
+   "step": 869,
+   "forwards": 869,
+   "val": 1.883939802646637
+  },
+  {
+   "t": 30.04,
+   "step": 1292,
+   "forwards": 1292,
+   "val": 1.7381979823112488
+  },
+  {
+   "t": 40.05,
+   "step": 1648,
+   "forwards": 1648,
+   "val": 1.627689576148987
+  },
+  {
+   "t": 50.06,
+   "step": 1876,
+   "forwards": 1876,
+   "val": 1.6081610202789307
+  },
+  {
+   "t": 60.11,
+   "step": 2106,
+   "forwards": 2106,
+   "val": 1.5668153405189513
+  },
+  {
+   "t": 70.13,
+   "step": 2333,
+   "forwards": 2333,
+   "val": 1.5554581046104432
+  },
+  {
+   "t": 80.16,
+   "step": 2563,
+   "forwards": 2563,
+   "val": 1.5444818139076233
+  },
+  {
+   "t": 90.19,
+   "step": 2787,
+   "forwards": 2787,
+   "val": 1.5320703387260437
+  },
+  {
+   "t": 100.23,
+   "step": 3021,
+   "forwards": 3021,
+   "val": 1.5187798142433167
+  },
+  {
+   "t": 110.23,
+   "step": 3256,
+   "forwards": 3256,
+   "val": 1.5065457344055175
+  },
+  {
+   "t": 120.24,
+   "step": 3490,
+   "forwards": 3490,
+   "val": 1.502837061882019
+  },
+  {
+   "t": 130.27,
+   "step": 3724,
+   "forwards": 3724,
+   "val": 1.4914304494857789
+  },
+  {
+   "t": 140.31,
+   "step": 3960,
+   "forwards": 3960,
+   "val": 1.4856537938117982
+  },
+  {
+   "t": 150.34,
+   "step": 4195,
+   "forwards": 4195,
+   "val": 1.4792226076126098
+  },
+  {
+   "t": 160.35,
+   "step": 4427,
+   "forwards": 4427,
+   "val": 1.4737074613571166
+  },
+  {
+   "t": 170.35,
+   "step": 4662,
+   "forwards": 4662,
+   "val": 1.466837430000305
+  },
+  {
+   "t": 180.37,
+   "step": 4895,
+   "forwards": 4895,
+   "val": 1.47341445684433
+  },
+  {
+   "t": 190.39,
+   "step": 5130,
+   "forwards": 5130,
+   "val": 1.4638944506645202
+  },
+  {
+   "t": 200.44,
+   "step": 5363,
+   "forwards": 5363,
+   "val": 1.465640664100647
+  },
+  {
+   "t": 210.46,
+   "step": 5598,
+   "forwards": 5598,
+   "val": 1.4588100790977478
+  },
+  {
+   "t": 220.49,
+   "step": 5833,
+   "forwards": 5833,
+   "val": 1.4574037313461303
+  },
+  {
+   "t": 230.54,
+   "step": 6068,
+   "forwards": 6068,
+   "val": 1.4551393151283265
+  },
+  {
+   "t": 240.57,
+   "step": 6303,
+   "forwards": 6303,
+   "val": 1.4450547814369201
+  },
+  {
+   "t": 250.57,
+   "step": 6536,
+   "forwards": 6536,
+   "val": 1.4406810760498048
+  },
+  {
+   "t": 260.6,
+   "step": 6771,
+   "forwards": 6771,
+   "val": 1.445195698738098
+  },
+  {
+   "t": 270.61,
+   "step": 7006,
+   "forwards": 7006,
+   "val": 1.4395442843437194
+  },
+  {
+   "t": 280.62,
+   "step": 7241,
+   "forwards": 7241,
+   "val": 1.445472812652588
+  },
+  {
+   "t": 290.66,
+   "step": 7477,
+   "forwards": 7477,
+   "val": 1.4407147288322448
+  },
+  {
+   "t": 300.01,
+   "step": 7696,
+   "forwards": 7696,
+   "val": 1.446924865245819
+  }
+ ],
+ "sample": "ROMEO:\nThou makest are not did called,\nAnd yet gold feel how to give thee re hear this beheld\nBegue, in such a kindred king and send\nAnd true nemit to use the stone.\n\nSecond Gentleman:\nSo this well-den.\nSeven yet faith and love,--In the marketposing flesh.\nAnd then the tidings. in both the state of the dau"
+}

@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-wf05-s0",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5865708112716674,
+ "best_val": 1.4451104855537416,
+ "best_at_s": 140.1,
+ "best_step": 8492,
+ "init_val": 4.216201114654541,
+ "steps": 18011,
+ "forwards": 18011,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 664,
+   "forwards": 664,
+   "val": 2.0167621850967405
+  },
+  {
+   "t": 20.01,
+   "step": 1327,
+   "forwards": 1327,
+   "val": 1.7416938424110413
+  },
+  {
+   "t": 30.02,
+   "step": 1934,
+   "forwards": 1934,
+   "val": 1.610247540473938
+  },
+  {
+   "t": 40.02,
+   "step": 2529,
+   "forwards": 2529,
+   "val": 1.5646150946617126
+  },
+  {
+   "t": 50.03,
+   "step": 3126,
+   "forwards": 3126,
+   "val": 1.514950704574585
+  },
+  {
+   "t": 60.04,
+   "step": 3722,
+   "forwards": 3722,
+   "val": 1.4939743280410767
+  },
+  {
+   "t": 70.04,
+   "step": 4319,
+   "forwards": 4319,
+   "val": 1.4889919877052307
+  },
+  {
+   "t": 80.05,
+   "step": 4915,
+   "forwards": 4915,
+   "val": 1.4733719944953918
+  },
+  {
+   "t": 90.06,
+   "step": 5512,
+   "forwards": 5512,
+   "val": 1.4629307627677917
+  },
+  {
+   "t": 100.06,
+   "step": 6109,
+   "forwards": 6109,
+   "val": 1.4516223311424254
+  },
+  {
+   "t": 110.07,
+   "step": 6705,
+   "forwards": 6705,
+   "val": 1.4580976724624635
+  },
+  {
+   "t": 120.09,
+   "step": 7301,
+   "forwards": 7301,
+   "val": 1.4489116311073302
+  },
+  {
+   "t": 130.09,
+   "step": 7896,
+   "forwards": 7896,
+   "val": 1.4531327843666078
+  },
+  {
+   "t": 140.1,
+   "step": 8492,
+   "forwards": 8492,
+   "val": 1.4459916830062867
+  },
+  {
+   "t": 150.1,
+   "step": 9087,
+   "forwards": 9087,
+   "val": 1.4481894254684449
+  },
+  {
+   "t": 160.12,
+   "step": 9683,
+   "forwards": 9683,
+   "val": 1.451226794719696
+  },
+  {
+   "t": 170.12,
+   "step": 10279,
+   "forwards": 10279,
+   "val": 1.4475209712982178
+  },
+  {
+   "t": 180.14,
+   "step": 10875,
+   "forwards": 10875,
+   "val": 1.4546687245368957
+  },
+  {
+   "t": 190.14,
+   "step": 11470,
+   "forwards": 11470,
+   "val": 1.4528538703918457
+  },
+  {
+   "t": 200.15,
+   "step": 12066,
+   "forwards": 12066,
+   "val": 1.4578974008560182
+  },
+  {
+   "t": 210.16,
+   "step": 12662,
+   "forwards": 12662,
+   "val": 1.4537651777267455
+  },
+  {
+   "t": 220.18,
+   "step": 13258,
+   "forwards": 13258,
+   "val": 1.4593966484069825
+  },
+  {
+   "t": 230.19,
+   "step": 13854,
+   "forwards": 13854,
+   "val": 1.458990180492401
+  },
+  {
+   "t": 240.2,
+   "step": 14450,
+   "forwards": 14450,
+   "val": 1.4589022994041443
+  },
+  {
+   "t": 250.21,
+   "step": 15045,
+   "forwards": 15045,
+   "val": 1.469146180152893
+  },
+  {
+   "t": 260.21,
+   "step": 15641,
+   "forwards": 15641,
+   "val": 1.4751955628395081
+  },
+  {
+   "t": 270.22,
+   "step": 16237,
+   "forwards": 16237,
+   "val": 1.4800386667251586
+  },
+  {
+   "t": 280.24,
+   "step": 16834,
+   "forwards": 16834,
+   "val": 1.4843352079391479
+  },
+  {
+   "t": 290.24,
+   "step": 17430,
+   "forwards": 17430,
+   "val": 1.4849039435386657
+  },
+  {
+   "t": 300.01,
+   "step": 18011,
+   "forwards": 18011,
+   "val": 1.4875725626945495
+  }
+ ],
+ "sample": "ROMEO:\nThy father had self aloude tears that will strength\nAs well for me rectite to be the consulself.\n\nKING RICHARD III:\nYet other did brone-day, thy depend stone alive,\nWere to do the bris great dear. So I fear,\nThat this imposent shall do come do be my delizament,\nAnd, my point-t the heart story of my "
+}

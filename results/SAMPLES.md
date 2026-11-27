@@ -2,6 +2,172 @@
 
 What each rule's model writes after its leaderboard run (prompt `ROMEO:`).
 
+**noisy_mirror (t04)** (test 1.558)
+
+```
+ROMEO:
+Thou makest are not did called,
+And yet gold feel how to give thee re hear this beheld
+Begue, in such a kindred king and send
+And true nemit to use the stone.
+
+Second Gentleman:
+So this well-den.
+Seven yet faith and love,--In the marketposing flesh.
+And then the tidings. in both the state of 
+```
+
+**noisy_mirror (sig08)** (test 1.566)
+
+```
+ROMEO:
+Thou must know she fith cannest of a dreamle father
+As we have were my strange shore is so shrives
+Matcomfort it be made: that thou, no; my father well.
+
+RIVERS:
+How now, go the contract.
+
+FRIAR:
+So sooth that had milk my hence shall I come?
+
+GLOUCESTER:
+My lord of his points, your foung corr
+```
+
+**noisy_mirror (t05)** (test 1.567)
+
+```
+ROMEO:
+Thou make king sweet looks or hand,
+And gilet the commission of my re hath not so,
+Which good denst a so your way,
+For come and forrown; my father we wish to acce I be to the
+pest brother from me. So I fearful and milk.
+Woe not say that of me for my deliving Romeo!
+
+BUCKINGHAM:
+Your straight 
+```
+
+**noisy_mirror** (test 1.567)
+
+```
+ROMEO:
+Thou makes her self me one of many of worths from home.
+
+POLIXENES:
+My lord, thou hell! Take him; that's your way,
+Have no fair foer none of thy depen's
+tone and which the wintescrim shows must his war,
+And speak
+They should have you been quite and with the med
+And neight by thy world's son t
+```
+
+**phase_transition (best-s2)** (test 1.569)
+
+```
+ROMEO:
+Thou must know the fire, and goes with the strengthooysed he now
+The chain of blood losses of the people appreiaken
+Than thou didstrange my father well store.
+
+SLY:
+Mercutio.
+
+DUCHESS OF YORK:
+Brother, for fair lady:
+How of not say 'dost delight of wine time.
+
+JULIET:
+Thou should not the king
+```
+
+**noisy_mirror (cos-t04)** (test 1.569)
+
+```
+ROMEO:
+Thou makes her silver our pursues you.
+If let the court-cond now here heavens!
+He is in many hours match your way,
+Have I not did trunk; my father we will not imagined to the head and your
+
+SICINIUS:
+It is for his fill my head,
+Why, in the light of winter's me thou,
+As to bed, and he that fro
+```
+
+**noisy_mirror (sig03)** (test 1.571)
+
+```
+ROMEO:
+Thou must know so? I would never brood I to thee,
+Is a witness wifere hear this being such a holy place,
+As I was well come afrientry and hands
+How the stones i' this head.
+
+PETRUCHIO:
+Why, I cannot a mother plain will make not say,
+If to quickly me interious patricians.
+
+SICINIUS:
+Then so st
+```
+
+**noisy_mirror (sig10-t04)** (test 1.572)
+
+```
+ROMEO:
+Thou must know self Warwick expect, in the strength
+Are you for an our strength being some performed
+though this person. We are forfended have so.
+
+LADY ANNE:
+I'll in his god tench-
+
+BUCKINGHAM:
+I have fearful him will moon not say that our charge this
+A conve thousand to bed, then ask'd the 
+```
+
+**phase_transition (taught-wf0.05)** (test 1.577)
+
+```
+ROMEO:
+Thou makest away:
+We would never brought to thee, I was you for meet? hath think
+And sees to him stinted your ways a whipt in the earldom of thee.
+
+LADY ANNE:
+Richard oft the head and humbly that.
+
+QUEEN ELIZABETH:
+All my honours mark too quench of wings i' the
+poison.
+
+KING RICHARD II:
+Ay, t
+```
+
+**phase_transition (best-s0)** (test 1.577)
+
+```
+ROMEO:
+Thou makes her self it on the hand,
+And gelse than of thy hands are my strength being some shrills
+And of persio.
+
+ROMEO:
+What is true, despite of well stand alive, of the
+Hath scon' so well deny. So IIV:
+Say, hie will make not say, if the light of wine eyes.
+
+JULIET:
+Their be your followed t
+```
+
 **backprop (taught)** (test 1.578)
 
 ```
@@ -13,6 +179,321 @@ Make no hands of well you for me him ove to come. I'll swear
 That I was for fair or will move not say,
 Make me deflecome blush'd to the next pins:
 For her England'
+```
+
+**phase_transition (taught-t4)** (test 1.580)
+
+```
+ROMEO:
+Thou makest himself indeed tears; we did the earth
+of thy hath were my strength being some sir, the people,
+Which we all this difference my father well stand alife
+ine it in the contrary.
+
+FRIAR LAURENCE:
+Shall I be long of not say that our charge things in the
+presence. in both the continue 
+```
+
+**phase_transition (taught-wf05-s2)** (test 1.580)
+
+```
+ROMEO:
+Thou must know so? for I am exampled;
+For let the common give thee re hath the seemedy:
+These dearly thoughts we permaccession thee, not more thou wert stoop.
+
+SLY:
+Menenius breach not up the strumpet male.
+
+KING EDWARD IV:
+I take friar of love to this suit:
+A sent, my point of the queen year
+```
+
+**phase_transition (taught-warmup15)** (test 1.580)
+
+```
+ROMEO:
+Thou must know the fire, and good quid I the eage
+For thy hourth here hath not seen to seek his father's glory.
+
+MERCUTIO:
+O, what a need have so even so much is a indeed
+By cheer and his fault from a mother plaint.
+
+HASTINGS:
+O, then?
+
+HENRY BOLINGBROKE:
+Then spoken shall be the more to the 
+```
+
+**gradient_centralized_mirror (t04)** (test 1.584)
+
+```
+ROMEO:
+Thou makest him not made thee hand,
+And gelserved how to given your majesty.
+
+JULIET:
+If good dearld thou lords above her: if
+AUf true:
+Thou shall we would for made of the wind will be sweet
+That I was for fair into them,--
+not say to thou livestom with the me stream sea,
+Some than a thousand
+```
+
+**stratified_mirror (t03)** (test 1.585)
+
+```
+ROMEO:
+Thou must know the fied, ander, for infaltles, great Derby Gremioner? hath holds
+And seem to him; that's your way, and come affright not me,
+That has wounded a man in his gold to him, he
+That she. So I were approach of my hence should seemels flesh.
+And then the things to bed, then to maint t
+```
+
+**phase_transition (taught-wf05-s0)** (test 1.587)
+
+```
+ROMEO:
+Thy father had self aloude tears that will strength
+As well for me rectite to be the consulself.
+
+KING RICHARD III:
+Yet other did brone-day, thy depend stone alive,
+Were to do the bris great dear. So I fear,
+That this imposent shall do come do be my delizament,
+And, my point-t the heart story
+```
+
+**phase_transition (best-s1)** (test 1.587)
+
+```
+ROMEO:
+Thou must know the first a meaning, and golse, great are gone.
+
+HASTINGS:
+And bleedelies good for that.
+I pray you, my countay that, none of thy devil, stand all this he
+disdains of the world cle. So too! what his
+milk moon, he say, if thou do be mew'd
+'Tis left thing.
+
+KING EDWARD IV:
+So fro
+```
+
+**phase_transition (taught)** (test 1.588)
+
+```
+ROMEO:
+Thou makes her self meddition hath a disgule them home.
+
+POLIXENES:
+My lord, you chell!
+
+HENRY BOLINGBROKE:
+While we all this raiser 'go must the elements of a man, being the hear i' the morning.
+Show my prayers and look on nor say 'dose.
+
+LORD WILLOUGHBY:
+The head, my lord,' that we thou fea
+```
+
+**phase_transition (taught-wf0.2)** (test 1.590)
+
+```
+ROMEO:
+Thou must know the first to early was from strengthood of his
+to here hath the secret of a pitiful watch your
+wasper ancesty;
+And true news for our purse of dail and endurghant,
+So 'tis well-den.
+Seven, to fled it fill my ennorant,
+Might deliver of wintering eyes to my point
+Spartors that fro
+```
+
+**phase_transition (taught-wf0.25)** (test 1.590)
+
+```
+ROMEO:
+Thou must know the fied cur early words gels from home.
+
+POLIXENES:
+My lord.
+
+KING RICHARD II:
+What attory or warporath.
+
+COMINIUS:
+We are the soor that to fire's diseason.
+
+SICINIUS:
+Come,
+I cannot any to fair in my poor honour,
+Nor I come to being in this me that neighbour'd you;
+The good a
+```
+
+**stratified_mirror (t04)** (test 1.591)
+
+```
+ROMEO:
+Thou make the presenced cannerable,
+And gelse than of thy hands and may should seemels!
+These deadly thought away we allosen:
+But true,
+The first the worth for me him oft to be scorn soul
+Where have a mother plaint.
+
+HASTINGS:
+I am that our duty of wintering to the next.
+
+ROMEO:
+The stroke st
+```
+
+**phase_transition (taught-wf05-s1)** (test 1.591)
+
+```
+ROMEO:
+Thou must know sole it of my good queen,
+Aleve no courtesy dined here hath not seeized Bohemia
+With a softler with him.
+As is disobeded-pliness of well stood a man, of the
+wicked on the world and Servingman:
+Thanks, look on not say 'down I'ld flat this reign.
+
+JULIET:
+It is bone; one that fea
+```
+
+**noisy_mirror (lr08-t04)** (test 1.593)
+
+```
+ROMEO:
+Thord have here not made a mean's ward I to the Menenius,
+Or now here he hath been blood one him; that
+While I am we are send the earldom of thy depend years.
+
+SLY:
+Mercutio.
+
+DUCHESS OF YORK:
+Why, what to fair is milking-honours,
+Tell come much of wine eyes to the nest.
+
+DUCHESS OF YORK:
+Wha
+```
+
+**phase_transition (taught-lr15)** (test 1.594)
+
+```
+ROMEO:
+Thou makes her self made a measure,
+And gels her eye upon his time
+To hear this being some other stinted your
+wakes, and send the earth-day finger well stone.
+
+Shepheerd:
+Had the Lady Clifford Buckingham, after is mine.
+Woe, he should spoke him to this death.
+
+JULIET:
+Thou shalt to the good t
+```
+
+**phase_transition (taught-warmup)** (test 1.595)
+
+```
+ROMEO:
+Thou must know the first and good counsel
+The true of thy heart;
+The charge of such lies and his son thought in the
+JULIET:
+Where is none faults, the worth of it will be
+thy cheek and much apt me. So I fear, it is.
+
+JULIET:
+I have fellow, sir; but I am reign to the neighbour
+So the queen your
+```
+
+**gradient_lottery** (test 1.597)
+
+```
+ROMEO:
+Thou makest awas liest of your anciends gelsed yourself,
+I did were my son of golden soul.
+
+BRUTUS:
+Well, let it be many this day true next forth.
+
+LADY ANNE:
+I'll in his good to him sound,
+I carry way thou, pitiest or more, he say,
+I see the flesh wind the measure,
+As think to the queen to t
+```
+
+**phase_contrastive** (test 1.598)
+
+```
+ROMEO:
+Thou makes her selfsame an eest of all I to tell you awhile: now here hath too slept in sad.
+
+PRINCE EDWARD:
+With we are senate forfend; my father weeps
+And dri's his head.
+
+Provost:
+Be with this. Sweet loxg plain, if I possess
+The fight of my leighting bird to the next.
+
+DUKE OF YORK:
+
+HASTI
+```
+
+**contrastive_credit** (test 1.603)
+
+```
+ROMEO:
+Thou makes her self indeed negalty,
+And gelst than of her hearts
+The changelo.
+
+GREEN:
+Beg on thy lips; I pray you,
+Your senate forrow a mistress of parlet for my life,
+Which he continue.
+
+FRIAR LAURENCE:
+Saint in my poor brother, fellow,
+His flesh with the me that never in be strong'd for my
+```
+
+**phase_transition (taught-sqrt)** (test 1.605)
+
+```
+ROMEO:
+Thou makes her silt is him nearest,
+And gelse, great Desire the bear our joys.
+
+BENVOLIO:
+There is not of the way we all:
+With thee, no; my father we will do aim a is hither.
+
+ROMEO:
+By which have heard of faith a fierce of nothing,
+And over-gentlemen,
+' dog to the next of such a man that fra
 ```
 
 **taught_mirror** (test 1.609)
@@ -32,6 +513,83 @@ Say this will be hence in fears of lovely mend me in me.
 
 GREGORY:
 So, Sir Lord England 
+```
+
+**phase_sam** (test 1.610)
+
+```
+ROMEO:
+Therefore knew self it one of hand,
+And gelse than of thy heart and may the poose
+Hels! Therefore that's your way were comes;
+And true nemit thee the world of thine own than the contrarizen:
+Renown of my prayers and look of not say,
+And our dear of wintering to the next.
+
+SICINIUS:
+Then story
+```
+
+**noisy_mirror_plus (t03)** (test 1.612)
+
+```
+ROMEO:
+Thou must know self it one means!
+
+DUCHESS OF YORK:
+Ay, you shall be chast to be chellood.
+
+LEONTES:
+Who your wakes many sends that we never stroke purposed
+Which I seek to do the brash with the man: I were,
+Thanks it is of not say 'Conce the flat thing bit
+That thou shakins to the fount of t
+```
+
+**backprop (taught-tuned-s0)** (test 1.616)
+
+```
+ROMEO:
+Thou mhast hear the daughteress of a dreamleness
+Thou would flay here he hath been slain and him
+We attorney awake,
+Your senate; and none of thy death, stoned in him.
+Though the contrarized
+Than you and end.
+
+First Servingman:
+What, is the legs both in this me spoken,
+Their be themselves to t
+```
+
+**drift_diffusion (taught)** (test 1.621)
+
+```
+ROMEO:
+Thou makest his nature Henryes,
+And thrown strength friends for a vil hath not speak.
+But I had not possess'd with daughter'd with a namempt
+That every stone and which to the people's news,
+I cannot spoke their head of mine nor say,
+And for my brother our mine hence, sir, but not
+Marcius to t
+```
+
+**tempest** (test 1.626)
+
+```
+ROMEO:
+Thou must know selter our foes,
+And in the strengthouse you for meet charge.
+
+LUCENTIO:
+These is some some or way we and this eyes:
+And thou stand well you for me him here.
+
+POMPEY:
+The writus no. So I fearful his filk moon, he should
+too quit being in this me spoken sit in both;
+Marcius to t
 ```
 
 **mirror_neurons** (test 1.638)
@@ -68,6 +626,21 @@ JULIET:
 Thou shalt to thy confes
 ```
 
+**phase_transition** (test 1.649)
+
+```
+ROMEO:
+Thou must know so? follow meet and aid I to tell
+Thou why hast were my strength being so.
+To help the songue awake a white of day,
+A next hath soot enduction a man,
+And that been his soul thus near fall of fair,
+And let to see as your scope.
+
+GLOUCESTER:
+My lord of his points, you have good t
+```
+
 **sam** (test 1.652)
 
 ```
@@ -100,6 +673,43 @@ They speed and grown be them.
 
 EDWARD:
 
+```
+
+**backprop (taught-s0)** (test 1.676)
+
+```
+ROMEO:
+Thou hast a swift?
+
+WARWICK:
+Thanks, disguiserance, our conditted and his head, and
+lies and his stands, your ways day.
+As if I had, none of thy devise stone.
+
+Shepherd:
+Let's the bristle thrust many one princely
+They have not stay till our cheers were a bride.
+
+ESCALUS:
+So, to the quam storm
+```
+
+**ouroboros (swa)** (test 1.697)
+
+```
+ROMEO:
+That make they selt it out of hand,
+And gelst the come of his the ene hath the seemeling
+Here is stands, yet him been hers is did trunk; my father well.
+
+RIVERS:
+Heiils,
+And be sconces up the crouS oath.
+3 KING HENRY VI
+
+VINCENRY VI:
+Then quence of with the me stop,
+As think thy world master 
 ```
 
 **local_losses** (test 1.743)

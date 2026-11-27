@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-warmup15",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.15,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5804211163520814,
+ "best_val": 1.4420256948471069,
+ "best_at_s": 150.1,
+ "best_step": 9073,
+ "init_val": 4.216201114654541,
+ "steps": 17946,
+ "forwards": 17946,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 662,
+   "forwards": 662,
+   "val": 2.0190380096435545
+  },
+  {
+   "t": 20.01,
+   "step": 1325,
+   "forwards": 1325,
+   "val": 1.7455798268318177
+  },
+  {
+   "t": 30.02,
+   "step": 1932,
+   "forwards": 1932,
+   "val": 1.6102945327758789
+  },
+  {
+   "t": 40.03,
+   "step": 2527,
+   "forwards": 2527,
+   "val": 1.562766969203949
+  },
+  {
+   "t": 50.04,
+   "step": 3122,
+   "forwards": 3122,
+   "val": 1.5117584943771363
+  },
+  {
+   "t": 60.04,
+   "step": 3717,
+   "forwards": 3717,
+   "val": 1.4947962760925293
+  },
+  {
+   "t": 70.05,
+   "step": 4312,
+   "forwards": 4312,
+   "val": 1.4880035758018493
+  },
+  {
+   "t": 80.06,
+   "step": 4908,
+   "forwards": 4908,
+   "val": 1.4756402730941773
+  },
+  {
+   "t": 90.07,
+   "step": 5503,
+   "forwards": 5503,
+   "val": 1.4608860969543458
+  },
+  {
+   "t": 100.07,
+   "step": 6098,
+   "forwards": 6098,
+   "val": 1.4594826102256775
+  },
+  {
+   "t": 110.08,
+   "step": 6693,
+   "forwards": 6693,
+   "val": 1.4481574177742005
+  },
+  {
+   "t": 120.09,
+   "step": 7288,
+   "forwards": 7288,
+   "val": 1.45559219121933
+  },
+  {
+   "t": 130.09,
+   "step": 7883,
+   "forwards": 7883,
+   "val": 1.4495356321334838
+  },
+  {
+   "t": 140.1,
+   "step": 8478,
+   "forwards": 8478,
+   "val": 1.44901762008667
+  },
+  {
+   "t": 150.1,
+   "step": 9073,
+   "forwards": 9073,
+   "val": 1.442300832271576
+  },
+  {
+   "t": 160.12,
+   "step": 9668,
+   "forwards": 9668,
+   "val": 1.4552933692932128
+  },
+  {
+   "t": 170.13,
+   "step": 10263,
+   "forwards": 10263,
+   "val": 1.4472232222557069
+  },
+  {
+   "t": 180.14,
+   "step": 10819,
+   "forwards": 10819,
+   "val": 1.4537798881530761
+  },
+  {
+   "t": 190.14,
+   "step": 11414,
+   "forwards": 11414,
+   "val": 1.4517377614974976
+  },
+  {
+   "t": 200.15,
+   "step": 12009,
+   "forwards": 12009,
+   "val": 1.4549327135086059
+  },
+  {
+   "t": 210.15,
+   "step": 12604,
+   "forwards": 12604,
+   "val": 1.4564509749412538
+  },
+  {
+   "t": 220.17,
+   "step": 13199,
+   "forwards": 13199,
+   "val": 1.4571706771850585
+  },
+  {
+   "t": 230.17,
+   "step": 13793,
+   "forwards": 13793,
+   "val": 1.4588183999061584
+  },
+  {
+   "t": 240.17,
+   "step": 14388,
+   "forwards": 14388,
+   "val": 1.4675979733467102
+  },
+  {
+   "t": 250.17,
+   "step": 14983,
+   "forwards": 14983,
+   "val": 1.4676353931427002
+  },
+  {
+   "t": 260.18,
+   "step": 15578,
+   "forwards": 15578,
+   "val": 1.4794182181358337
+  },
+  {
+   "t": 270.19,
+   "step": 16173,
+   "forwards": 16173,
+   "val": 1.477434468269348
+  },
+  {
+   "t": 280.2,
+   "step": 16768,
+   "forwards": 16768,
+   "val": 1.483005440235138
+  },
+  {
+   "t": 290.21,
+   "step": 17363,
+   "forwards": 17363,
+   "val": 1.4794636011123656
+  },
+  {
+   "t": 300.01,
+   "step": 17946,
+   "forwards": 17946,
+   "val": 1.4805769324302673
+  }
+ ],
+ "sample": "ROMEO:\nThou must know the fire, and good quid I the eage\nFor thy hourth here hath not seen to seek his father's glory.\n\nMERCUTIO:\nO, what a need have so even so much is a indeed\nBy cheer and his fault from a mother plaint.\n\nHASTINGS:\nO, then?\n\nHENRY BOLINGBROKE:\nThen spoken shall be the more to the fear\nTh"
+}

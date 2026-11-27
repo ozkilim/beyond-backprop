@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-wf05-s1",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.591466326713562,
+ "best_val": 1.4415053081512452,
+ "best_at_s": 140.14,
+ "best_step": 8480,
+ "init_val": 4.177147626876831,
+ "steps": 17992,
+ "forwards": 17992,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 1,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.177147626876831
+  },
+  {
+   "t": 10.01,
+   "step": 661,
+   "forwards": 661,
+   "val": 1.9806284070014955
+  },
+  {
+   "t": 20.02,
+   "step": 1322,
+   "forwards": 1322,
+   "val": 1.7150842666625976
+  },
+  {
+   "t": 30.03,
+   "step": 1929,
+   "forwards": 1929,
+   "val": 1.5766337037086486
+  },
+  {
+   "t": 40.03,
+   "step": 2524,
+   "forwards": 2524,
+   "val": 1.5376489639282227
+  },
+  {
+   "t": 50.05,
+   "step": 3120,
+   "forwards": 3120,
+   "val": 1.5123419642448426
+  },
+  {
+   "t": 60.06,
+   "step": 3716,
+   "forwards": 3716,
+   "val": 1.4964433312416077
+  },
+  {
+   "t": 70.08,
+   "step": 4312,
+   "forwards": 4312,
+   "val": 1.4784465193748475
+  },
+  {
+   "t": 80.09,
+   "step": 4908,
+   "forwards": 4908,
+   "val": 1.466099739074707
+  },
+  {
+   "t": 90.1,
+   "step": 5504,
+   "forwards": 5504,
+   "val": 1.452375555038452
+  },
+  {
+   "t": 100.11,
+   "step": 6099,
+   "forwards": 6099,
+   "val": 1.4644437074661254
+  },
+  {
+   "t": 110.12,
+   "step": 6694,
+   "forwards": 6694,
+   "val": 1.4613406777381897
+  },
+  {
+   "t": 120.14,
+   "step": 7290,
+   "forwards": 7290,
+   "val": 1.4525842666625977
+  },
+  {
+   "t": 130.14,
+   "step": 7885,
+   "forwards": 7885,
+   "val": 1.446728265285492
+  },
+  {
+   "t": 140.14,
+   "step": 8480,
+   "forwards": 8480,
+   "val": 1.4446888089179992
+  },
+  {
+   "t": 150.15,
+   "step": 9076,
+   "forwards": 9076,
+   "val": 1.4551981329917907
+  },
+  {
+   "t": 160.16,
+   "step": 9671,
+   "forwards": 9671,
+   "val": 1.4469639897346496
+  },
+  {
+   "t": 170.16,
+   "step": 10266,
+   "forwards": 10266,
+   "val": 1.4581609606742858
+  },
+  {
+   "t": 180.18,
+   "step": 10862,
+   "forwards": 10862,
+   "val": 1.4500640869140624
+  },
+  {
+   "t": 190.2,
+   "step": 11458,
+   "forwards": 11458,
+   "val": 1.459284484386444
+  },
+  {
+   "t": 200.2,
+   "step": 12053,
+   "forwards": 12053,
+   "val": 1.4598319292068482
+  },
+  {
+   "t": 210.21,
+   "step": 12649,
+   "forwards": 12649,
+   "val": 1.458846926689148
+  },
+  {
+   "t": 220.21,
+   "step": 13244,
+   "forwards": 13244,
+   "val": 1.4672553896903993
+  },
+  {
+   "t": 230.22,
+   "step": 13840,
+   "forwards": 13840,
+   "val": 1.468477487564087
+  },
+  {
+   "t": 240.23,
+   "step": 14436,
+   "forwards": 14436,
+   "val": 1.475665533542633
+  },
+  {
+   "t": 250.24,
+   "step": 15032,
+   "forwards": 15032,
+   "val": 1.4675686597824096
+  },
+  {
+   "t": 260.25,
+   "step": 15628,
+   "forwards": 15628,
+   "val": 1.4785347938537599
+  },
+  {
+   "t": 270.26,
+   "step": 16223,
+   "forwards": 16223,
+   "val": 1.4831865072250365
+  },
+  {
+   "t": 280.26,
+   "step": 16817,
+   "forwards": 16817,
+   "val": 1.481235921382904
+  },
+  {
+   "t": 290.28,
+   "step": 17413,
+   "forwards": 17413,
+   "val": 1.483389186859131
+  },
+  {
+   "t": 300.01,
+   "step": 17992,
+   "forwards": 17992,
+   "val": 1.4853910326957702
+  }
+ ],
+ "sample": "ROMEO:\nThou must know sole it of my good queen,\nAleve no courtesy dined here hath not seeized Bohemia\nWith a softler with him.\nAs is disobeded-pliness of well stood a man, of the\nwicked on the world and Servingman:\nThanks, look on not say 'down I'ld flat this reign.\n\nJULIET:\nIt is bone; one that fear mysel"
+}

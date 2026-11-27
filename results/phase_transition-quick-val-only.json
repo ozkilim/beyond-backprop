@@ -1,0 +1,87 @@
+{
+ "rule": "phase_transition",
+ "tag": "quick",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.0,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.0,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 1.5134947466850281,
+ "best_at_s": 60.01,
+ "best_step": 4090,
+ "init_val": 4.216201114654541,
+ "steps": 4090,
+ "forwards": 4090,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 675,
+   "forwards": 675,
+   "val": 2.005032181739807
+  },
+  {
+   "t": 20.01,
+   "step": 1365,
+   "forwards": 1365,
+   "val": 1.726451325416565
+  },
+  {
+   "t": 30.03,
+   "step": 2040,
+   "forwards": 2040,
+   "val": 1.6254167914390565
+  },
+  {
+   "t": 40.03,
+   "step": 2722,
+   "forwards": 2722,
+   "val": 1.5636675953865051
+  },
+  {
+   "t": 50.04,
+   "step": 3404,
+   "forwards": 3404,
+   "val": 1.523297381401062
+  },
+  {
+   "t": 60.01,
+   "step": 4090,
+   "forwards": 4090,
+   "val": 1.5103660106658936
+  }
+ ],
+ "sample": "ROMEO:\nThere have had sell deadly me as yours.\n\nAll:\nBear of thy house;\nThe child thing is like a perceise.\n\nCOMINIUS:\nWhy, I could;\nAnd take never the other of the right,\nWere that he contract.\n\nFRIAR LAURENCE:\nShepherds it is,--\n\nCORIOLANUS:\nThe duke of with the medam, and given\nFor thou strain stopp'd a"
+}

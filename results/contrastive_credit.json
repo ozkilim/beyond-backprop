@@ -1,0 +1,230 @@
+{
+ "rule": "contrastive_credit",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Two batches, keep only gradient components where both agree in sign: a multiplicative filter that zeroes out batch-specific (non-generalising) credit signals.",
+ "paper": "Novel: contrastive gradient filtering for implicit regularisation.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "agreement_boost": 1.5,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.6033629012107848,
+ "best_val": 1.4501821088790894,
+ "best_at_s": 160.14,
+ "best_step": 9394,
+ "init_val": 4.216201114654541,
+ "steps": 17474,
+ "forwards": 17474,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 637,
+   "forwards": 637,
+   "val": 2.081623673439026
+  },
+  {
+   "t": 20.02,
+   "step": 1281,
+   "forwards": 1281,
+   "val": 1.7864959955215454
+  },
+  {
+   "t": 30.02,
+   "step": 1875,
+   "forwards": 1875,
+   "val": 1.6541792631149292
+  },
+  {
+   "t": 40.02,
+   "step": 2453,
+   "forwards": 2453,
+   "val": 1.5713871955871581
+  },
+  {
+   "t": 50.02,
+   "step": 3031,
+   "forwards": 3031,
+   "val": 1.5238702535629272
+  },
+  {
+   "t": 60.04,
+   "step": 3610,
+   "forwards": 3610,
+   "val": 1.5090872764587402
+  },
+  {
+   "t": 70.04,
+   "step": 4188,
+   "forwards": 4188,
+   "val": 1.4866296291351317
+  },
+  {
+   "t": 80.06,
+   "step": 4767,
+   "forwards": 4767,
+   "val": 1.4739810705184937
+  },
+  {
+   "t": 90.07,
+   "step": 5346,
+   "forwards": 5346,
+   "val": 1.4754608750343323
+  },
+  {
+   "t": 100.09,
+   "step": 5925,
+   "forwards": 5925,
+   "val": 1.4549964666366577
+  },
+  {
+   "t": 110.1,
+   "step": 6503,
+   "forwards": 6503,
+   "val": 1.4585561633110047
+  },
+  {
+   "t": 120.11,
+   "step": 7081,
+   "forwards": 7081,
+   "val": 1.4567142009735108
+  },
+  {
+   "t": 130.11,
+   "step": 7659,
+   "forwards": 7659,
+   "val": 1.4562282323837281
+  },
+  {
+   "t": 140.12,
+   "step": 8238,
+   "forwards": 8238,
+   "val": 1.4539923429489137
+  },
+  {
+   "t": 150.13,
+   "step": 8816,
+   "forwards": 8816,
+   "val": 1.453244423866272
+  },
+  {
+   "t": 160.14,
+   "step": 9394,
+   "forwards": 9394,
+   "val": 1.447814702987671
+  },
+  {
+   "t": 170.15,
+   "step": 9972,
+   "forwards": 9972,
+   "val": 1.4568006157875062
+  },
+  {
+   "t": 180.16,
+   "step": 10551,
+   "forwards": 10551,
+   "val": 1.4535511970520019
+  },
+  {
+   "t": 190.17,
+   "step": 11129,
+   "forwards": 11129,
+   "val": 1.4588703036308288
+  },
+  {
+   "t": 200.17,
+   "step": 11707,
+   "forwards": 11707,
+   "val": 1.464035451412201
+  },
+  {
+   "t": 210.18,
+   "step": 12285,
+   "forwards": 12285,
+   "val": 1.4618956565856933
+  },
+  {
+   "t": 220.19,
+   "step": 12863,
+   "forwards": 12863,
+   "val": 1.4609121084213257
+  },
+  {
+   "t": 230.2,
+   "step": 13441,
+   "forwards": 13441,
+   "val": 1.4693204522132874
+  },
+  {
+   "t": 240.21,
+   "step": 14020,
+   "forwards": 14020,
+   "val": 1.468301010131836
+  },
+  {
+   "t": 250.22,
+   "step": 14598,
+   "forwards": 14598,
+   "val": 1.465584433078766
+  },
+  {
+   "t": 260.22,
+   "step": 15176,
+   "forwards": 15176,
+   "val": 1.4734285593032836
+  },
+  {
+   "t": 270.23,
+   "step": 15754,
+   "forwards": 15754,
+   "val": 1.47413010597229
+  },
+  {
+   "t": 280.24,
+   "step": 16332,
+   "forwards": 16332,
+   "val": 1.4842515230178832
+  },
+  {
+   "t": 290.24,
+   "step": 16910,
+   "forwards": 16910,
+   "val": 1.484257423877716
+  },
+  {
+   "t": 300.0,
+   "step": 17474,
+   "forwards": 17474,
+   "val": 1.4828505516052246
+  }
+ ],
+ "sample": "ROMEO:\nThou makes her self indeed negalty,\nAnd gelst than of her hearts\nThe changelo.\n\nGREEN:\nBeg on thy lips; I pray you,\nYour senate forrow a mistress of parlet for my life,\nWhich he continue.\n\nFRIAR LAURENCE:\nSaint in my poor brother, fellow,\nHis flesh with the me that never in be strong'd for my parts\n"
+}

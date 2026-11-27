@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-wf0.05",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5768309330940247,
+ "best_val": 1.4364666318893433,
+ "best_at_s": 190.23,
+ "best_step": 7999,
+ "init_val": 4.216201114654541,
+ "steps": 12260,
+ "forwards": 12260,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 663,
+   "forwards": 663,
+   "val": 2.0204809665679933
+  },
+  {
+   "t": 20.01,
+   "step": 1320,
+   "forwards": 1320,
+   "val": 1.7533583998680116
+  },
+  {
+   "t": 30.02,
+   "step": 1711,
+   "forwards": 1711,
+   "val": 1.6287066698074342
+  },
+  {
+   "t": 40.03,
+   "step": 2081,
+   "forwards": 2081,
+   "val": 1.5877341151237487
+  },
+  {
+   "t": 50.05,
+   "step": 2453,
+   "forwards": 2453,
+   "val": 1.5617368578910829
+  },
+  {
+   "t": 60.06,
+   "step": 2796,
+   "forwards": 2796,
+   "val": 1.5348803400993347
+  },
+  {
+   "t": 70.09,
+   "step": 3168,
+   "forwards": 3168,
+   "val": 1.5147152304649354
+  },
+  {
+   "t": 80.1,
+   "step": 3575,
+   "forwards": 3575,
+   "val": 1.4994354367256164
+  },
+  {
+   "t": 90.11,
+   "step": 4166,
+   "forwards": 4166,
+   "val": 1.4854347467422486
+  },
+  {
+   "t": 100.13,
+   "step": 4582,
+   "forwards": 4582,
+   "val": 1.4754693865776063
+  },
+  {
+   "t": 110.16,
+   "step": 4955,
+   "forwards": 4955,
+   "val": 1.4775110006332397
+  },
+  {
+   "t": 120.16,
+   "step": 5327,
+   "forwards": 5327,
+   "val": 1.4674150466918945
+  },
+  {
+   "t": 130.17,
+   "step": 5700,
+   "forwards": 5700,
+   "val": 1.4707311153411866
+  },
+  {
+   "t": 140.18,
+   "step": 6072,
+   "forwards": 6072,
+   "val": 1.460645568370819
+  },
+  {
+   "t": 150.18,
+   "step": 6445,
+   "forwards": 6445,
+   "val": 1.4514274835586547
+  },
+  {
+   "t": 160.19,
+   "step": 6832,
+   "forwards": 6832,
+   "val": 1.457203483581543
+  },
+  {
+   "t": 170.19,
+   "step": 7220,
+   "forwards": 7220,
+   "val": 1.4390925526618958
+  },
+  {
+   "t": 180.2,
+   "step": 7609,
+   "forwards": 7609,
+   "val": 1.4485849499702455
+  },
+  {
+   "t": 190.23,
+   "step": 7999,
+   "forwards": 7999,
+   "val": 1.4362944126129151
+  },
+  {
+   "t": 200.25,
+   "step": 8389,
+   "forwards": 8389,
+   "val": 1.4452686548233031
+  },
+  {
+   "t": 210.26,
+   "step": 8778,
+   "forwards": 8778,
+   "val": 1.4426794409751893
+  },
+  {
+   "t": 220.26,
+   "step": 9162,
+   "forwards": 9162,
+   "val": 1.4517771124839782
+  },
+  {
+   "t": 230.26,
+   "step": 9549,
+   "forwards": 9549,
+   "val": 1.4472941875457763
+  },
+  {
+   "t": 240.29,
+   "step": 9938,
+   "forwards": 9938,
+   "val": 1.4500856041908263
+  },
+  {
+   "t": 250.31,
+   "step": 10327,
+   "forwards": 10327,
+   "val": 1.4503782510757446
+  },
+  {
+   "t": 260.33,
+   "step": 10716,
+   "forwards": 10716,
+   "val": 1.4517211198806763
+  },
+  {
+   "t": 270.33,
+   "step": 11105,
+   "forwards": 11105,
+   "val": 1.4450520396232605
+  },
+  {
+   "t": 280.35,
+   "step": 11495,
+   "forwards": 11495,
+   "val": 1.4452664852142334
+  },
+  {
+   "t": 290.36,
+   "step": 11884,
+   "forwards": 11884,
+   "val": 1.4493956089019775
+  },
+  {
+   "t": 300.02,
+   "step": 12260,
+   "forwards": 12260,
+   "val": 1.4582846760749817
+  }
+ ],
+ "sample": "ROMEO:\nThou makest away:\nWe would never brought to thee, I was you for meet? hath think\nAnd sees to him stinted your ways a whipt in the earldom of thee.\n\nLADY ANNE:\nRichard oft the head and humbly that.\n\nQUEEN ELIZABETH:\nAll my honours mark too quench of wings i' the\npoison.\n\nKING RICHARD II:\nAy, then mad"
+}

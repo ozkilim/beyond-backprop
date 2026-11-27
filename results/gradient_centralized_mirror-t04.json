@@ -1,0 +1,230 @@
+{
+ "rule": "gradient_centralized_mirror",
+ "tag": "t04",
+ "autograd": "modified",
+ "blurb": "Mirror neurons + gradient centralization: zero-mean gradient rows as implicit regularization.",
+ "paper": "Novel combination: Kolen-Pollack mirror + Yong 2020 GC + counting teacher.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "gc_strength": 1.0,
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.583595118522644,
+ "best_val": 1.45116881608963,
+ "best_at_s": 290.64,
+ "best_step": 6481,
+ "init_val": 4.216201114654541,
+ "steps": 6650,
+ "forwards": 6650,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 203,
+   "forwards": 203,
+   "val": 2.518681287765503
+  },
+  {
+   "t": 20.03,
+   "step": 406,
+   "forwards": 406,
+   "val": 2.2530804872512817
+  },
+  {
+   "t": 30.04,
+   "step": 668,
+   "forwards": 668,
+   "val": 2.049981784820557
+  },
+  {
+   "t": 40.05,
+   "step": 959,
+   "forwards": 959,
+   "val": 1.8844916343688964
+  },
+  {
+   "t": 50.07,
+   "step": 1229,
+   "forwards": 1229,
+   "val": 1.78224356174469
+  },
+  {
+   "t": 60.22,
+   "step": 1500,
+   "forwards": 1500,
+   "val": 1.7002355098724364
+  },
+  {
+   "t": 70.27,
+   "step": 1744,
+   "forwards": 1744,
+   "val": 1.6332152128219604
+  },
+  {
+   "t": 80.28,
+   "step": 1988,
+   "forwards": 1988,
+   "val": 1.597398281097412
+  },
+  {
+   "t": 90.3,
+   "step": 2228,
+   "forwards": 2228,
+   "val": 1.5817942857742309
+  },
+  {
+   "t": 100.33,
+   "step": 2470,
+   "forwards": 2470,
+   "val": 1.5540115475654601
+  },
+  {
+   "t": 110.35,
+   "step": 2713,
+   "forwards": 2713,
+   "val": 1.5448433995246886
+  },
+  {
+   "t": 120.36,
+   "step": 2954,
+   "forwards": 2954,
+   "val": 1.53417911529541
+  },
+  {
+   "t": 130.39,
+   "step": 3194,
+   "forwards": 3194,
+   "val": 1.520198655128479
+  },
+  {
+   "t": 140.41,
+   "step": 3436,
+   "forwards": 3436,
+   "val": 1.5187342286109924
+  },
+  {
+   "t": 150.44,
+   "step": 3678,
+   "forwards": 3678,
+   "val": 1.4926395416259766
+  },
+  {
+   "t": 160.44,
+   "step": 3922,
+   "forwards": 3922,
+   "val": 1.5026087403297423
+  },
+  {
+   "t": 170.44,
+   "step": 4162,
+   "forwards": 4162,
+   "val": 1.489054834842682
+  },
+  {
+   "t": 180.46,
+   "step": 4417,
+   "forwards": 4417,
+   "val": 1.482834231853485
+  },
+  {
+   "t": 190.47,
+   "step": 4653,
+   "forwards": 4653,
+   "val": 1.4879713892936706
+  },
+  {
+   "t": 200.49,
+   "step": 4858,
+   "forwards": 4858,
+   "val": 1.4760359406471253
+  },
+  {
+   "t": 210.52,
+   "step": 5035,
+   "forwards": 5035,
+   "val": 1.4694384455680847
+  },
+  {
+   "t": 220.53,
+   "step": 5212,
+   "forwards": 5212,
+   "val": 1.4740853428840637
+  },
+  {
+   "t": 230.54,
+   "step": 5388,
+   "forwards": 5388,
+   "val": 1.4701523303985595
+  },
+  {
+   "t": 240.58,
+   "step": 5566,
+   "forwards": 5566,
+   "val": 1.469711720943451
+  },
+  {
+   "t": 250.59,
+   "step": 5744,
+   "forwards": 5744,
+   "val": 1.4715385675430297
+  },
+  {
+   "t": 260.6,
+   "step": 5941,
+   "forwards": 5941,
+   "val": 1.4614463210105897
+  },
+  {
+   "t": 270.62,
+   "step": 6120,
+   "forwards": 6120,
+   "val": 1.461652934551239
+  },
+  {
+   "t": 280.62,
+   "step": 6301,
+   "forwards": 6301,
+   "val": 1.4549063324928284
+  },
+  {
+   "t": 290.64,
+   "step": 6481,
+   "forwards": 6481,
+   "val": 1.450569474697113
+  },
+  {
+   "t": 300.02,
+   "step": 6650,
+   "forwards": 6650,
+   "val": 1.4559234380722046
+  }
+ ],
+ "sample": "ROMEO:\nThou makest him not made thee hand,\nAnd gelserved how to given your majesty.\n\nJULIET:\nIf good dearld thou lords above her: if\nAUf true:\nThou shall we would for made of the wind will be sweet\nThat I was for fair into them,--\nnot say to thou livestom with the me stream sea,\nSome than a thousand plague"
+}

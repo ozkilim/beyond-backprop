@@ -1,0 +1,230 @@
+{
+ "rule": "noisy_mirror",
+ "tag": "lr08-t04",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with decaying Gaussian noise: explores around the true gradient early, converges to exact credit assignment late.",
+ "paper": "Novel: temperature-scheduled noise on mirror backward weights.",
+ "hp": {
+  "lr": 0.0008,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "noise_schedule": "linear",
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.592825698852539,
+ "best_val": 1.43799218416214,
+ "best_at_s": 260.31,
+ "best_step": 10044,
+ "init_val": 4.216201114654541,
+ "steps": 11804,
+ "forwards": 11804,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 414,
+   "forwards": 414,
+   "val": 2.238141345977783
+  },
+  {
+   "t": 20.02,
+   "step": 829,
+   "forwards": 829,
+   "val": 1.9678520917892457
+  },
+  {
+   "t": 30.04,
+   "step": 1247,
+   "forwards": 1247,
+   "val": 1.8151487469673158
+  },
+  {
+   "t": 40.04,
+   "step": 1644,
+   "forwards": 1644,
+   "val": 1.6772265911102295
+  },
+  {
+   "t": 50.05,
+   "step": 2024,
+   "forwards": 2024,
+   "val": 1.6197252035140992
+  },
+  {
+   "t": 60.05,
+   "step": 2405,
+   "forwards": 2405,
+   "val": 1.5793184280395507
+  },
+  {
+   "t": 70.07,
+   "step": 2789,
+   "forwards": 2789,
+   "val": 1.555873441696167
+  },
+  {
+   "t": 80.08,
+   "step": 3171,
+   "forwards": 3171,
+   "val": 1.5313393235206605
+  },
+  {
+   "t": 90.08,
+   "step": 3553,
+   "forwards": 3553,
+   "val": 1.5264415860176086
+  },
+  {
+   "t": 100.11,
+   "step": 3934,
+   "forwards": 3934,
+   "val": 1.5099554538726807
+  },
+  {
+   "t": 110.11,
+   "step": 4317,
+   "forwards": 4317,
+   "val": 1.5017502307891846
+  },
+  {
+   "t": 120.12,
+   "step": 4698,
+   "forwards": 4698,
+   "val": 1.4918257117271423
+  },
+  {
+   "t": 130.13,
+   "step": 5078,
+   "forwards": 5078,
+   "val": 1.4751439452171327
+  },
+  {
+   "t": 140.15,
+   "step": 5458,
+   "forwards": 5458,
+   "val": 1.4869328379631042
+  },
+  {
+   "t": 150.16,
+   "step": 5839,
+   "forwards": 5839,
+   "val": 1.4750412106513977
+  },
+  {
+   "t": 160.18,
+   "step": 6221,
+   "forwards": 6221,
+   "val": 1.4698943138122558
+  },
+  {
+   "t": 170.18,
+   "step": 6603,
+   "forwards": 6603,
+   "val": 1.4623339414596557
+  },
+  {
+   "t": 180.2,
+   "step": 6984,
+   "forwards": 6984,
+   "val": 1.4640278816223145
+  },
+  {
+   "t": 190.22,
+   "step": 7366,
+   "forwards": 7366,
+   "val": 1.4518316626548766
+  },
+  {
+   "t": 200.24,
+   "step": 7748,
+   "forwards": 7748,
+   "val": 1.454360032081604
+  },
+  {
+   "t": 210.26,
+   "step": 8130,
+   "forwards": 8130,
+   "val": 1.4576688289642334
+  },
+  {
+   "t": 220.28,
+   "step": 8510,
+   "forwards": 8510,
+   "val": 1.4470293760299682
+  },
+  {
+   "t": 230.28,
+   "step": 8892,
+   "forwards": 8892,
+   "val": 1.4461516737937927
+  },
+  {
+   "t": 240.29,
+   "step": 9275,
+   "forwards": 9275,
+   "val": 1.4457918047904967
+  },
+  {
+   "t": 250.3,
+   "step": 9652,
+   "forwards": 9652,
+   "val": 1.4446025609970092
+  },
+  {
+   "t": 260.31,
+   "step": 10044,
+   "forwards": 10044,
+   "val": 1.4392650604248047
+  },
+  {
+   "t": 270.34,
+   "step": 10419,
+   "forwards": 10419,
+   "val": 1.4438635468482972
+  },
+  {
+   "t": 280.36,
+   "step": 10819,
+   "forwards": 10819,
+   "val": 1.4410914540290833
+  },
+  {
+   "t": 290.36,
+   "step": 11391,
+   "forwards": 11391,
+   "val": 1.4417928218841554
+  },
+  {
+   "t": 300.02,
+   "step": 11804,
+   "forwards": 11804,
+   "val": 1.4419445157051087
+  }
+ ],
+ "sample": "ROMEO:\nThord have here not made a mean's ward I to the Menenius,\nOr now here he hath been blood one him; that\nWhile I am we are send the earldom of thy depend years.\n\nSLY:\nMercutio.\n\nDUCHESS OF YORK:\nWhy, what to fair is milking-honours,\nTell come much of wine eyes to the nest.\n\nDUCHESS OF YORK:\nWhat my ha"
+}

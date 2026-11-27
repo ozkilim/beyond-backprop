@@ -1,0 +1,230 @@
+{
+ "rule": "gradient_lottery",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "At each step, only a random sparse subset of gradient components are applied (amplified to compensate), breaking the coordinated updates that enable memorisation.",
+ "paper": "Novel: lottery-ticket-inspired gradient sparsification.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "keep_frac": 0.3,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5971053266525268,
+ "best_val": 1.4467483901977538,
+ "best_at_s": 300.0,
+ "best_step": 17847,
+ "init_val": 4.216201114654541,
+ "steps": 17847,
+ "forwards": 17847,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 658,
+   "forwards": 658,
+   "val": 2.1337219953536986
+  },
+  {
+   "t": 20.02,
+   "step": 1317,
+   "forwards": 1317,
+   "val": 1.8760350704193116
+  },
+  {
+   "t": 30.04,
+   "step": 1921,
+   "forwards": 1921,
+   "val": 1.7406208515167236
+  },
+  {
+   "t": 40.05,
+   "step": 2512,
+   "forwards": 2512,
+   "val": 1.6681273937225343
+  },
+  {
+   "t": 50.05,
+   "step": 3102,
+   "forwards": 3102,
+   "val": 1.6303202033042907
+  },
+  {
+   "t": 60.05,
+   "step": 3692,
+   "forwards": 3692,
+   "val": 1.5846014976501466
+  },
+  {
+   "t": 70.05,
+   "step": 4283,
+   "forwards": 4283,
+   "val": 1.5609992861747741
+  },
+  {
+   "t": 80.06,
+   "step": 4873,
+   "forwards": 4873,
+   "val": 1.5413400650024414
+  },
+  {
+   "t": 90.06,
+   "step": 5463,
+   "forwards": 5463,
+   "val": 1.527941107749939
+  },
+  {
+   "t": 100.08,
+   "step": 6054,
+   "forwards": 6054,
+   "val": 1.5244145154953004
+  },
+  {
+   "t": 110.1,
+   "step": 6645,
+   "forwards": 6645,
+   "val": 1.5094100832939148
+  },
+  {
+   "t": 120.1,
+   "step": 7235,
+   "forwards": 7235,
+   "val": 1.5069475889205932
+  },
+  {
+   "t": 130.1,
+   "step": 7825,
+   "forwards": 7825,
+   "val": 1.4965315580368042
+  },
+  {
+   "t": 140.12,
+   "step": 8416,
+   "forwards": 8416,
+   "val": 1.4932543992996217
+  },
+  {
+   "t": 150.13,
+   "step": 9006,
+   "forwards": 9006,
+   "val": 1.4921461939811707
+  },
+  {
+   "t": 160.13,
+   "step": 9596,
+   "forwards": 9596,
+   "val": 1.4857425212860107
+  },
+  {
+   "t": 170.13,
+   "step": 10186,
+   "forwards": 10186,
+   "val": 1.4702590703964233
+  },
+  {
+   "t": 180.14,
+   "step": 10776,
+   "forwards": 10776,
+   "val": 1.4777687311172485
+  },
+  {
+   "t": 190.14,
+   "step": 11366,
+   "forwards": 11366,
+   "val": 1.465794599056244
+  },
+  {
+   "t": 200.15,
+   "step": 11956,
+   "forwards": 11956,
+   "val": 1.4836510062217712
+  },
+  {
+   "t": 210.15,
+   "step": 12546,
+   "forwards": 12546,
+   "val": 1.4666100144386292
+  },
+  {
+   "t": 220.15,
+   "step": 13136,
+   "forwards": 13136,
+   "val": 1.4665426373481751
+  },
+  {
+   "t": 230.16,
+   "step": 13726,
+   "forwards": 13726,
+   "val": 1.4664947271347046
+  },
+  {
+   "t": 240.17,
+   "step": 14317,
+   "forwards": 14317,
+   "val": 1.4616884350776673
+  },
+  {
+   "t": 250.17,
+   "step": 14907,
+   "forwards": 14907,
+   "val": 1.464998996257782
+  },
+  {
+   "t": 260.17,
+   "step": 15497,
+   "forwards": 15497,
+   "val": 1.4598576903343201
+  },
+  {
+   "t": 270.19,
+   "step": 16088,
+   "forwards": 16088,
+   "val": 1.4623865604400634
+  },
+  {
+   "t": 280.2,
+   "step": 16678,
+   "forwards": 16678,
+   "val": 1.4609586477279664
+  },
+  {
+   "t": 290.21,
+   "step": 17269,
+   "forwards": 17269,
+   "val": 1.4567383527755737
+  },
+  {
+   "t": 300.0,
+   "step": 17847,
+   "forwards": 17847,
+   "val": 1.4472389578819276
+  }
+ ],
+ "sample": "ROMEO:\nThou makest awas liest of your anciends gelsed yourself,\nI did were my son of golden soul.\n\nBRUTUS:\nWell, let it be many this day true next forth.\n\nLADY ANNE:\nI'll in his good to him sound,\nI carry way thou, pitiest or more, he say,\nI see the flesh wind the measure,\nAs think to the queen to them mar"
+}

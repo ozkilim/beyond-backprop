@@ -1,0 +1,91 @@
+{
+ "rule": "mirror_neurons",
+ "tag": "quick",
+ "autograd": "modified",
+ "blurb": "Separate, random-born backward weights that receive the same Hebbian update as their forward twins, so they drift into alignment without any weight being copied.",
+ "paper": "Kolen & Pollack 1994; Akrout et al. 2019 (weight mirrors)",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "half": 0,
+  "noise": 0.0,
+  "bdrop": 0.0,
+  "fnoise": 0.0,
+  "fdrop": 0.0,
+  "born": "random",
+  "frank": 0,
+  "frank_every": 25,
+  "rho": 0.0,
+  "wjit": 0.0
+ },
+ "test_loss": null,
+ "best_val": 1.5116091465950012,
+ "best_at_s": 60.01,
+ "best_step": 4171,
+ "init_val": 4.216201114654541,
+ "steps": 4171,
+ "forwards": 4171,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 693,
+   "forwards": 693,
+   "val": 1.984330654144287
+  },
+  {
+   "t": 20.02,
+   "step": 1390,
+   "forwards": 1390,
+   "val": 1.7227166056632996
+  },
+  {
+   "t": 30.02,
+   "step": 2087,
+   "forwards": 2087,
+   "val": 1.6318657159805299
+  },
+  {
+   "t": 40.03,
+   "step": 2784,
+   "forwards": 2784,
+   "val": 1.5550243496894836
+  },
+  {
+   "t": 50.03,
+   "step": 3479,
+   "forwards": 3479,
+   "val": 1.5324827075004577
+  },
+  {
+   "t": 60.01,
+   "step": 4171,
+   "forwards": 4171,
+   "val": 1.5116265416145325
+  }
+ ],
+ "sample": "ROMEO:\nThou must know'st the dead of heavy in the strenge\nThat you forget receit her. He is so so,\nBut the power portiers of her moar that wear,\nThe thousand hopes of my highness and the brass:\nThe dragin of the parting to the poor heart.\n\nCLIFFORD:\nAlas this still to the neighbing of the queens?\n\nJULIET:\n"
+}

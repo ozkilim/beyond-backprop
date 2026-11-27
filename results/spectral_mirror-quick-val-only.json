@@ -1,0 +1,86 @@
+{
+ "rule": "spectral_mirror",
+ "tag": "quick",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with periodic SVD: backward weights are projected to their own top-k singular vectors, forcing credit through a low-dimensional manifold.",
+ "paper": "Novel: spectral regularisation of the backward pathway.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "rank": 16,
+  "project_every": 100,
+  "teach": 0.0,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 1.68240727186203,
+ "best_at_s": 60.0,
+ "best_step": 4011,
+ "init_val": 4.216201114654541,
+ "steps": 4011,
+ "forwards": 4011,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 643,
+   "forwards": 643,
+   "val": 2.169079613685608
+  },
+  {
+   "t": 20.02,
+   "step": 1308,
+   "forwards": 1308,
+   "val": 1.9603088259696961
+  },
+  {
+   "t": 30.02,
+   "step": 1986,
+   "forwards": 1986,
+   "val": 1.833542275428772
+  },
+  {
+   "t": 40.03,
+   "step": 2661,
+   "forwards": 2661,
+   "val": 1.7794374108314515
+  },
+  {
+   "t": 50.04,
+   "step": 3337,
+   "forwards": 3337,
+   "val": 1.7228322505950928
+  },
+  {
+   "t": 60.0,
+   "step": 4011,
+   "forwards": 4011,
+   "val": 1.684081256389618
+  }
+ ],
+ "sample": "ROMEO:\nThou make knew sell it one means your withless greep and\nIn that here hath think of lives of him; that of to silk,\nFarecting art off the mothersed we worth;\nWhich I in the all the brother the strung and to faith.\n\nFirst Would the mortate, quegger:\nOur letthing here, my poins to the post soor that\nTh"
+}

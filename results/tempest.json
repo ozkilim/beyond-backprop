@@ -1,0 +1,231 @@
+{
+ "rule": "tempest",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Ensemble of noisy backward-weight perturbations: average N different credit hypotheses per step, with temperature-scheduled noise. Named for Shakespeare's play (and this arena's test set).",
+ "paper": "Novel: backward-weight ensemble with temperature scheduling.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "n_ensemble": 3,
+  "noise_schedule": "cosine",
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.6262605023384094,
+ "best_val": 1.5055969262123108,
+ "best_at_s": 300.01,
+ "best_step": 2992,
+ "init_val": 4.216201114654541,
+ "steps": 2992,
+ "forwards": 8976,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.08,
+   "step": 95,
+   "forwards": 285,
+   "val": 2.5013622999191285
+  },
+  {
+   "t": 20.08,
+   "step": 204,
+   "forwards": 612,
+   "val": 2.3912665128707884
+  },
+  {
+   "t": 30.11,
+   "step": 314,
+   "forwards": 942,
+   "val": 2.2379780769348145
+  },
+  {
+   "t": 40.14,
+   "step": 424,
+   "forwards": 1272,
+   "val": 2.121778702735901
+  },
+  {
+   "t": 50.16,
+   "step": 521,
+   "forwards": 1563,
+   "val": 2.016593074798584
+  },
+  {
+   "t": 60.16,
+   "step": 607,
+   "forwards": 1821,
+   "val": 1.9522595643997191
+  },
+  {
+   "t": 70.26,
+   "step": 703,
+   "forwards": 2109,
+   "val": 1.8985415339469909
+  },
+  {
+   "t": 80.37,
+   "step": 798,
+   "forwards": 2394,
+   "val": 1.8328527569770814
+  },
+  {
+   "t": 90.37,
+   "step": 892,
+   "forwards": 2676,
+   "val": 1.7896868228912353
+  },
+  {
+   "t": 100.41,
+   "step": 987,
+   "forwards": 2961,
+   "val": 1.7565436005592345
+  },
+  {
+   "t": 110.5,
+   "step": 1083,
+   "forwards": 3249,
+   "val": 1.7041783452033996
+  },
+  {
+   "t": 120.52,
+   "step": 1177,
+   "forwards": 3531,
+   "val": 1.6781452655792237
+  },
+  {
+   "t": 130.61,
+   "step": 1272,
+   "forwards": 3816,
+   "val": 1.6621370673179627
+  },
+  {
+   "t": 140.64,
+   "step": 1366,
+   "forwards": 4098,
+   "val": 1.6288800835609436
+  },
+  {
+   "t": 150.73,
+   "step": 1462,
+   "forwards": 4386,
+   "val": 1.6233869791030884
+  },
+  {
+   "t": 160.78,
+   "step": 1557,
+   "forwards": 4671,
+   "val": 1.6040915966033935
+  },
+  {
+   "t": 170.79,
+   "step": 1651,
+   "forwards": 4953,
+   "val": 1.589521872997284
+  },
+  {
+   "t": 180.88,
+   "step": 1747,
+   "forwards": 5241,
+   "val": 1.5852619290351868
+  },
+  {
+   "t": 190.96,
+   "step": 1842,
+   "forwards": 5526,
+   "val": 1.5782060980796815
+  },
+  {
+   "t": 200.99,
+   "step": 1937,
+   "forwards": 5811,
+   "val": 1.5609603524208069
+  },
+  {
+   "t": 211.02,
+   "step": 2032,
+   "forwards": 6096,
+   "val": 1.5557512283325194
+  },
+  {
+   "t": 221.04,
+   "step": 2126,
+   "forwards": 6378,
+   "val": 1.5358320355415345
+  },
+  {
+   "t": 231.1,
+   "step": 2221,
+   "forwards": 6663,
+   "val": 1.5419826745986938
+  },
+  {
+   "t": 241.1,
+   "step": 2316,
+   "forwards": 6948,
+   "val": 1.5291728138923646
+  },
+  {
+   "t": 251.12,
+   "step": 2410,
+   "forwards": 7230,
+   "val": 1.5204558730125428
+  },
+  {
+   "t": 261.18,
+   "step": 2505,
+   "forwards": 7515,
+   "val": 1.5190961956977844
+  },
+  {
+   "t": 271.28,
+   "step": 2599,
+   "forwards": 7797,
+   "val": 1.5225268363952638
+  },
+  {
+   "t": 281.32,
+   "step": 2735,
+   "forwards": 8205,
+   "val": 1.5133670568466187
+  },
+  {
+   "t": 291.38,
+   "step": 2877,
+   "forwards": 8631,
+   "val": 1.5135432839393617
+  },
+  {
+   "t": 300.01,
+   "step": 2992,
+   "forwards": 8976,
+   "val": 1.5035942673683167
+  }
+ ],
+ "sample": "ROMEO:\nThou must know selter our foes,\nAnd in the strengthouse you for meet charge.\n\nLUCENTIO:\nThese is some some or way we and this eyes:\nAnd thou stand well you for me him here.\n\nPOMPEY:\nThe writus no. So I fearful his filk moon, he should\ntoo quit being in this me spoken sit in both;\nMarcius to them mar"
+}

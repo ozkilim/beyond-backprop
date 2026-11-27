@@ -1,0 +1,230 @@
+{
+ "rule": "noisy_mirror",
+ "tag": "sig03",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with decaying Gaussian noise: explores around the true gradient early, converges to exact credit assignment late.",
+ "paper": "Novel: temperature-scheduled noise on mirror backward weights.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.3,
+  "noise_schedule": "linear",
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5706964755058288,
+ "best_val": 1.4233916544914245,
+ "best_at_s": 250.26,
+ "best_step": 9633,
+ "init_val": 4.216201114654541,
+ "steps": 11520,
+ "forwards": 11520,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 423,
+   "forwards": 423,
+   "val": 2.163668179512024
+  },
+  {
+   "t": 20.01,
+   "step": 848,
+   "forwards": 848,
+   "val": 1.8530071377754211
+  },
+  {
+   "t": 30.01,
+   "step": 1318,
+   "forwards": 1318,
+   "val": 1.688820731639862
+  },
+  {
+   "t": 40.02,
+   "step": 1702,
+   "forwards": 1702,
+   "val": 1.592292058467865
+  },
+  {
+   "t": 50.02,
+   "step": 2063,
+   "forwards": 2063,
+   "val": 1.5572259664535522
+  },
+  {
+   "t": 60.03,
+   "step": 2424,
+   "forwards": 2424,
+   "val": 1.5265485525131226
+  },
+  {
+   "t": 70.04,
+   "step": 2804,
+   "forwards": 2804,
+   "val": 1.50693279504776
+  },
+  {
+   "t": 80.04,
+   "step": 3183,
+   "forwards": 3183,
+   "val": 1.4960280656814575
+  },
+  {
+   "t": 90.06,
+   "step": 3564,
+   "forwards": 3564,
+   "val": 1.479983139038086
+  },
+  {
+   "t": 100.07,
+   "step": 3942,
+   "forwards": 3942,
+   "val": 1.468872594833374
+  },
+  {
+   "t": 110.08,
+   "step": 4321,
+   "forwards": 4321,
+   "val": 1.466528308391571
+  },
+  {
+   "t": 120.08,
+   "step": 4700,
+   "forwards": 4700,
+   "val": 1.4541912436485291
+  },
+  {
+   "t": 130.11,
+   "step": 5080,
+   "forwards": 5080,
+   "val": 1.449353313446045
+  },
+  {
+   "t": 140.13,
+   "step": 5461,
+   "forwards": 5461,
+   "val": 1.452068281173706
+  },
+  {
+   "t": 150.15,
+   "step": 5840,
+   "forwards": 5840,
+   "val": 1.4462425231933593
+  },
+  {
+   "t": 160.16,
+   "step": 6220,
+   "forwards": 6220,
+   "val": 1.4377049922943115
+  },
+  {
+   "t": 170.18,
+   "step": 6601,
+   "forwards": 6601,
+   "val": 1.4418615818023681
+  },
+  {
+   "t": 180.18,
+   "step": 6976,
+   "forwards": 6976,
+   "val": 1.436490035057068
+  },
+  {
+   "t": 190.19,
+   "step": 7354,
+   "forwards": 7354,
+   "val": 1.436133861541748
+  },
+  {
+   "t": 200.2,
+   "step": 7735,
+   "forwards": 7735,
+   "val": 1.427944791316986
+  },
+  {
+   "t": 210.2,
+   "step": 8115,
+   "forwards": 8115,
+   "val": 1.4309560418128968
+  },
+  {
+   "t": 220.23,
+   "step": 8495,
+   "forwards": 8495,
+   "val": 1.4317208051681518
+  },
+  {
+   "t": 230.24,
+   "step": 8874,
+   "forwards": 8874,
+   "val": 1.4325218081474305
+  },
+  {
+   "t": 240.25,
+   "step": 9254,
+   "forwards": 9254,
+   "val": 1.4325459122657775
+  },
+  {
+   "t": 250.26,
+   "step": 9633,
+   "forwards": 9633,
+   "val": 1.4211050629615785
+  },
+  {
+   "t": 260.27,
+   "step": 10012,
+   "forwards": 10012,
+   "val": 1.4323368430137635
+  },
+  {
+   "t": 270.28,
+   "step": 10392,
+   "forwards": 10392,
+   "val": 1.4315110564231872
+  },
+  {
+   "t": 280.29,
+   "step": 10770,
+   "forwards": 10770,
+   "val": 1.434833037853241
+  },
+  {
+   "t": 290.3,
+   "step": 11151,
+   "forwards": 11151,
+   "val": 1.4289433836936951
+  },
+  {
+   "t": 300.02,
+   "step": 11520,
+   "forwards": 11520,
+   "val": 1.4317778110504151
+  }
+ ],
+ "sample": "ROMEO:\nThou must know so? I would never brood I to thee,\nIs a witness wifere hear this being such a holy place,\nAs I was well come afrientry and hands\nHow the stones i' this head.\n\nPETRUCHIO:\nWhy, I cannot a mother plain will make not say,\nIf to quickly me interious patricians.\n\nSICINIUS:\nThen so stop for "
+}

@@ -1,0 +1,226 @@
+{
+ "rule": "backprop",
+ "tag": "taught-tuned-s0",
+ "autograd": "full",
+ "blurb": "Plain backprop + AdamW. The baseline everyone loses to.",
+ "paper": "Rumelhart, Hinton & Williams 1986",
+ "hp": {
+  "lr": 0.000667,
+  "weight_decay": 0.01,
+  "half": 0,
+  "noise": 0.0,
+  "teach": 0.3
+ },
+ "test_loss": 1.6155855965614319,
+ "best_val": 1.4595862555503845,
+ "best_at_s": 110.1,
+ "best_step": 7556,
+ "init_val": 4.216201114654541,
+ "steps": 20222,
+ "forwards": 20222,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 764,
+   "forwards": 764,
+   "val": 1.9124247193336488
+  },
+  {
+   "t": 20.02,
+   "step": 1522,
+   "forwards": 1522,
+   "val": 1.6523905396461487
+  },
+  {
+   "t": 30.03,
+   "step": 2194,
+   "forwards": 2194,
+   "val": 1.5543834209442138
+  },
+  {
+   "t": 40.04,
+   "step": 2865,
+   "forwards": 2865,
+   "val": 1.524111235141754
+  },
+  {
+   "t": 50.05,
+   "step": 3538,
+   "forwards": 3538,
+   "val": 1.4909845113754272
+  },
+  {
+   "t": 60.06,
+   "step": 4210,
+   "forwards": 4210,
+   "val": 1.4772072911262513
+  },
+  {
+   "t": 70.07,
+   "step": 4883,
+   "forwards": 4883,
+   "val": 1.4689224362373352
+  },
+  {
+   "t": 80.08,
+   "step": 5555,
+   "forwards": 5555,
+   "val": 1.471760869026184
+  },
+  {
+   "t": 90.09,
+   "step": 6227,
+   "forwards": 6227,
+   "val": 1.4667473196983338
+  },
+  {
+   "t": 100.09,
+   "step": 6899,
+   "forwards": 6899,
+   "val": 1.4635243892669678
+  },
+  {
+   "t": 110.1,
+   "step": 7556,
+   "forwards": 7556,
+   "val": 1.4600666880607605
+  },
+  {
+   "t": 120.11,
+   "step": 8199,
+   "forwards": 8199,
+   "val": 1.4756850004196167
+  },
+  {
+   "t": 130.11,
+   "step": 8871,
+   "forwards": 8871,
+   "val": 1.4680349349975585
+  },
+  {
+   "t": 140.12,
+   "step": 9542,
+   "forwards": 9542,
+   "val": 1.463514804840088
+  },
+  {
+   "t": 150.13,
+   "step": 10215,
+   "forwards": 10215,
+   "val": 1.479703676700592
+  },
+  {
+   "t": 160.14,
+   "step": 10886,
+   "forwards": 10886,
+   "val": 1.478650653362274
+  },
+  {
+   "t": 170.15,
+   "step": 11557,
+   "forwards": 11557,
+   "val": 1.4951209783554078
+  },
+  {
+   "t": 180.16,
+   "step": 12229,
+   "forwards": 12229,
+   "val": 1.4889435648918152
+  },
+  {
+   "t": 190.17,
+   "step": 12900,
+   "forwards": 12900,
+   "val": 1.5021886229515076
+  },
+  {
+   "t": 200.18,
+   "step": 13572,
+   "forwards": 13572,
+   "val": 1.5028699040412903
+  },
+  {
+   "t": 210.18,
+   "step": 14242,
+   "forwards": 14242,
+   "val": 1.5152145862579345
+  },
+  {
+   "t": 220.18,
+   "step": 14914,
+   "forwards": 14914,
+   "val": 1.5135308384895325
+  },
+  {
+   "t": 230.2,
+   "step": 15541,
+   "forwards": 15541,
+   "val": 1.5175567030906678
+  },
+  {
+   "t": 240.2,
+   "step": 16211,
+   "forwards": 16211,
+   "val": 1.5208438158035278
+  },
+  {
+   "t": 250.21,
+   "step": 16882,
+   "forwards": 16882,
+   "val": 1.538379693031311
+  },
+  {
+   "t": 260.22,
+   "step": 17553,
+   "forwards": 17553,
+   "val": 1.5403773427009582
+  },
+  {
+   "t": 270.22,
+   "step": 18223,
+   "forwards": 18223,
+   "val": 1.5476383566856384
+  },
+  {
+   "t": 280.23,
+   "step": 18895,
+   "forwards": 18895,
+   "val": 1.5541731238365173
+  },
+  {
+   "t": 290.24,
+   "step": 19567,
+   "forwards": 19567,
+   "val": 1.557545268535614
+  },
+  {
+   "t": 300.01,
+   "step": 20222,
+   "forwards": 20222,
+   "val": 1.56398606300354
+  }
+ ],
+ "sample": "ROMEO:\nThou mhast hear the daughteress of a dreamleness\nThou would flay here he hath been slain and him\nWe attorney awake,\nYour senate; and none of thy death, stoned in him.\nThough the contrarized\nThan you and end.\n\nFirst Servingman:\nWhat, is the legs both in this me spoken,\nTheir be themselves to them dea"
+}

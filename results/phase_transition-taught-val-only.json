@@ -1,0 +1,87 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.0,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 1.498802843093872,
+ "best_at_s": 60.01,
+ "best_step": 3709,
+ "init_val": 4.216201114654541,
+ "steps": 3709,
+ "forwards": 3709,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 660,
+   "forwards": 660,
+   "val": 2.0263979196548463
+  },
+  {
+   "t": 20.0,
+   "step": 1319,
+   "forwards": 1319,
+   "val": 1.7511778831481934
+  },
+  {
+   "t": 30.02,
+   "step": 1926,
+   "forwards": 1926,
+   "val": 1.614381694793701
+  },
+  {
+   "t": 40.03,
+   "step": 2521,
+   "forwards": 2521,
+   "val": 1.5563405275344848
+  },
+  {
+   "t": 50.04,
+   "step": 3116,
+   "forwards": 3116,
+   "val": 1.5166563034057616
+  },
+  {
+   "t": 60.01,
+   "step": 3709,
+   "forwards": 3709,
+   "val": 1.4955522894859314
+  }
+ ],
+ "sample": "ROMEO:\nThou must keep sold it off men,\nAnd yet gelst that of thy hourters records of blood\nFor many him. That's the die person.\n\nCORIOLANUS:\nHe must the even of the right in his gold!\n\nSICINIUS:\nWhy shall I poor Edward:\nThis is offend say times, and flesh with the med\nAnd nobly in bottle her was from mysel"
+}

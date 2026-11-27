@@ -1,0 +1,230 @@
+{
+ "rule": "noisy_mirror",
+ "tag": "",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with decaying Gaussian noise: explores around the true gradient early, converges to exact credit assignment late.",
+ "paper": "Novel: temperature-scheduled noise on mirror backward weights.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "noise_schedule": "linear",
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5669050192832947,
+ "best_val": 1.4353783345222473,
+ "best_at_s": 210.27,
+ "best_step": 8201,
+ "init_val": 4.240832328796387,
+ "steps": 11710,
+ "forwards": 11710,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 2,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.240832328796387
+  },
+  {
+   "t": 10.01,
+   "step": 431,
+   "forwards": 431,
+   "val": 2.18784921169281
+  },
+  {
+   "t": 20.02,
+   "step": 864,
+   "forwards": 864,
+   "val": 1.9129104614257812
+  },
+  {
+   "t": 30.04,
+   "step": 1298,
+   "forwards": 1298,
+   "val": 1.7455994606018066
+  },
+  {
+   "t": 40.05,
+   "step": 1700,
+   "forwards": 1700,
+   "val": 1.630235505104065
+  },
+  {
+   "t": 50.08,
+   "step": 2083,
+   "forwards": 2083,
+   "val": 1.5835701823234558
+  },
+  {
+   "t": 60.09,
+   "step": 2465,
+   "forwards": 2465,
+   "val": 1.5594734787940978
+  },
+  {
+   "t": 70.11,
+   "step": 2849,
+   "forwards": 2849,
+   "val": 1.5393788933753967
+  },
+  {
+   "t": 80.11,
+   "step": 3231,
+   "forwards": 3231,
+   "val": 1.5217357993125915
+  },
+  {
+   "t": 90.14,
+   "step": 3614,
+   "forwards": 3614,
+   "val": 1.5099351167678834
+  },
+  {
+   "t": 100.14,
+   "step": 3997,
+   "forwards": 3997,
+   "val": 1.4937527894973754
+  },
+  {
+   "t": 110.15,
+   "step": 4379,
+   "forwards": 4379,
+   "val": 1.4845779299736024
+  },
+  {
+   "t": 120.16,
+   "step": 4762,
+   "forwards": 4762,
+   "val": 1.4738435745239258
+  },
+  {
+   "t": 130.16,
+   "step": 5145,
+   "forwards": 5145,
+   "val": 1.4737115859985352
+  },
+  {
+   "t": 140.18,
+   "step": 5527,
+   "forwards": 5527,
+   "val": 1.4648327112197876
+  },
+  {
+   "t": 150.19,
+   "step": 5907,
+   "forwards": 5907,
+   "val": 1.463504421710968
+  },
+  {
+   "t": 160.21,
+   "step": 6290,
+   "forwards": 6290,
+   "val": 1.4499172568321228
+  },
+  {
+   "t": 170.22,
+   "step": 6672,
+   "forwards": 6672,
+   "val": 1.4488182425498963
+  },
+  {
+   "t": 180.23,
+   "step": 7054,
+   "forwards": 7054,
+   "val": 1.4477075934410095
+  },
+  {
+   "t": 190.25,
+   "step": 7437,
+   "forwards": 7437,
+   "val": 1.448656439781189
+  },
+  {
+   "t": 200.26,
+   "step": 7819,
+   "forwards": 7819,
+   "val": 1.4392369747161866
+  },
+  {
+   "t": 210.27,
+   "step": 8201,
+   "forwards": 8201,
+   "val": 1.4344988822937013
+  },
+  {
+   "t": 220.29,
+   "step": 8583,
+   "forwards": 8583,
+   "val": 1.441315221786499
+  },
+  {
+   "t": 230.29,
+   "step": 8965,
+   "forwards": 8965,
+   "val": 1.4496562838554383
+  },
+  {
+   "t": 240.32,
+   "step": 9347,
+   "forwards": 9347,
+   "val": 1.4437233209609985
+  },
+  {
+   "t": 250.33,
+   "step": 9730,
+   "forwards": 9730,
+   "val": 1.4345113158226013
+  },
+  {
+   "t": 260.34,
+   "step": 10112,
+   "forwards": 10112,
+   "val": 1.4362615704536439
+  },
+  {
+   "t": 270.36,
+   "step": 10494,
+   "forwards": 10494,
+   "val": 1.4432647585868836
+  },
+  {
+   "t": 280.36,
+   "step": 10979,
+   "forwards": 10979,
+   "val": 1.4405487179756165
+  },
+  {
+   "t": 290.38,
+   "step": 11352,
+   "forwards": 11352,
+   "val": 1.436948561668396
+  },
+  {
+   "t": 300.0,
+   "step": 11710,
+   "forwards": 11710,
+   "val": 1.4400290489196776
+  }
+ ],
+ "sample": "ROMEO:\nThou makes her self me one of many of worths from home.\n\nPOLIXENES:\nMy lord, thou hell! Take him; that's your way,\nHave no fair foer none of thy depen's\ntone and which the wintescrim shows must his war,\nAnd speak\nThey should have you been quite and with the med\nAnd neight by thy world's son to my ha"
+}

@@ -1,0 +1,230 @@
+{
+ "rule": "noisy_mirror",
+ "tag": "sig10-t04",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with decaying Gaussian noise: explores around the true gradient early, converges to exact credit assignment late.",
+ "paper": "Novel: temperature-scheduled noise on mirror backward weights.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 1.0,
+  "noise_schedule": "linear",
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5715276837348937,
+ "best_val": 1.4297546434402466,
+ "best_at_s": 300.01,
+ "best_step": 11477,
+ "init_val": 4.216201114654541,
+ "steps": 11477,
+ "forwards": 11477,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 430,
+   "forwards": 430,
+   "val": 2.2997632741928102
+  },
+  {
+   "t": 20.01,
+   "step": 864,
+   "forwards": 864,
+   "val": 2.049285364151001
+  },
+  {
+   "t": 30.01,
+   "step": 1298,
+   "forwards": 1298,
+   "val": 1.9288251876831055
+  },
+  {
+   "t": 40.02,
+   "step": 1701,
+   "forwards": 1701,
+   "val": 1.8046199440956117
+  },
+  {
+   "t": 50.03,
+   "step": 2085,
+   "forwards": 2085,
+   "val": 1.7522605895996093
+  },
+  {
+   "t": 60.05,
+   "step": 2470,
+   "forwards": 2470,
+   "val": 1.6869783759117127
+  },
+  {
+   "t": 70.05,
+   "step": 2854,
+   "forwards": 2854,
+   "val": 1.657956564426422
+  },
+  {
+   "t": 80.08,
+   "step": 3239,
+   "forwards": 3239,
+   "val": 1.6158204436302186
+  },
+  {
+   "t": 90.1,
+   "step": 3623,
+   "forwards": 3623,
+   "val": 1.599632942676544
+  },
+  {
+   "t": 100.1,
+   "step": 4008,
+   "forwards": 4008,
+   "val": 1.569084072113037
+  },
+  {
+   "t": 110.13,
+   "step": 4362,
+   "forwards": 4362,
+   "val": 1.5573720693588258
+  },
+  {
+   "t": 120.14,
+   "step": 4747,
+   "forwards": 4747,
+   "val": 1.53799706697464
+  },
+  {
+   "t": 130.15,
+   "step": 5131,
+   "forwards": 5131,
+   "val": 1.5234595775604247
+  },
+  {
+   "t": 140.17,
+   "step": 5516,
+   "forwards": 5516,
+   "val": 1.513441276550293
+  },
+  {
+   "t": 150.18,
+   "step": 5900,
+   "forwards": 5900,
+   "val": 1.5163233637809754
+  },
+  {
+   "t": 160.2,
+   "step": 6285,
+   "forwards": 6285,
+   "val": 1.4987473726272582
+  },
+  {
+   "t": 170.22,
+   "step": 6670,
+   "forwards": 6670,
+   "val": 1.4957544565200807
+  },
+  {
+   "t": 180.23,
+   "step": 7054,
+   "forwards": 7054,
+   "val": 1.4824651718139648
+  },
+  {
+   "t": 190.24,
+   "step": 7438,
+   "forwards": 7438,
+   "val": 1.4738654732704162
+  },
+  {
+   "t": 200.25,
+   "step": 7823,
+   "forwards": 7823,
+   "val": 1.4698565006256104
+  },
+  {
+   "t": 210.27,
+   "step": 8207,
+   "forwards": 8207,
+   "val": 1.4675048112869262
+  },
+  {
+   "t": 220.27,
+   "step": 8592,
+   "forwards": 8592,
+   "val": 1.4553094863891602
+  },
+  {
+   "t": 230.29,
+   "step": 8977,
+   "forwards": 8977,
+   "val": 1.4474476456642151
+  },
+  {
+   "t": 240.3,
+   "step": 9362,
+   "forwards": 9362,
+   "val": 1.4442571878433228
+  },
+  {
+   "t": 250.33,
+   "step": 9762,
+   "forwards": 9762,
+   "val": 1.437154233455658
+  },
+  {
+   "t": 260.33,
+   "step": 10131,
+   "forwards": 10131,
+   "val": 1.4418874263763428
+  },
+  {
+   "t": 270.35,
+   "step": 10498,
+   "forwards": 10498,
+   "val": 1.4439457654953003
+  },
+  {
+   "t": 280.36,
+   "step": 10849,
+   "forwards": 10849,
+   "val": 1.4343433022499084
+  },
+  {
+   "t": 290.37,
+   "step": 11207,
+   "forwards": 11207,
+   "val": 1.434044599533081
+  },
+  {
+   "t": 300.01,
+   "step": 11477,
+   "forwards": 11477,
+   "val": 1.4272768020629882
+  }
+ ],
+ "sample": "ROMEO:\nThou must know self Warwick expect, in the strength\nAre you for an our strength being some performed\nthough this person. We are forfended have so.\n\nLADY ANNE:\nI'll in his god tench-\n\nBUCKINGHAM:\nI have fearful him will moon not say that our charge this\nA conve thousand to bed, then ask'd the things "
+}

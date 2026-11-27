@@ -1,0 +1,95 @@
+{
+ "rule": "taught_mirror",
+ "tag": "quick",
+ "autograd": "modified",
+ "blurb": "mirror_neurons learning 30% from a smoothed 9-gram table it builds by counting the batches it sees (leave-one-out); no weight copied, no gradient in the teacher.",
+ "paper": "Kolen & Pollack 1994 (mirror); Witten & Bell 1991 (smoothing); Hinton et al. 2015 (soft targets)",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "half": 0,
+  "noise": 0.0,
+  "bdrop": 0.0,
+  "fnoise": 0.0,
+  "fdrop": 0.0,
+  "born": "random",
+  "frank": 0,
+  "frank_every": 25,
+  "rho": 0.0,
+  "wjit": 0.0,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 1.498693766593933,
+ "best_at_s": 60.01,
+ "best_step": 3764,
+ "init_val": 4.216201114654541,
+ "steps": 3764,
+ "forwards": 3764,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 672,
+   "forwards": 672,
+   "val": 2.0048866391181948
+  },
+  {
+   "t": 20.01,
+   "step": 1345,
+   "forwards": 1345,
+   "val": 1.7468185901641846
+  },
+  {
+   "t": 30.03,
+   "step": 1958,
+   "forwards": 1958,
+   "val": 1.601689636707306
+  },
+  {
+   "t": 40.03,
+   "step": 2562,
+   "forwards": 2562,
+   "val": 1.5637123465538025
+  },
+  {
+   "t": 50.04,
+   "step": 3164,
+   "forwards": 3164,
+   "val": 1.527121078968048
+  },
+  {
+   "t": 60.01,
+   "step": 3764,
+   "forwards": 3764,
+   "val": 1.4984542369842528
+  }
+ ],
+ "sample": "ROMEO:\nThy farmed have not indeed means\nOr in the strength our young therein hath good lord.\n\nBRUTUS:\nWhat, though this power.\nAs is not true:\nThe first of the tongue is his heads,\nWhen I can shed up no. So I fearful first or moon, he say,\nAnd of men being in this meant to my pointed then.\n\nELBOW:\nThe fath"
+}

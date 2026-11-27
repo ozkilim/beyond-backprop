@@ -1,0 +1,230 @@
+{
+ "rule": "noisy_mirror",
+ "tag": "cos-t04",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with decaying Gaussian noise: explores around the true gradient early, converges to exact credit assignment late.",
+ "paper": "Novel: temperature-scheduled noise on mirror backward weights.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "noise_schedule": "cosine",
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5689871549606322,
+ "best_val": 1.4251698398590087,
+ "best_at_s": 280.38,
+ "best_step": 10782,
+ "init_val": 4.216201114654541,
+ "steps": 11533,
+ "forwards": 11533,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 413,
+   "forwards": 413,
+   "val": 2.1749002933502197
+  },
+  {
+   "t": 20.01,
+   "step": 829,
+   "forwards": 829,
+   "val": 1.9034470915794373
+  },
+  {
+   "t": 30.02,
+   "step": 1244,
+   "forwards": 1244,
+   "val": 1.7663492918014527
+  },
+  {
+   "t": 40.03,
+   "step": 1642,
+   "forwards": 1642,
+   "val": 1.635564923286438
+  },
+  {
+   "t": 50.06,
+   "step": 2023,
+   "forwards": 2023,
+   "val": 1.597313904762268
+  },
+  {
+   "t": 60.08,
+   "step": 2403,
+   "forwards": 2403,
+   "val": 1.5567129731178284
+  },
+  {
+   "t": 70.1,
+   "step": 2786,
+   "forwards": 2786,
+   "val": 1.5369877576828004
+  },
+  {
+   "t": 80.11,
+   "step": 3167,
+   "forwards": 3167,
+   "val": 1.5175218343734742
+  },
+  {
+   "t": 90.12,
+   "step": 3548,
+   "forwards": 3548,
+   "val": 1.5076726436614991
+  },
+  {
+   "t": 100.14,
+   "step": 3930,
+   "forwards": 3930,
+   "val": 1.4957302451133727
+  },
+  {
+   "t": 110.16,
+   "step": 4313,
+   "forwards": 4313,
+   "val": 1.4794341683387757
+  },
+  {
+   "t": 120.17,
+   "step": 4694,
+   "forwards": 4694,
+   "val": 1.4777701020240783
+  },
+  {
+   "t": 130.2,
+   "step": 5077,
+   "forwards": 5077,
+   "val": 1.4691220998764039
+  },
+  {
+   "t": 140.22,
+   "step": 5458,
+   "forwards": 5458,
+   "val": 1.4694921851158143
+  },
+  {
+   "t": 150.23,
+   "step": 5839,
+   "forwards": 5839,
+   "val": 1.4634467005729674
+  },
+  {
+   "t": 160.24,
+   "step": 6220,
+   "forwards": 6220,
+   "val": 1.45644154548645
+  },
+  {
+   "t": 170.24,
+   "step": 6601,
+   "forwards": 6601,
+   "val": 1.4571256399154664
+  },
+  {
+   "t": 180.26,
+   "step": 6981,
+   "forwards": 6981,
+   "val": 1.4489261984825135
+  },
+  {
+   "t": 190.27,
+   "step": 7361,
+   "forwards": 7361,
+   "val": 1.4444680213928223
+  },
+  {
+   "t": 200.27,
+   "step": 7743,
+   "forwards": 7743,
+   "val": 1.4415804982185363
+  },
+  {
+   "t": 210.27,
+   "step": 8123,
+   "forwards": 8123,
+   "val": 1.4357725501060485
+  },
+  {
+   "t": 220.28,
+   "step": 8502,
+   "forwards": 8502,
+   "val": 1.4397314548492433
+  },
+  {
+   "t": 230.3,
+   "step": 8882,
+   "forwards": 8882,
+   "val": 1.439079213142395
+  },
+  {
+   "t": 240.31,
+   "step": 9263,
+   "forwards": 9263,
+   "val": 1.428501558303833
+  },
+  {
+   "t": 250.33,
+   "step": 9646,
+   "forwards": 9646,
+   "val": 1.4338847637176513
+  },
+  {
+   "t": 260.35,
+   "step": 10035,
+   "forwards": 10035,
+   "val": 1.4286026358604431
+  },
+  {
+   "t": 270.35,
+   "step": 10408,
+   "forwards": 10408,
+   "val": 1.4291549324989319
+  },
+  {
+   "t": 280.38,
+   "step": 10782,
+   "forwards": 10782,
+   "val": 1.427723801136017
+  },
+  {
+   "t": 290.39,
+   "step": 11163,
+   "forwards": 11163,
+   "val": 1.42811518907547
+  },
+  {
+   "t": 300.01,
+   "step": 11533,
+   "forwards": 11533,
+   "val": 1.4309780478477478
+  }
+ ],
+ "sample": "ROMEO:\nThou makes her silver our pursues you.\nIf let the court-cond now here heavens!\nHe is in many hours match your way,\nHave I not did trunk; my father we will not imagined to the head and your\n\nSICINIUS:\nIt is for his fill my head,\nWhy, in the light of winter's me thou,\nAs to bed, and he that from my ha"
+}

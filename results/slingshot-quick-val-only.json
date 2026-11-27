@@ -1,0 +1,88 @@
+{
+ "rule": "slingshot",
+ "tag": "quick",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with periodic weight slingshots: fling weights past the current minimum along the recent trajectory to escape local basins and find wider ones.",
+ "paper": "Novel: gravitational slingshot applied to weight-space exploration.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "sling_every": 500,
+  "sling_strength": 2.0,
+  "anchor_ema": 0.995,
+  "teach": 0.0,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 1.5746984958648682,
+ "best_at_s": 60.01,
+ "best_step": 4135,
+ "init_val": 4.216201114654541,
+ "steps": 4135,
+ "forwards": 4135,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 688,
+   "forwards": 688,
+   "val": 2.0766666650772097
+  },
+  {
+   "t": 20.02,
+   "step": 1378,
+   "forwards": 1378,
+   "val": 1.8572426915168763
+  },
+  {
+   "t": 30.03,
+   "step": 2068,
+   "forwards": 2068,
+   "val": 1.7226177334785462
+  },
+  {
+   "t": 40.03,
+   "step": 2758,
+   "forwards": 2758,
+   "val": 1.640195083618164
+  },
+  {
+   "t": 50.04,
+   "step": 3448,
+   "forwards": 3448,
+   "val": 1.6008189916610718
+  },
+  {
+   "t": 60.01,
+   "step": 4135,
+   "forwards": 4135,
+   "val": 1.572387683391571
+  }
+ ],
+ "sample": "ROMEO:\nTherefore is wisely dedice means.\n\nLUCIO:\nThe true peace, he now here hath the secondings.\n\nShepherd:\nNo your wake a winds in earler none.\n\nLERDIZEL:\nHow marries which to the peoce of your curse.\nShould you, plain, if you have shall do come me being\nAnd the measure, my pointer themness confessed mar"
+}

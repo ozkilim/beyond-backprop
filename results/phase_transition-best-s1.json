@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "best-s1",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.587489023208618,
+ "best_val": 1.4388452243804932,
+ "best_at_s": 180.11,
+ "best_step": 10862,
+ "init_val": 4.177147626876831,
+ "steps": 17503,
+ "forwards": 17503,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 1,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.177147626876831
+  },
+  {
+   "t": 10.01,
+   "step": 662,
+   "forwards": 662,
+   "val": 1.985499119758606
+  },
+  {
+   "t": 20.01,
+   "step": 1322,
+   "forwards": 1322,
+   "val": 1.7149709701538085
+  },
+  {
+   "t": 30.01,
+   "step": 1929,
+   "forwards": 1929,
+   "val": 1.571670126914978
+  },
+  {
+   "t": 40.02,
+   "step": 2525,
+   "forwards": 2525,
+   "val": 1.5353410840034485
+  },
+  {
+   "t": 50.03,
+   "step": 3120,
+   "forwards": 3120,
+   "val": 1.5105785131454468
+  },
+  {
+   "t": 60.03,
+   "step": 3715,
+   "forwards": 3715,
+   "val": 1.4904807090759278
+  },
+  {
+   "t": 70.03,
+   "step": 4310,
+   "forwards": 4310,
+   "val": 1.4742448329925537
+  },
+  {
+   "t": 80.04,
+   "step": 4905,
+   "forwards": 4905,
+   "val": 1.471334743499756
+  },
+  {
+   "t": 90.05,
+   "step": 5501,
+   "forwards": 5501,
+   "val": 1.457401692867279
+  },
+  {
+   "t": 100.06,
+   "step": 6097,
+   "forwards": 6097,
+   "val": 1.4652236938476562
+  },
+  {
+   "t": 110.06,
+   "step": 6692,
+   "forwards": 6692,
+   "val": 1.4614468216896057
+  },
+  {
+   "t": 120.06,
+   "step": 7287,
+   "forwards": 7287,
+   "val": 1.456871259212494
+  },
+  {
+   "t": 130.07,
+   "step": 7883,
+   "forwards": 7883,
+   "val": 1.449439561367035
+  },
+  {
+   "t": 140.08,
+   "step": 8478,
+   "forwards": 8478,
+   "val": 1.4457273960113526
+  },
+  {
+   "t": 150.09,
+   "step": 9074,
+   "forwards": 9074,
+   "val": 1.456246554851532
+  },
+  {
+   "t": 160.1,
+   "step": 9670,
+   "forwards": 9670,
+   "val": 1.4471873044967651
+  },
+  {
+   "t": 170.1,
+   "step": 10266,
+   "forwards": 10266,
+   "val": 1.4528310418128967
+  },
+  {
+   "t": 180.11,
+   "step": 10862,
+   "forwards": 10862,
+   "val": 1.442916250228882
+  },
+  {
+   "t": 190.12,
+   "step": 11457,
+   "forwards": 11457,
+   "val": 1.4454608678817749
+  },
+  {
+   "t": 200.13,
+   "step": 12053,
+   "forwards": 12053,
+   "val": 1.4539328813552856
+  },
+  {
+   "t": 210.14,
+   "step": 12648,
+   "forwards": 12648,
+   "val": 1.4527711033821107
+  },
+  {
+   "t": 220.14,
+   "step": 13243,
+   "forwards": 13243,
+   "val": 1.4585934400558471
+  },
+  {
+   "t": 230.15,
+   "step": 13839,
+   "forwards": 13839,
+   "val": 1.4516514658927917
+  },
+  {
+   "t": 240.15,
+   "step": 14434,
+   "forwards": 14434,
+   "val": 1.4640106558799744
+  },
+  {
+   "t": 250.15,
+   "step": 15029,
+   "forwards": 15029,
+   "val": 1.4547309875488281
+  },
+  {
+   "t": 260.16,
+   "step": 15624,
+   "forwards": 15624,
+   "val": 1.4646511673927307
+  },
+  {
+   "t": 270.17,
+   "step": 16213,
+   "forwards": 16213,
+   "val": 1.4667270183563232
+  },
+  {
+   "t": 280.19,
+   "step": 16736,
+   "forwards": 16736,
+   "val": 1.4605217814445495
+  },
+  {
+   "t": 290.2,
+   "step": 17123,
+   "forwards": 17123,
+   "val": 1.4745672941207886
+  },
+  {
+   "t": 300.02,
+   "step": 17503,
+   "forwards": 17503,
+   "val": 1.4581324934959412
+  }
+ ],
+ "sample": "ROMEO:\nThou must know the first a meaning, and golse, great are gone.\n\nHASTINGS:\nAnd bleedelies good for that.\nI pray you, my countay that, none of thy devil, stand all this he\ndisdains of the world cle. So too! what his\nmilk moon, he say, if thou do be mew'd\n'Tis left thing.\n\nKING EDWARD IV:\nSo from my hu"
+}

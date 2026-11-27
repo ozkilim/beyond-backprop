@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "best-s2",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5686499691009521,
+ "best_val": 1.442824923992157,
+ "best_at_s": 280.34,
+ "best_step": 11063,
+ "init_val": 4.240832328796387,
+ "steps": 11823,
+ "forwards": 11823,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 2,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.240832328796387
+  },
+  {
+   "t": 10.02,
+   "step": 437,
+   "forwards": 437,
+   "val": 2.149977421760559
+  },
+  {
+   "t": 20.02,
+   "step": 877,
+   "forwards": 877,
+   "val": 1.8636147856712342
+  },
+  {
+   "t": 30.02,
+   "step": 1316,
+   "forwards": 1316,
+   "val": 1.723983895778656
+  },
+  {
+   "t": 40.03,
+   "step": 1718,
+   "forwards": 1718,
+   "val": 1.6076857566833496
+  },
+  {
+   "t": 50.04,
+   "step": 2103,
+   "forwards": 2103,
+   "val": 1.5661168932914733
+  },
+  {
+   "t": 60.05,
+   "step": 2488,
+   "forwards": 2488,
+   "val": 1.5448347806930542
+  },
+  {
+   "t": 70.06,
+   "step": 2872,
+   "forwards": 2872,
+   "val": 1.5123318791389466
+  },
+  {
+   "t": 80.07,
+   "step": 3258,
+   "forwards": 3258,
+   "val": 1.5087311267852783
+  },
+  {
+   "t": 90.09,
+   "step": 3614,
+   "forwards": 3614,
+   "val": 1.4968427538871765
+  },
+  {
+   "t": 100.11,
+   "step": 3998,
+   "forwards": 3998,
+   "val": 1.4779518961906433
+  },
+  {
+   "t": 110.13,
+   "step": 4382,
+   "forwards": 4382,
+   "val": 1.4746645450592042
+  },
+  {
+   "t": 120.15,
+   "step": 4768,
+   "forwards": 4768,
+   "val": 1.4652810573577881
+  },
+  {
+   "t": 130.16,
+   "step": 5153,
+   "forwards": 5153,
+   "val": 1.4681625843048096
+  },
+  {
+   "t": 140.19,
+   "step": 5537,
+   "forwards": 5537,
+   "val": 1.4574050307273865
+  },
+  {
+   "t": 150.19,
+   "step": 5921,
+   "forwards": 5921,
+   "val": 1.4563784837722777
+  },
+  {
+   "t": 160.19,
+   "step": 6305,
+   "forwards": 6305,
+   "val": 1.4523719429969788
+  },
+  {
+   "t": 170.22,
+   "step": 6690,
+   "forwards": 6690,
+   "val": 1.4500478506088257
+  },
+  {
+   "t": 180.24,
+   "step": 7074,
+   "forwards": 7074,
+   "val": 1.448978877067566
+  },
+  {
+   "t": 190.25,
+   "step": 7459,
+   "forwards": 7459,
+   "val": 1.4615510940551757
+  },
+  {
+   "t": 200.25,
+   "step": 7843,
+   "forwards": 7843,
+   "val": 1.451754081249237
+  },
+  {
+   "t": 210.26,
+   "step": 8227,
+   "forwards": 8227,
+   "val": 1.4501006484031678
+  },
+  {
+   "t": 220.26,
+   "step": 8611,
+   "forwards": 8611,
+   "val": 1.4491433024406433
+  },
+  {
+   "t": 230.28,
+   "step": 8996,
+   "forwards": 8996,
+   "val": 1.447570788860321
+  },
+  {
+   "t": 240.29,
+   "step": 9381,
+   "forwards": 9381,
+   "val": 1.4470147371292115
+  },
+  {
+   "t": 250.3,
+   "step": 9765,
+   "forwards": 9765,
+   "val": 1.4466148257255553
+  },
+  {
+   "t": 260.32,
+   "step": 10152,
+   "forwards": 10152,
+   "val": 1.4448956727981568
+  },
+  {
+   "t": 270.34,
+   "step": 10534,
+   "forwards": 10534,
+   "val": 1.451491153240204
+  },
+  {
+   "t": 280.34,
+   "step": 11063,
+   "forwards": 11063,
+   "val": 1.442804253101349
+  },
+  {
+   "t": 290.35,
+   "step": 11449,
+   "forwards": 11449,
+   "val": 1.4515804052352905
+  },
+  {
+   "t": 300.03,
+   "step": 11823,
+   "forwards": 11823,
+   "val": 1.4487374305725098
+  }
+ ],
+ "sample": "ROMEO:\nThou must know the fire, and goes with the strengthooysed he now\nThe chain of blood losses of the people appreiaken\nThan thou didstrange my father well store.\n\nSLY:\nMercutio.\n\nDUCHESS OF YORK:\nBrother, for fair lady:\nHow of not say 'dost delight of wine time.\n\nJULIET:\nThou should not the king have a"
+}

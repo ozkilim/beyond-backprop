@@ -1,0 +1,88 @@
+{
+ "rule": "echo_distill",
+ "tag": "quick",
+ "autograd": "modified",
+ "blurb": "Mirror neurons plus self-distillation from temporal echoes: the model's past predictions on the same context regularise its current ones.",
+ "paper": "Novel: temporal self-distillation without a model copy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "echo_alpha": 0.2,
+  "echo_ctx": 4,
+  "echo_ema": 0.9,
+  "teach": 0.0,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 2.5860616874694826,
+ "best_at_s": 60.37,
+ "best_step": 134,
+ "init_val": 4.216201114654541,
+ "steps": 134,
+ "forwards": 134,
+ "train_seconds": 60.4,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.05,
+   "step": 66,
+   "forwards": 66,
+   "val": 2.744913935661316
+  },
+  {
+   "t": 20.18,
+   "step": 81,
+   "forwards": 81,
+   "val": 2.681678819656372
+  },
+  {
+   "t": 30.18,
+   "step": 95,
+   "forwards": 95,
+   "val": 2.641893172264099
+  },
+  {
+   "t": 40.75,
+   "step": 109,
+   "forwards": 109,
+   "val": 2.6139990091323853
+  },
+  {
+   "t": 50.86,
+   "step": 122,
+   "forwards": 122,
+   "val": 2.5879592657089234
+  },
+  {
+   "t": 60.37,
+   "step": 134,
+   "forwards": 134,
+   "val": 2.5844890832901
+  }
+ ],
+ "sample": "ROMEO:\nt bremhis ke whselterlouch merakor, id Igelste grecoure y h fotherere heth thin beielis sg serilost atho y or we pee ancosendarthoer nd d haf thed we woy t f acif Iiserethind te chan s uwe y th h.Sho I\n\nA3 f pifid mily mioennd ssarfeinteouthe fleome inle ind t he the setoinobo y ton tERost hathafe a"
+}

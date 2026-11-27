@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "best-s0",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.05,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.4,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5770023012161254,
+ "best_val": 1.4352773189544679,
+ "best_at_s": 190.15,
+ "best_step": 10845,
+ "init_val": 4.216201114654541,
+ "steps": 17376,
+ "forwards": 17376,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 437,
+   "forwards": 437,
+   "val": 2.1777558088302613
+  },
+  {
+   "t": 20.02,
+   "step": 876,
+   "forwards": 876,
+   "val": 1.894650149345398
+  },
+  {
+   "t": 30.03,
+   "step": 1366,
+   "forwards": 1366,
+   "val": 1.7266461849212646
+  },
+  {
+   "t": 40.03,
+   "step": 1966,
+   "forwards": 1966,
+   "val": 1.5981515407562257
+  },
+  {
+   "t": 50.03,
+   "step": 2560,
+   "forwards": 2560,
+   "val": 1.5588092923164367
+  },
+  {
+   "t": 60.04,
+   "step": 3154,
+   "forwards": 3154,
+   "val": 1.526470148563385
+  },
+  {
+   "t": 70.04,
+   "step": 3709,
+   "forwards": 3709,
+   "val": 1.4943613767623902
+  },
+  {
+   "t": 80.05,
+   "step": 4303,
+   "forwards": 4303,
+   "val": 1.4819742918014527
+  },
+  {
+   "t": 90.05,
+   "step": 4897,
+   "forwards": 4897,
+   "val": 1.4728840351104737
+  },
+  {
+   "t": 100.06,
+   "step": 5492,
+   "forwards": 5492,
+   "val": 1.462914192676544
+  },
+  {
+   "t": 110.07,
+   "step": 6087,
+   "forwards": 6087,
+   "val": 1.4538817286491394
+  },
+  {
+   "t": 120.08,
+   "step": 6682,
+   "forwards": 6682,
+   "val": 1.447951877117157
+  },
+  {
+   "t": 130.08,
+   "step": 7276,
+   "forwards": 7276,
+   "val": 1.4490431070327758
+  },
+  {
+   "t": 140.1,
+   "step": 7871,
+   "forwards": 7871,
+   "val": 1.4492146015167235
+  },
+  {
+   "t": 150.11,
+   "step": 8466,
+   "forwards": 8466,
+   "val": 1.4400195837020875
+  },
+  {
+   "t": 160.12,
+   "step": 9061,
+   "forwards": 9061,
+   "val": 1.4451207518577576
+  },
+  {
+   "t": 170.12,
+   "step": 9655,
+   "forwards": 9655,
+   "val": 1.4415412664413452
+  },
+  {
+   "t": 180.14,
+   "step": 10250,
+   "forwards": 10250,
+   "val": 1.4396673798561097
+  },
+  {
+   "t": 190.15,
+   "step": 10845,
+   "forwards": 10845,
+   "val": 1.4368807792663574
+  },
+  {
+   "t": 200.16,
+   "step": 11440,
+   "forwards": 11440,
+   "val": 1.4411436676979066
+  },
+  {
+   "t": 210.17,
+   "step": 12035,
+   "forwards": 12035,
+   "val": 1.4465031743049621
+  },
+  {
+   "t": 220.19,
+   "step": 12631,
+   "forwards": 12631,
+   "val": 1.4401182770729064
+  },
+  {
+   "t": 230.19,
+   "step": 13226,
+   "forwards": 13226,
+   "val": 1.439617145061493
+  },
+  {
+   "t": 240.21,
+   "step": 13821,
+   "forwards": 13821,
+   "val": 1.442540717124939
+  },
+  {
+   "t": 250.21,
+   "step": 14416,
+   "forwards": 14416,
+   "val": 1.4500571846961976
+  },
+  {
+   "t": 260.22,
+   "step": 15009,
+   "forwards": 15009,
+   "val": 1.4519678473472595
+  },
+  {
+   "t": 270.22,
+   "step": 15603,
+   "forwards": 15603,
+   "val": 1.4532534718513488
+  },
+  {
+   "t": 280.23,
+   "step": 16199,
+   "forwards": 16199,
+   "val": 1.4592096328735351
+  },
+  {
+   "t": 290.24,
+   "step": 16795,
+   "forwards": 16795,
+   "val": 1.4568638920783996
+  },
+  {
+   "t": 300.02,
+   "step": 17376,
+   "forwards": 17376,
+   "val": 1.462685263156891
+  }
+ ],
+ "sample": "ROMEO:\nThou makes her self it on the hand,\nAnd gelse than of thy hands are my strength being some shrills\nAnd of persio.\n\nROMEO:\nWhat is true, despite of well stand alive, of the\nHath scon' so well deny. So IIV:\nSay, hie will make not say, if the light of wine eyes.\n\nJULIET:\nTheir be your followed to my ha"
+}

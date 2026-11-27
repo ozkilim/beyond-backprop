@@ -1,0 +1,230 @@
+{
+ "rule": "stratified_mirror",
+ "tag": "t03",
+ "autograd": "modified",
+ "blurb": "Layer-wise phased backward noise: output layers get clean credit early, input layers explore first, then they swap.",
+ "paper": "Novel: spatiotemporal noise scheduling across network depth.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "phase_spread": 1.0,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5849774289131164,
+ "best_val": 1.442126796245575,
+ "best_at_s": 300.03,
+ "best_step": 6309,
+ "init_val": 4.216201114654541,
+ "steps": 6309,
+ "forwards": 6309,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.0,
+   "step": 271,
+   "forwards": 271,
+   "val": 2.321688985824585
+  },
+  {
+   "t": 20.03,
+   "step": 543,
+   "forwards": 543,
+   "val": 2.0416847705841064
+  },
+  {
+   "t": 30.06,
+   "step": 814,
+   "forwards": 814,
+   "val": 1.8744558215141296
+  },
+  {
+   "t": 40.08,
+   "step": 1088,
+   "forwards": 1088,
+   "val": 1.7422627449035644
+  },
+  {
+   "t": 50.09,
+   "step": 1389,
+   "forwards": 1389,
+   "val": 1.6567652940750122
+  },
+  {
+   "t": 60.13,
+   "step": 1635,
+   "forwards": 1635,
+   "val": 1.6007528066635133
+  },
+  {
+   "t": 70.14,
+   "step": 1872,
+   "forwards": 1872,
+   "val": 1.5649733066558837
+  },
+  {
+   "t": 80.15,
+   "step": 2109,
+   "forwards": 2109,
+   "val": 1.5406163454055786
+  },
+  {
+   "t": 90.2,
+   "step": 2338,
+   "forwards": 2338,
+   "val": 1.5393890261650085
+  },
+  {
+   "t": 100.23,
+   "step": 2520,
+   "forwards": 2520,
+   "val": 1.5232315063476562
+  },
+  {
+   "t": 110.26,
+   "step": 2704,
+   "forwards": 2704,
+   "val": 1.5209118604660035
+  },
+  {
+   "t": 120.27,
+   "step": 2888,
+   "forwards": 2888,
+   "val": 1.5012943148612976
+  },
+  {
+   "t": 130.3,
+   "step": 3070,
+   "forwards": 3070,
+   "val": 1.4978049039840697
+  },
+  {
+   "t": 140.3,
+   "step": 3253,
+   "forwards": 3253,
+   "val": 1.4891694068908692
+  },
+  {
+   "t": 150.31,
+   "step": 3446,
+   "forwards": 3446,
+   "val": 1.483346939086914
+  },
+  {
+   "t": 160.35,
+   "step": 3651,
+   "forwards": 3651,
+   "val": 1.4870725750923157
+  },
+  {
+   "t": 170.4,
+   "step": 3834,
+   "forwards": 3834,
+   "val": 1.4793126344680787
+  },
+  {
+   "t": 180.43,
+   "step": 4023,
+   "forwards": 4023,
+   "val": 1.4693839430809021
+  },
+  {
+   "t": 190.48,
+   "step": 4208,
+   "forwards": 4208,
+   "val": 1.4764097929000854
+  },
+  {
+   "t": 200.51,
+   "step": 4390,
+   "forwards": 4390,
+   "val": 1.4700654983520507
+  },
+  {
+   "t": 210.51,
+   "step": 4572,
+   "forwards": 4572,
+   "val": 1.4673987984657288
+  },
+  {
+   "t": 220.54,
+   "step": 4763,
+   "forwards": 4763,
+   "val": 1.454834020137787
+  },
+  {
+   "t": 230.56,
+   "step": 4944,
+   "forwards": 4944,
+   "val": 1.4581356048583984
+  },
+  {
+   "t": 240.57,
+   "step": 5126,
+   "forwards": 5126,
+   "val": 1.4631099104881287
+  },
+  {
+   "t": 250.57,
+   "step": 5292,
+   "forwards": 5292,
+   "val": 1.4537377834320069
+  },
+  {
+   "t": 260.62,
+   "step": 5475,
+   "forwards": 5475,
+   "val": 1.4565184116363525
+  },
+  {
+   "t": 270.63,
+   "step": 5656,
+   "forwards": 5656,
+   "val": 1.4575064182281494
+  },
+  {
+   "t": 280.65,
+   "step": 5843,
+   "forwards": 5843,
+   "val": 1.453197991847992
+  },
+  {
+   "t": 290.68,
+   "step": 6088,
+   "forwards": 6088,
+   "val": 1.4439511060714723
+  },
+  {
+   "t": 300.03,
+   "step": 6309,
+   "forwards": 6309,
+   "val": 1.4438982725143432
+  }
+ ],
+ "sample": "ROMEO:\nThou must know the fied, ander, for infaltles, great Derby Gremioner? hath holds\nAnd seem to him; that's your way, and come affright not me,\nThat has wounded a man in his gold to him, he\nThat she. So I were approach of my hence should seemels flesh.\nAnd then the things to bed, then to maint them may"
+}

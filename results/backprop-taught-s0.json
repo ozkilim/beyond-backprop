@@ -1,0 +1,226 @@
+{
+ "rule": "backprop",
+ "tag": "taught-s0",
+ "autograd": "full",
+ "blurb": "Plain backprop + AdamW. The baseline everyone loses to.",
+ "paper": "Rumelhart, Hinton & Williams 1986",
+ "hp": {
+  "lr": 0.002,
+  "weight_decay": 0.01,
+  "half": 0,
+  "noise": 0.0,
+  "teach": 0.3
+ },
+ "test_loss": 1.6758241391181945,
+ "best_val": 1.4660411477088928,
+ "best_at_s": 190.26,
+ "best_step": 8455,
+ "init_val": 4.216201114654541,
+ "steps": 13112,
+ "forwards": 13112,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 500,
+   "forwards": 500,
+   "val": 2.3596719980239866
+  },
+  {
+   "t": 20.02,
+   "step": 1002,
+   "forwards": 1002,
+   "val": 1.9943318009376525
+  },
+  {
+   "t": 30.03,
+   "step": 1632,
+   "forwards": 1632,
+   "val": 1.6939261198043822
+  },
+  {
+   "t": 40.05,
+   "step": 2071,
+   "forwards": 2071,
+   "val": 1.6031893849372865
+  },
+  {
+   "t": 50.05,
+   "step": 2503,
+   "forwards": 2503,
+   "val": 1.557070219516754
+  },
+  {
+   "t": 60.07,
+   "step": 2936,
+   "forwards": 2936,
+   "val": 1.5388845562934876
+  },
+  {
+   "t": 70.08,
+   "step": 3363,
+   "forwards": 3363,
+   "val": 1.51427081823349
+  },
+  {
+   "t": 80.09,
+   "step": 3787,
+   "forwards": 3787,
+   "val": 1.4983473300933838
+  },
+  {
+   "t": 90.11,
+   "step": 4213,
+   "forwards": 4213,
+   "val": 1.494474995136261
+  },
+  {
+   "t": 100.12,
+   "step": 4637,
+   "forwards": 4637,
+   "val": 1.4903588771820069
+  },
+  {
+   "t": 110.12,
+   "step": 5060,
+   "forwards": 5060,
+   "val": 1.4813696146011353
+  },
+  {
+   "t": 120.14,
+   "step": 5484,
+   "forwards": 5484,
+   "val": 1.4769299387931825
+  },
+  {
+   "t": 130.15,
+   "step": 5908,
+   "forwards": 5908,
+   "val": 1.4780627846717835
+  },
+  {
+   "t": 140.17,
+   "step": 6333,
+   "forwards": 6333,
+   "val": 1.4724803566932678
+  },
+  {
+   "t": 150.19,
+   "step": 6757,
+   "forwards": 6757,
+   "val": 1.4775956511497497
+  },
+  {
+   "t": 160.2,
+   "step": 7181,
+   "forwards": 7181,
+   "val": 1.4753821969032288
+  },
+  {
+   "t": 170.22,
+   "step": 7607,
+   "forwards": 7607,
+   "val": 1.47534122467041
+  },
+  {
+   "t": 180.24,
+   "step": 8031,
+   "forwards": 8031,
+   "val": 1.4717368721961974
+  },
+  {
+   "t": 190.26,
+   "step": 8455,
+   "forwards": 8455,
+   "val": 1.4711321592330933
+  },
+  {
+   "t": 200.26,
+   "step": 8878,
+   "forwards": 8878,
+   "val": 1.4841126918792724
+  },
+  {
+   "t": 210.28,
+   "step": 9302,
+   "forwards": 9302,
+   "val": 1.4832359552383423
+  },
+  {
+   "t": 220.29,
+   "step": 9727,
+   "forwards": 9727,
+   "val": 1.478877890110016
+  },
+  {
+   "t": 230.3,
+   "step": 10152,
+   "forwards": 10152,
+   "val": 1.4834336519241333
+  },
+  {
+   "t": 240.31,
+   "step": 10576,
+   "forwards": 10576,
+   "val": 1.4878585815429688
+  },
+  {
+   "t": 250.32,
+   "step": 11001,
+   "forwards": 11001,
+   "val": 1.480151617527008
+  },
+  {
+   "t": 260.33,
+   "step": 11426,
+   "forwards": 11426,
+   "val": 1.4975632190704347
+  },
+  {
+   "t": 270.35,
+   "step": 11852,
+   "forwards": 11852,
+   "val": 1.49171621799469
+  },
+  {
+   "t": 280.35,
+   "step": 12277,
+   "forwards": 12277,
+   "val": 1.4953914880752563
+  },
+  {
+   "t": 290.36,
+   "step": 12703,
+   "forwards": 12703,
+   "val": 1.4903627634048462
+  },
+  {
+   "t": 300.0,
+   "step": 13112,
+   "forwards": 13112,
+   "val": 1.493066394329071
+  }
+ ],
+ "sample": "ROMEO:\nThou hast a swift?\n\nWARWICK:\nThanks, disguiserance, our conditted and his head, and\nlies and his stands, your ways day.\nAs if I had, none of thy devise stone.\n\nShepherd:\nLet's the bristle thrust many one princely\nThey have not stay till our cheers were a bride.\n\nESCALUS:\nSo, to the quam storm his ha"
+}

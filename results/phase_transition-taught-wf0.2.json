@@ -1,0 +1,231 @@
+{
+ "rule": "phase_transition",
+ "tag": "taught-wf0.2",
+ "autograd": "modified",
+ "blurb": "Backward weights anneal from random (exploration) to forward-tracking (exploitation) on a cosine schedule.",
+ "paper": "Novel: scheduled interpolation of credit-assignment accuracy.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "warmup_frac": 0.2,
+  "schedule": "cosine",
+  "mirror": true,
+  "teach": 0.3,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.589592034816742,
+ "best_val": 1.4421857333183288,
+ "best_at_s": 180.13,
+ "best_step": 10840,
+ "init_val": 4.216201114654541,
+ "steps": 17963,
+ "forwards": 17963,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 660,
+   "forwards": 660,
+   "val": 2.026620852947235
+  },
+  {
+   "t": 20.02,
+   "step": 1320,
+   "forwards": 1320,
+   "val": 1.7534687876701356
+  },
+  {
+   "t": 30.03,
+   "step": 1927,
+   "forwards": 1927,
+   "val": 1.6124147772789001
+  },
+  {
+   "t": 40.04,
+   "step": 2521,
+   "forwards": 2521,
+   "val": 1.5587422966957092
+  },
+  {
+   "t": 50.04,
+   "step": 3115,
+   "forwards": 3115,
+   "val": 1.520044243335724
+  },
+  {
+   "t": 60.05,
+   "step": 3710,
+   "forwards": 3710,
+   "val": 1.495248544216156
+  },
+  {
+   "t": 70.06,
+   "step": 4304,
+   "forwards": 4304,
+   "val": 1.4855385661125182
+  },
+  {
+   "t": 80.07,
+   "step": 4898,
+   "forwards": 4898,
+   "val": 1.478765857219696
+  },
+  {
+   "t": 90.08,
+   "step": 5492,
+   "forwards": 5492,
+   "val": 1.4571617484092712
+  },
+  {
+   "t": 100.08,
+   "step": 6086,
+   "forwards": 6086,
+   "val": 1.4557298064231872
+  },
+  {
+   "t": 110.1,
+   "step": 6681,
+   "forwards": 6681,
+   "val": 1.4512890696525573
+  },
+  {
+   "t": 120.11,
+   "step": 7276,
+   "forwards": 7276,
+   "val": 1.4511666893959045
+  },
+  {
+   "t": 130.11,
+   "step": 7870,
+   "forwards": 7870,
+   "val": 1.4561185002326966
+  },
+  {
+   "t": 140.12,
+   "step": 8464,
+   "forwards": 8464,
+   "val": 1.4450257301330567
+  },
+  {
+   "t": 150.12,
+   "step": 9058,
+   "forwards": 9058,
+   "val": 1.4538641214370727
+  },
+  {
+   "t": 160.13,
+   "step": 9652,
+   "forwards": 9652,
+   "val": 1.44967360496521
+  },
+  {
+   "t": 170.13,
+   "step": 10246,
+   "forwards": 10246,
+   "val": 1.4471981406211853
+  },
+  {
+   "t": 180.13,
+   "step": 10840,
+   "forwards": 10840,
+   "val": 1.4425575137138367
+  },
+  {
+   "t": 190.14,
+   "step": 11435,
+   "forwards": 11435,
+   "val": 1.4551999807357787
+  },
+  {
+   "t": 200.15,
+   "step": 12030,
+   "forwards": 12030,
+   "val": 1.461481523513794
+  },
+  {
+   "t": 210.16,
+   "step": 12625,
+   "forwards": 12625,
+   "val": 1.464370357990265
+  },
+  {
+   "t": 220.17,
+   "step": 13220,
+   "forwards": 13220,
+   "val": 1.4600908875465393
+  },
+  {
+   "t": 230.18,
+   "step": 13815,
+   "forwards": 13815,
+   "val": 1.464225959777832
+  },
+  {
+   "t": 240.19,
+   "step": 14410,
+   "forwards": 14410,
+   "val": 1.4682278156280517
+  },
+  {
+   "t": 250.2,
+   "step": 15004,
+   "forwards": 15004,
+   "val": 1.4701961398124694
+  },
+  {
+   "t": 260.21,
+   "step": 15599,
+   "forwards": 15599,
+   "val": 1.4830699563026428
+  },
+  {
+   "t": 270.23,
+   "step": 16194,
+   "forwards": 16194,
+   "val": 1.4827087283134461
+  },
+  {
+   "t": 280.24,
+   "step": 16789,
+   "forwards": 16789,
+   "val": 1.4878381848335267
+  },
+  {
+   "t": 290.25,
+   "step": 17384,
+   "forwards": 17384,
+   "val": 1.4879969358444214
+  },
+  {
+   "t": 300.0,
+   "step": 17963,
+   "forwards": 17963,
+   "val": 1.4892334342002869
+  }
+ ],
+ "sample": "ROMEO:\nThou must know the first to early was from strengthood of his\nto here hath the secret of a pitiful watch your\nwasper ancesty;\nAnd true news for our purse of dail and endurghant,\nSo 'tis well-den.\nSeven, to fled it fill my ennorant,\nMight deliver of wintering eyes to my point\nSpartors that from my hu"
+}

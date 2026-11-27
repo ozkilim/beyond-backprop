@@ -1,0 +1,230 @@
+{
+ "rule": "noisy_mirror",
+ "tag": "t05",
+ "autograd": "modified",
+ "blurb": "Mirror neurons with decaying Gaussian noise: explores around the true gradient early, converges to exact credit assignment late.",
+ "paper": "Novel: temperature-scheduled noise on mirror backward weights.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "sigma0": 0.5,
+  "noise_schedule": "linear",
+  "teach": 0.5,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": 1.5665368390083314,
+ "best_val": 1.4286159682273865,
+ "best_at_s": 290.38,
+ "best_step": 11020,
+ "init_val": 4.216201114654541,
+ "steps": 11385,
+ "forwards": 11385,
+ "train_seconds": 300.0,
+ "budget_minutes": 5.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": 3.3595265769958496,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.02,
+   "step": 298,
+   "forwards": 298,
+   "val": 2.2988707780838014
+  },
+  {
+   "t": 20.04,
+   "step": 722,
+   "forwards": 722,
+   "val": 1.947566771507263
+  },
+  {
+   "t": 30.05,
+   "step": 1149,
+   "forwards": 1149,
+   "val": 1.7836989998817443
+  },
+  {
+   "t": 40.08,
+   "step": 1564,
+   "forwards": 1564,
+   "val": 1.6466126561164856
+  },
+  {
+   "t": 50.08,
+   "step": 1944,
+   "forwards": 1944,
+   "val": 1.592785620689392
+  },
+  {
+   "t": 60.11,
+   "step": 2324,
+   "forwards": 2324,
+   "val": 1.5562123656272888
+  },
+  {
+   "t": 70.11,
+   "step": 2704,
+   "forwards": 2704,
+   "val": 1.5367215514183044
+  },
+  {
+   "t": 80.13,
+   "step": 3085,
+   "forwards": 3085,
+   "val": 1.516074252128601
+  },
+  {
+   "t": 90.14,
+   "step": 3465,
+   "forwards": 3465,
+   "val": 1.5020912289619446
+  },
+  {
+   "t": 100.14,
+   "step": 3845,
+   "forwards": 3845,
+   "val": 1.4891810417175293
+  },
+  {
+   "t": 110.15,
+   "step": 4225,
+   "forwards": 4225,
+   "val": 1.477536714076996
+  },
+  {
+   "t": 120.16,
+   "step": 4605,
+   "forwards": 4605,
+   "val": 1.4715973377227782
+  },
+  {
+   "t": 130.17,
+   "step": 4985,
+   "forwards": 4985,
+   "val": 1.4591427445411682
+  },
+  {
+   "t": 140.2,
+   "step": 5365,
+   "forwards": 5365,
+   "val": 1.4652481198310852
+  },
+  {
+   "t": 150.2,
+   "step": 5744,
+   "forwards": 5744,
+   "val": 1.462290632724762
+  },
+  {
+   "t": 160.21,
+   "step": 6124,
+   "forwards": 6124,
+   "val": 1.461624264717102
+  },
+  {
+   "t": 170.21,
+   "step": 6504,
+   "forwards": 6504,
+   "val": 1.4476210117340087
+  },
+  {
+   "t": 180.22,
+   "step": 6884,
+   "forwards": 6884,
+   "val": 1.4532909870147706
+  },
+  {
+   "t": 190.22,
+   "step": 7264,
+   "forwards": 7264,
+   "val": 1.448217785358429
+  },
+  {
+   "t": 200.25,
+   "step": 7643,
+   "forwards": 7643,
+   "val": 1.4437809705734252
+  },
+  {
+   "t": 210.27,
+   "step": 8022,
+   "forwards": 8022,
+   "val": 1.4394218564033507
+  },
+  {
+   "t": 220.29,
+   "step": 8403,
+   "forwards": 8403,
+   "val": 1.4425490379333497
+  },
+  {
+   "t": 230.3,
+   "step": 8783,
+   "forwards": 8783,
+   "val": 1.4325902223587037
+  },
+  {
+   "t": 240.32,
+   "step": 9164,
+   "forwards": 9164,
+   "val": 1.4388985633850098
+  },
+  {
+   "t": 250.33,
+   "step": 9544,
+   "forwards": 9544,
+   "val": 1.4354331016540527
+  },
+  {
+   "t": 260.33,
+   "step": 9933,
+   "forwards": 9933,
+   "val": 1.437676227092743
+  },
+  {
+   "t": 270.36,
+   "step": 10296,
+   "forwards": 10296,
+   "val": 1.4341206789016723
+  },
+  {
+   "t": 280.36,
+   "step": 10658,
+   "forwards": 10658,
+   "val": 1.432121217250824
+  },
+  {
+   "t": 290.38,
+   "step": 11020,
+   "forwards": 11020,
+   "val": 1.4281733751296997
+  },
+  {
+   "t": 300.02,
+   "step": 11385,
+   "forwards": 11385,
+   "val": 1.4290710091590881
+  }
+ ],
+ "sample": "ROMEO:\nThou make king sweet looks or hand,\nAnd gilet the commission of my re hath not so,\nWhich good denst a so your way,\nFor come and forrown; my father we wish to acce I be to the\npest brother from me. So I fearful and milk.\nWoe not say that of me for my deliving Romeo!\n\nBUCKINGHAM:\nYour straight that ha"
+}

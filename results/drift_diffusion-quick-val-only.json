@@ -1,0 +1,87 @@
+{
+ "rule": "drift_diffusion",
+ "tag": "quick",
+ "autograd": "modified",
+ "blurb": "Mirror-neuron credit plus noise that scales with per-weight gradient uncertainty: noisy where the signal is unreliable, precise where it's clear.",
+ "paper": "Novel: Ratcliff's drift-diffusion (1978) applied as a credit-assignment mechanism.",
+ "hp": {
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "scale": 1.0,
+  "mirror": true,
+  "sigma": 0.3,
+  "ema_var": 0.999,
+  "teach": 0.0,
+  "beta": 16.0,
+  "order": 9,
+  "count_steps": 1500
+ },
+ "test_loss": null,
+ "best_val": 1.5155689406394959,
+ "best_at_s": 60.01,
+ "best_step": 3849,
+ "init_val": 4.216201114654541,
+ "steps": 3849,
+ "forwards": 3849,
+ "train_seconds": 60.0,
+ "budget_minutes": 1.0,
+ "device": "mps",
+ "params": 826368,
+ "model": {
+  "vocab_size": 65,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "batch_size": 32,
+ "seed": 0,
+ "diverged": false,
+ "unigram_val_loss": 3.329419493675232,
+ "unigram_test_loss": null,
+ "curve": [
+  {
+   "t": 0.0,
+   "step": 0,
+   "forwards": 0,
+   "val": 4.216201114654541
+  },
+  {
+   "t": 10.01,
+   "step": 648,
+   "forwards": 648,
+   "val": 2.031672978401184
+  },
+  {
+   "t": 20.02,
+   "step": 1293,
+   "forwards": 1293,
+   "val": 1.7577259540557861
+  },
+  {
+   "t": 30.03,
+   "step": 1937,
+   "forwards": 1937,
+   "val": 1.6425915956497192
+  },
+  {
+   "t": 40.03,
+   "step": 2572,
+   "forwards": 2572,
+   "val": 1.5831559777259827
+  },
+  {
+   "t": 50.03,
+   "step": 3213,
+   "forwards": 3213,
+   "val": 1.5398545265197754
+  },
+  {
+   "t": 60.01,
+   "step": 3849,
+   "forwards": 3849,
+   "val": 1.5118699431419373
+  }
+ ],
+ "sample": "ROMEO:\nThou must keep so tribood inext of ald I to thee\nThough your name arm hath hold be ever saw\nThis stands, your wakes, and souly thou, none hands\nHow speak on maid with his good to him,\nCut the stranglant of fair in milk.\nWoe not say to thou livest me in so,\nThe sun shapes, but not one that fear mysel"
+}
